@@ -1,0 +1,38 @@
+# Yardımcı iş: Releases'teki son APK'yı indirip imzasını ve paket bilgisini kontrol eder,
+# sonucu "gunluk-kontrol" dalına yazar.
+name: APK kontrol
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  kontrol:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: APK'yı indir ve incele
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/k && cd /tmp/k
+          gh release download --repo "${{ github.repository }}" --pattern Ezan-Vakitlerim.apk
+          BT=$(ls -d $ANDROID_HOME/build-tools/* | sort -V | tail -1)
+          {
+            echo "== boyut"; ls -l Ezan-Vakitlerim.apk; sha256sum Ezan-Vakitlerim.apk
+            echo "== apksigner"; $BT/apksigner verify -v --print-certs Ezan-Vakitlerim.apk 2>&1
+            echo "== aapt2 badging"; $BT/aapt2 dump badging Ezan-Vakitlerim.apk 2>&1 | head -40
+            echo "== zip"; unzip -l Ezan-Vakitlerim.apk | tail -3
+          } > /tmp/kontrol.txt 2>&1 || true
+          cat /tmp/kontrol.txt
+      - name: Sonucu kaydet
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout -q --orphan gunluk-kontrol
+          git rm -rf -q --cached . > /dev/null
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp /tmp/kontrol.txt .
+          git add -A
+          git commit -q -m "APK kontrol"
+          git push -q -f origin gunluk-kontrol
