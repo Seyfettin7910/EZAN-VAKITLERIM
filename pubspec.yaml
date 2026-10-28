@@ -12,13 +12,13 @@ dependencies:
   flutter:
     sdk: flutter
   # Vakit girince bildirim göstermek için
-  flutter_local_notifications: any
+  flutter_local_notifications: ^22.3.3
   # Bildirimleri Türkiye saatine göre kurmak için
-  timezone: any
+  timezone: ^0.11.2
   # GPS ile konum bulmak için
-  geolocator: any
+  geolocator: ^14.1.2
   # Seçilen konumu ve ayarları telefonda saklamak için
-  shared_preferences: any
+  shared_preferences: ^2.5.6
 
 dev_dependencies:
   flutter_test:
