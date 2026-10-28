@@ -1,24 +1,26 @@
-# Tek seferlik yardımcı iş: Flutter'ın güncel Android şablonunu üretip indirilebilir dosya olarak bırakır.
+# Tek seferlik yardımcı iş: Flutter'ın güncel Android şablonunu üretip "iskelet" dalına yazar.
 name: Android iskeleti uret
 on:
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   iskelet:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
-      - run: flutter --version
-      - run: flutter create --platforms=android --org com.seyfettin --project-name ezan_vakitlerim iskelet
-      - run: flutter --version > iskelet/flutter-surum.txt
-      - uses: actions/upload-artifact@v4
-        with:
-          name: iskelet
-          path: |
-            iskelet/android
-            iskelet/pubspec.yaml
-            iskelet/analysis_options.yaml
-            iskelet/.gitignore
-            iskelet/flutter-surum.txt
-          include-hidden-files: true
+      - run: flutter create --platforms=android --org com.seyfettin --project-name ezan_vakitlerim /tmp/iskelet
+      - name: iskelet dalina yaz
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout --orphan iskelet
+          git rm -rf -q .
+          cp -r /tmp/iskelet/android /tmp/iskelet/pubspec.yaml /tmp/iskelet/analysis_options.yaml /tmp/iskelet/.gitignore .
+          flutter --version > flutter-surum.txt
+          git add -A
+          git commit -q -m "Flutter Android iskeleti"
+          git push -f origin iskelet
