@@ -1,0 +1,75 @@
+# Her güncellemede APK'yı derleyip Releases sayfasına koyan iş.
+# Sabit indirme linki (hep son sürüm):
+# https://github.com/Seyfettin7910/EZAN-VAKITLERIM/releases/latest/download/Ezan-Vakitlerim.apk
+name: APK derle
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '**.md'
+      - 'tasarim/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  derle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Paketleri indir
+        run: flutter pub get
+
+      - name: Kullanılan paket sürümleri
+        run: grep -A3 -E '^  (flutter_local_notifications|geolocator|shared_preferences|timezone):' pubspec.lock
+
+      - name: Kod kontrolü
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
+
+      # İmza anahtarı GitHub Secrets'ta varsa onunla imzalanır (güncellemeler üstüne kurulur).
+      - name: İmza anahtarını hazırla
+        env:
+          ANAHTAR_JKS_BASE64: ${{ secrets.ANAHTAR_JKS_BASE64 }}
+          ANAHTAR_SIFRE: ${{ secrets.ANAHTAR_SIFRE }}
+        run: |
+          if [ -n "$ANAHTAR_JKS_BASE64" ] && [ -n "$ANAHTAR_SIFRE" ]; then
+            echo "$ANAHTAR_JKS_BASE64" | base64 -d > android/app/vakit.jks
+            printf 'storeFile=vakit.jks\nstorePassword=%s\nkeyAlias=vakit\nkeyPassword=%s\n' "$ANAHTAR_SIFRE" "$ANAHTAR_SIFRE" > android/key.properties
+            echo "IMZA=kalici" >> "$GITHUB_ENV"
+          else
+            echo "::warning::İmza anahtarı yok, geçici anahtarla imzalanıyor."
+            echo "IMZA=gecici" >> "$GITHUB_ENV"
+          fi
+
+      - name: APK derle
+        run: flutter build apk --release --build-number=${{ github.run_number }}
+
+      - name: Sürümü oku ve dosyayı adlandır
+        run: |
+          SURUM=$(grep '^version:' pubspec.yaml | sed 's/version: *//; s/+.*//')
+          echo "SURUM=$SURUM" >> "$GITHUB_ENV"
+          cp build/app/outputs/flutter-apk/app-release.apk Ezan-Vakitlerim.apk
+
+      - name: Releases sayfasına koy
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ env.SURUM }}
+          name: Ezan Vakitlerim ${{ env.SURUM }}
+          make_latest: true
+          files: Ezan-Vakitlerim.apk
+          body: |
+            Derleme no: ${{ github.run_number }} · İmza: ${{ env.IMZA }}
+            İndir: https://github.com/Seyfettin7910/EZAN-VAKITLERIM/releases/latest/download/Ezan-Vakitlerim.apk

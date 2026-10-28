@@ -1,0 +1,29 @@
+name: ezan_vakitlerim
+description: "Ücretsiz, reklamsız namaz vakitleri uygulaması (Android)."
+publish_to: 'none'
+
+# Sürüm: 1.0.0 kullanıcıya görünen sürüm. "+" sonrasını GitHub her derlemede kendisi artırır.
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Vakit girince bildirim göstermek için
+  flutter_local_notifications: any
+  # Bildirimleri Türkiye saatine göre kurmak için
+  timezone: any
+  # GPS ile konum bulmak için
+  geolocator: any
+  # Seçilen konumu ve ayarları telefonda saklamak için
+  shared_preferences: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
