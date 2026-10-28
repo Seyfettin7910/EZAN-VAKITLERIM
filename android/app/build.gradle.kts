@@ -44,6 +44,10 @@ android {
                 storeFile = file(anahtarBilgisi["storeFile"] as String)
                 storePassword = anahtarBilgisi["storePassword"] as String
             }
+            // Bütün imza yöntemleri açık: eski ve yeni Android kurulum ekranları sorunsuz kabul etsin
+            enableV1Signing = true
+            enableV2Signing = true
+            enableV3Signing = true
         }
     }
 
