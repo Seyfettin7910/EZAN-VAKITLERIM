@@ -34,7 +34,7 @@ class BildirimServisi {
     tz_veri.initializeTimeZones();
     tz.setLocalLocation(tz.getLocation('Europe/Istanbul'));
     const ayar = InitializationSettings(android: AndroidInitializationSettings('ic_bildirim'));
-    await _eklenti.initialize(ayar);
+    await _eklenti.initialize(settings: ayar);
   }
 
   /// Android 13 ve üstünde kullanıcıdan bildirim izni ister.
@@ -61,11 +61,11 @@ class BildirimServisi {
         final zaman = v.vakitler[i];
         if (!zaman.isAfter(simdi)) continue; // geçmiş vakit kurulmaz
         await _eklenti.zonedSchedule(
-          numara,
-          i == 1 ? 'Güneş doğdu' : '${vakitAdlari[i]} vakti girdi',
-          '${saatYaz(zaman)} · ${konum.ad}',
-          tz.TZDateTime.from(zaman, tz.local),
-          _detay,
+          id: numara,
+          title: i == 1 ? 'Güneş doğdu' : '${vakitAdlari[i]} vakti girdi',
+          body: '${saatYaz(zaman)} · ${konum.ad}',
+          scheduledDate: tz.TZDateTime.from(zaman, tz.local),
+          notificationDetails: _detay,
           androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
         );
       }
