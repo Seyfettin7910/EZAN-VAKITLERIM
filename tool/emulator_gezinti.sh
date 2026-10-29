@@ -24,7 +24,9 @@ adb install -r $O/Ezan-Vakitlerim.apk > $O/kurulum.txt 2>&1
 adb shell pm grant $P android.permission.POST_NOTIFICATIONS
 adb logcat -c
 adb shell am start -n $P/.MainActivity
-sleep 20
+# Açılış ekranı birkaç saniye görünür: art arda kareler al
+for i in 1 2 3 4 5 6 7 8 9 10; do cek 0-acilis-$i; sleep 0.6; done
+sleep 10
 cek 1-acilis
 dokun "Ankara"
 sleep 3

@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 
+import 'ekranlar/acilis_ekrani.dart';
 import 'ekranlar/ana_ekran.dart';
 import 'ekranlar/ayarlar_ekrani.dart';
 import 'ekranlar/camiler_ekrani.dart';
@@ -16,18 +17,15 @@ import 'servis/durum.dart';
 import 'servis/icerik_servisi.dart';
 import 'servis/yerel.dart';
 import 'tema.dart';
-import 'veri/ilceler.dart';
 
 /// Tam ekran uyarıyı her yerden açabilmek için uygulamanın gezinme anahtarı.
 final GlobalKey<NavigatorState> gezinme = GlobalKey<NavigatorState>();
 
-/// Uygulama açılınca ilk çalışan fonksiyon: ayarları okur, bildirimleri hazırlar, ekranı açar.
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await durum.yukle();
-  await BildirimServisi.baslat();
-  await IcerikServisi.yukle();
-  await IlceVerisi.yukle();
+/// Uygulama açılınca ilk çalışan fonksiyon: hemen açılış ekranını gösterir,
+/// ayarlar ve veriler o ekran görünürken yüklenir (bkz. acilis_ekrani.dart).
+void main() {
+  final baglanti = WidgetsFlutterBinding.ensureInitialized();
+  baglanti.deferFirstFrame(); // logo resmi hazır olunca açılış ekranı izin verir
   runApp(const EzanVakitlerimUygulamasi());
 }
 
@@ -52,7 +50,7 @@ class EzanVakitlerimUygulamasi extends StatelessWidget {
             child: child!,
           );
         },
-        home: const Kabuk(),
+        home: const AcilisEkrani(),
       ),
     );
   }
@@ -60,7 +58,9 @@ class EzanVakitlerimUygulamasi extends StatelessWidget {
 
 /// Alt menülü ana iskelet: Vakitler, Kıble, Camiler, İmsakiye, Ayarlar.
 class Kabuk extends StatefulWidget {
-  const Kabuk({super.key});
+  /// Uygulama ezan uyarısıyla açıldıysa o vaktin numarası (0-5), değilse -1.
+  final int acilisVakti;
+  const Kabuk({super.key, this.acilisVakti = -1});
 
   @override
   State<Kabuk> createState() => _KabukState();
@@ -78,8 +78,7 @@ class _KabukState extends State<Kabuk> {
     final ilkKurulum = durum.konum == null;
     Yerel.tamEkranDinle(_tamEkraniAc);
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      final vakit = await Yerel.acilisVakti();
-      if (vakit >= 0) _tamEkraniAc(vakit);
+      if (widget.acilisVakti >= 0) _tamEkraniAc(widget.acilisVakti);
       await BildirimServisi.izinIste();
       await BildirimServisi.planla();
       IcerikServisi.hatimOncedenIndir();

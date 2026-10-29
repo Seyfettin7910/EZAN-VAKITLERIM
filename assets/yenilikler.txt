@@ -1,7 +1,5 @@
-• Yazı boyutu: Ayarlar > Görünüm'den Normal, Büyük ya da Çok büyük seçebilirsin. Bütün uygulamanın yazıları birden büyür.
-• Widget'larda yazılar daha büyük, daha kalın ve daha koyu; uzaktan da rahat okunur.
-• Küçük widget (2×2) düzeltildi: artık ana ekrana eklenebiliyor.
-• Widget seçme ekranında örnek vakitler görünüyor.
-• Tam ekran uyarıda "Durdur" ve "Kapat" düğmeleri büyüdü, kolay basılıyor.
+• Yeni açılış ekranı: logonun altında "Ezan Vakitlerim" yazısı, altın süslü ayraç ve vakit ayeti (Nisâ Sûresi, 103).
+• Telefonun kendi açılış ekranı da artık yeşil zeminde; uygulamaya geçiş yumuşak.
+• Ezan uyarısıyla açılınca açılış ekranında beklemeden doğrudan tam ekran uyarı gelir.
 
 Uygulamanın yapımında katkısı olan müezzinlerimize çok teşekkür ederiz. Allah onlardan razı olsun.
