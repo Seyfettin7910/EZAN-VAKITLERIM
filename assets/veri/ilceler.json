@@ -1,0 +1,5363 @@
+[
+ {
+  "plaka": 1,
+  "il": "Adana",
+  "ilceler": [
+   {
+    "ad": "Aladağ",
+    "enlem": 37.5452,
+    "boylam": 35.3944
+   },
+   {
+    "ad": "Ceyhan",
+    "enlem": 37.0259,
+    "boylam": 35.817
+   },
+   {
+    "ad": "Çukurova",
+    "enlem": 37.0469,
+    "boylam": 35.2823
+   },
+   {
+    "ad": "Feke",
+    "enlem": 37.8148,
+    "boylam": 35.9117
+   },
+   {
+    "ad": "İmamoğlu",
+    "enlem": 37.2577,
+    "boylam": 35.6613
+   },
+   {
+    "ad": "Karaisalı",
+    "enlem": 37.2572,
+    "boylam": 35.0586
+   },
+   {
+    "ad": "Karataş",
+    "enlem": 36.5646,
+    "boylam": 35.3841
+   },
+   {
+    "ad": "Kozan",
+    "enlem": 37.4478,
+    "boylam": 35.8166
+   },
+   {
+    "ad": "Pozantı",
+    "enlem": 37.4215,
+    "boylam": 34.8718
+   },
+   {
+    "ad": "Saimbeyli",
+    "enlem": 37.9846,
+    "boylam": 36.0888
+   },
+   {
+    "ad": "Sarıçam",
+    "enlem": 37.0197,
+    "boylam": 35.399
+   },
+   {
+    "ad": "Seyhan",
+    "enlem": 36.9899,
+    "boylam": 35.3214
+   },
+   {
+    "ad": "Tufanbeyli",
+    "enlem": 38.2291,
+    "boylam": 36.2
+   },
+   {
+    "ad": "Yumurtalık",
+    "enlem": 36.7676,
+    "boylam": 35.7916
+   },
+   {
+    "ad": "Yüreğir",
+    "enlem": 36.9895,
+    "boylam": 35.3409
+   }
+  ]
+ },
+ {
+  "plaka": 2,
+  "il": "Adıyaman",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 37.7603,
+    "boylam": 38.2773
+   },
+   {
+    "ad": "Besni",
+    "enlem": 37.6911,
+    "boylam": 37.8623
+   },
+   {
+    "ad": "Çelikhan",
+    "enlem": 38.0802,
+    "boylam": 38.2653
+   },
+   {
+    "ad": "Gerger",
+    "enlem": 38.0293,
+    "boylam": 39.0333
+   },
+   {
+    "ad": "Gölbaşı",
+    "enlem": 37.7844,
+    "boylam": 37.6396
+   },
+   {
+    "ad": "Kâhta",
+    "enlem": 37.7861,
+    "boylam": 38.6217
+   },
+   {
+    "ad": "Samsat",
+    "enlem": 37.5785,
+    "boylam": 38.4809
+   },
+   {
+    "ad": "Sincik",
+    "enlem": 38.0291,
+    "boylam": 38.6194
+   },
+   {
+    "ad": "Tut",
+    "enlem": 37.7944,
+    "boylam": 37.9149
+   }
+  ]
+ },
+ {
+  "plaka": 3,
+  "il": "Afyonkarahisar",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 38.7569,
+    "boylam": 30.5387
+   },
+   {
+    "ad": "Başmakçı",
+    "enlem": 37.8974,
+    "boylam": 30.0098
+   },
+   {
+    "ad": "Bayat",
+    "enlem": 38.9844,
+    "boylam": 30.9256
+   },
+   {
+    "ad": "Bolvadin",
+    "enlem": 38.7116,
+    "boylam": 31.0455
+   },
+   {
+    "ad": "Çay",
+    "enlem": 38.5926,
+    "boylam": 31.0274
+   },
+   {
+    "ad": "Çobanlar",
+    "enlem": 38.7016,
+    "boylam": 30.7815
+   },
+   {
+    "ad": "Dazkırı",
+    "enlem": 37.9194,
+    "boylam": 29.8604
+   },
+   {
+    "ad": "Dinar",
+    "enlem": 38.1541,
+    "boylam": 30.2879
+   },
+   {
+    "ad": "Emirdağ",
+    "enlem": 39.0195,
+    "boylam": 31.1503
+   },
+   {
+    "ad": "Evciler",
+    "enlem": 38.0417,
+    "boylam": 29.8857
+   },
+   {
+    "ad": "Hocalar",
+    "enlem": 38.5808,
+    "boylam": 29.9669
+   },
+   {
+    "ad": "İhsaniye",
+    "enlem": 39.0569,
+    "boylam": 30.4805
+   },
+   {
+    "ad": "İscehisar",
+    "enlem": 38.8621,
+    "boylam": 30.751
+   },
+   {
+    "ad": "Kızılören",
+    "enlem": 38.2721,
+    "boylam": 30.173
+   },
+   {
+    "ad": "Sandıklı",
+    "enlem": 38.4789,
+    "boylam": 30.1631
+   },
+   {
+    "ad": "Sinanpaşa",
+    "enlem": 38.7452,
+    "boylam": 30.2452
+   },
+   {
+    "ad": "Şuhut",
+    "enlem": 38.534,
+    "boylam": 30.5461
+   },
+   {
+    "ad": "Sultandağı",
+    "enlem": 38.5323,
+    "boylam": 31.229
+   }
+  ]
+ },
+ {
+  "plaka": 4,
+  "il": "Ağrı",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 39.7191,
+    "boylam": 43.0505
+   },
+   {
+    "ad": "Diyadin",
+    "enlem": 39.5398,
+    "boylam": 43.6712
+   },
+   {
+    "ad": "Doğubayazıt",
+    "enlem": 39.5483,
+    "boylam": 44.0794
+   },
+   {
+    "ad": "Eleşkirt",
+    "enlem": 39.7984,
+    "boylam": 42.6755
+   },
+   {
+    "ad": "Hamur",
+    "enlem": 39.6093,
+    "boylam": 42.9882
+   },
+   {
+    "ad": "Panos",
+    "enlem": 39.2334,
+    "boylam": 42.8612
+   },
+   {
+    "ad": "Taşlıçay",
+    "enlem": 39.5996,
+    "boylam": 43.4014
+   },
+   {
+    "ad": "Tutak",
+    "enlem": 39.5394,
+    "boylam": 42.7728
+   }
+  ]
+ },
+ {
+  "plaka": 5,
+  "il": "Amasya",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 40.6503,
+    "boylam": 35.8329
+   },
+   {
+    "ad": "Göynücek",
+    "enlem": 40.3971,
+    "boylam": 35.5237
+   },
+   {
+    "ad": "Gümüşhacıköy",
+    "enlem": 40.8736,
+    "boylam": 35.2159
+   },
+   {
+    "ad": "Hamamözü",
+    "enlem": 40.7832,
+    "boylam": 35.0242
+   },
+   {
+    "ad": "Merzifon",
+    "enlem": 40.8721,
+    "boylam": 35.4635
+   },
+   {
+    "ad": "Suluova",
+    "enlem": 40.8364,
+    "boylam": 35.6456
+   },
+   {
+    "ad": "Taşova",
+    "enlem": 40.7603,
+    "boylam": 36.322
+   }
+  ]
+ },
+ {
+  "plaka": 6,
+  "il": "Ankara",
+  "ilceler": [
+   {
+    "ad": "Akyurt",
+    "enlem": 40.1308,
+    "boylam": 33.0871
+   },
+   {
+    "ad": "Altındağ",
+    "enlem": 39.9524,
+    "boylam": 32.8662
+   },
+   {
+    "ad": "Ayaş",
+    "enlem": 40.0151,
+    "boylam": 32.3324
+   },
+   {
+    "ad": "Balâ",
+    "enlem": 39.5534,
+    "boylam": 33.1238
+   },
+   {
+    "ad": "Beypazarı",
+    "enlem": 40.1656,
+    "boylam": 31.9205
+   },
+   {
+    "ad": "Çamlıdere",
+    "enlem": 40.4915,
+    "boylam": 32.4758
+   },
+   {
+    "ad": "Çankaya",
+    "enlem": 39.8853,
+    "boylam": 32.8555
+   },
+   {
+    "ad": "Çubuk",
+    "enlem": 40.2389,
+    "boylam": 33.0289
+   },
+   {
+    "ad": "Elmadağ",
+    "enlem": 39.9173,
+    "boylam": 33.2344
+   },
+   {
+    "ad": "Etimesgut",
+    "enlem": 39.9489,
+    "boylam": 32.6621
+   },
+   {
+    "ad": "Evren",
+    "enlem": 39.0221,
+    "boylam": 33.8079
+   },
+   {
+    "ad": "Gölbaşı",
+    "enlem": 39.7925,
+    "boylam": 32.8067
+   },
+   {
+    "ad": "Güdül",
+    "enlem": 40.2105,
+    "boylam": 32.2432
+   },
+   {
+    "ad": "Haymana",
+    "enlem": 39.4341,
+    "boylam": 32.4988
+   },
+   {
+    "ad": "Kahramankazan",
+    "enlem": 40.2054,
+    "boylam": 32.6813
+   },
+   {
+    "ad": "Kalecik",
+    "enlem": 40.1038,
+    "boylam": 33.4102
+   },
+   {
+    "ad": "Keçiören",
+    "enlem": 39.9777,
+    "boylam": 32.867
+   },
+   {
+    "ad": "Kızılcahamam",
+    "enlem": 40.4701,
+    "boylam": 32.6529
+   },
+   {
+    "ad": "Mamak",
+    "enlem": 39.933,
+    "boylam": 32.9082
+   },
+   {
+    "ad": "Nallıhan",
+    "enlem": 40.1888,
+    "boylam": 31.3503
+   },
+   {
+    "ad": "Polatlı",
+    "enlem": 39.5852,
+    "boylam": 32.1437
+   },
+   {
+    "ad": "Pursaklar",
+    "enlem": 40.0381,
+    "boylam": 32.8969
+   },
+   {
+    "ad": "Şereflikoçhisar",
+    "enlem": 38.9389,
+    "boylam": 33.5439
+   },
+   {
+    "ad": "Sincan",
+    "enlem": 39.9655,
+    "boylam": 32.5794
+   },
+   {
+    "ad": "Yenimahalle",
+    "enlem": 39.9661,
+    "boylam": 32.8088
+   }
+  ]
+ },
+ {
+  "plaka": 7,
+  "il": "Antalya",
+  "ilceler": [
+   {
+    "ad": "Akseki",
+    "enlem": 37.0456,
+    "boylam": 31.7897
+   },
+   {
+    "ad": "Aksu",
+    "enlem": 36.9475,
+    "boylam": 30.8477
+   },
+   {
+    "ad": "Alanya",
+    "enlem": 36.5437,
+    "boylam": 32.0019
+   },
+   {
+    "ad": "Demre",
+    "enlem": 36.2446,
+    "boylam": 29.9876
+   },
+   {
+    "ad": "Döşemealtı",
+    "enlem": 37.023,
+    "boylam": 30.6013
+   },
+   {
+    "ad": "Elmalı",
+    "enlem": 36.7384,
+    "boylam": 29.9184
+   },
+   {
+    "ad": "Finike",
+    "enlem": 36.3046,
+    "boylam": 30.1445
+   },
+   {
+    "ad": "Gazipaşa",
+    "enlem": 36.2683,
+    "boylam": 32.3175
+   },
+   {
+    "ad": "Gündoğmuş",
+    "enlem": 36.8143,
+    "boylam": 31.9983
+   },
+   {
+    "ad": "İbradı",
+    "enlem": 37.0969,
+    "boylam": 31.5969
+   },
+   {
+    "ad": "Kaş",
+    "enlem": 36.1994,
+    "boylam": 29.6413
+   },
+   {
+    "ad": "Kemer",
+    "enlem": 36.6014,
+    "boylam": 30.5639
+   },
+   {
+    "ad": "Kepez",
+    "enlem": 36.9176,
+    "boylam": 30.715
+   },
+   {
+    "ad": "Konyaaltı",
+    "enlem": 36.8726,
+    "boylam": 30.6504
+   },
+   {
+    "ad": "Korkuteli",
+    "enlem": 37.0733,
+    "boylam": 30.128
+   },
+   {
+    "ad": "Kumluca",
+    "enlem": 36.3669,
+    "boylam": 30.2858
+   },
+   {
+    "ad": "Manavgat",
+    "enlem": 36.787,
+    "boylam": 31.4407
+   },
+   {
+    "ad": "Muratpaşa",
+    "enlem": 36.8889,
+    "boylam": 30.7209
+   },
+   {
+    "ad": "Serik",
+    "enlem": 36.9169,
+    "boylam": 31.1047
+   }
+  ]
+ },
+ {
+  "plaka": 8,
+  "il": "Artvin",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 41.1831,
+    "boylam": 41.8287
+   },
+   {
+    "ad": "Ardanuç",
+    "enlem": 41.1223,
+    "boylam": 42.0682
+   },
+   {
+    "ad": "Arhavi",
+    "enlem": 41.3521,
+    "boylam": 41.3094
+   },
+   {
+    "ad": "Borçka",
+    "enlem": 41.3961,
+    "boylam": 41.8289
+   },
+   {
+    "ad": "Hopa",
+    "enlem": 41.3888,
+    "boylam": 41.4182
+   },
+   {
+    "ad": "Kemalpaşa",
+    "enlem": 41.4811,
+    "boylam": 41.5271
+   },
+   {
+    "ad": "Murgul",
+    "enlem": 41.2797,
+    "boylam": 41.5641
+   },
+   {
+    "ad": "Şavşat",
+    "enlem": 41.2525,
+    "boylam": 42.3569
+   },
+   {
+    "ad": "Yusufeli",
+    "enlem": 40.8108,
+    "boylam": 41.5271
+   }
+  ]
+ },
+ {
+  "plaka": 9,
+  "il": "Aydın",
+  "ilceler": [
+   {
+    "ad": "Bozdoğan",
+    "enlem": 37.6739,
+    "boylam": 28.3132
+   },
+   {
+    "ad": "Buharkent",
+    "enlem": 37.9655,
+    "boylam": 28.7435
+   },
+   {
+    "ad": "Çine",
+    "enlem": 37.6125,
+    "boylam": 28.0623
+   },
+   {
+    "ad": "Didim",
+    "enlem": 37.4588,
+    "boylam": 27.3298
+   },
+   {
+    "ad": "Efeler",
+    "enlem": 37.8472,
+    "boylam": 27.8337
+   },
+   {
+    "ad": "Germencik",
+    "enlem": 37.8725,
+    "boylam": 27.6047
+   },
+   {
+    "ad": "İncirliova",
+    "enlem": 37.8538,
+    "boylam": 27.7235
+   },
+   {
+    "ad": "Karacasu",
+    "enlem": 37.7307,
+    "boylam": 28.6063
+   },
+   {
+    "ad": "Karpuzlu",
+    "enlem": 37.559,
+    "boylam": 27.8361
+   },
+   {
+    "ad": "Koçarlı",
+    "enlem": 37.7622,
+    "boylam": 27.7073
+   },
+   {
+    "ad": "Köşk",
+    "enlem": 37.8532,
+    "boylam": 28.0518
+   },
+   {
+    "ad": "Kuşadası",
+    "enlem": 37.8632,
+    "boylam": 27.2669
+   },
+   {
+    "ad": "Kuyucak",
+    "enlem": 37.9149,
+    "boylam": 28.4596
+   },
+   {
+    "ad": "Nazilli",
+    "enlem": 37.9098,
+    "boylam": 28.3242
+   },
+   {
+    "ad": "Söke",
+    "enlem": 37.752,
+    "boylam": 27.4056
+   },
+   {
+    "ad": "Sultanhisar",
+    "enlem": 37.8901,
+    "boylam": 28.1543
+   },
+   {
+    "ad": "Yenipazar",
+    "enlem": 37.8233,
+    "boylam": 28.1957
+   }
+  ]
+ },
+ {
+  "plaka": 10,
+  "il": "Balıkesir",
+  "ilceler": [
+   {
+    "ad": "Altıeylül",
+    "enlem": 39.6446,
+    "boylam": 27.8834
+   },
+   {
+    "ad": "Ayvalık",
+    "enlem": 39.3181,
+    "boylam": 26.6917
+   },
+   {
+    "ad": "Balya",
+    "enlem": 39.7499,
+    "boylam": 27.5797
+   },
+   {
+    "ad": "Bandırma",
+    "enlem": 40.3555,
+    "boylam": 27.9698
+   },
+   {
+    "ad": "Bigadiç",
+    "enlem": 39.3913,
+    "boylam": 28.132
+   },
+   {
+    "ad": "Burhaniye",
+    "enlem": 39.503,
+    "boylam": 26.9807
+   },
+   {
+    "ad": "Dursunbey",
+    "enlem": 39.588,
+    "boylam": 28.6254
+   },
+   {
+    "ad": "Edremit",
+    "enlem": 39.5938,
+    "boylam": 27.0157
+   },
+   {
+    "ad": "Erdek",
+    "enlem": 40.3974,
+    "boylam": 27.791
+   },
+   {
+    "ad": "Gömeç",
+    "enlem": 39.3901,
+    "boylam": 26.8412
+   },
+   {
+    "ad": "Gönen",
+    "enlem": 40.1044,
+    "boylam": 27.6564
+   },
+   {
+    "ad": "Havran",
+    "enlem": 39.5576,
+    "boylam": 27.1003
+   },
+   {
+    "ad": "İvrindi",
+    "enlem": 39.582,
+    "boylam": 27.4853
+   },
+   {
+    "ad": "Karesi",
+    "enlem": 39.6464,
+    "boylam": 27.8853
+   },
+   {
+    "ad": "Kepsut",
+    "enlem": 39.6899,
+    "boylam": 28.1529
+   },
+   {
+    "ad": "Manyas",
+    "enlem": 40.0477,
+    "boylam": 27.968
+   },
+   {
+    "ad": "Marmara",
+    "enlem": 40.5862,
+    "boylam": 27.5568
+   },
+   {
+    "ad": "Savaştepe",
+    "enlem": 39.3856,
+    "boylam": 27.656
+   },
+   {
+    "ad": "Sındırgı",
+    "enlem": 39.2387,
+    "boylam": 28.1749
+   },
+   {
+    "ad": "Susurluk",
+    "enlem": 39.9184,
+    "boylam": 28.1532
+   }
+  ]
+ },
+ {
+  "plaka": 11,
+  "il": "Bilecik",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 40.1435,
+    "boylam": 29.9753
+   },
+   {
+    "ad": "Bozüyük",
+    "enlem": 39.9068,
+    "boylam": 30.0346
+   },
+   {
+    "ad": "Gölpazarı",
+    "enlem": 40.2839,
+    "boylam": 30.3165
+   },
+   {
+    "ad": "İnhisar",
+    "enlem": 40.0503,
+    "boylam": 30.3848
+   },
+   {
+    "ad": "Osmaneli",
+    "enlem": 40.3591,
+    "boylam": 30.0166
+   },
+   {
+    "ad": "Pazaryeri",
+    "enlem": 39.9954,
+    "boylam": 29.9031
+   },
+   {
+    "ad": "Söğüt",
+    "enlem": 40.0156,
+    "boylam": 30.1814
+   },
+   {
+    "ad": "Yenipazar",
+    "enlem": 40.1767,
+    "boylam": 30.5191
+   }
+  ]
+ },
+ {
+  "plaka": 12,
+  "il": "Bingöl",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 38.8861,
+    "boylam": 40.4972
+   },
+   {
+    "ad": "Adaklı",
+    "enlem": 39.2285,
+    "boylam": 40.4827
+   },
+   {
+    "ad": "Genç",
+    "enlem": 38.7495,
+    "boylam": 40.5566
+   },
+   {
+    "ad": "Karlıova",
+    "enlem": 39.2946,
+    "boylam": 41.0102
+   },
+   {
+    "ad": "Kiğı",
+    "enlem": 39.3104,
+    "boylam": 40.3496
+   },
+   {
+    "ad": "Solhan",
+    "enlem": 38.9659,
+    "boylam": 41.0518
+   },
+   {
+    "ad": "Yayladere",
+    "enlem": 39.2275,
+    "boylam": 40.0686
+   },
+   {
+    "ad": "Yedisu",
+    "enlem": 39.434,
+    "boylam": 40.5451
+   }
+  ]
+ },
+ {
+  "plaka": 13,
+  "il": "Bitlis",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 38.4021,
+    "boylam": 42.1085
+   },
+   {
+    "ad": "Adilcevaz",
+    "enlem": 38.8043,
+    "boylam": 42.7346
+   },
+   {
+    "ad": "Ahlat",
+    "enlem": 38.7547,
+    "boylam": 42.4833
+   },
+   {
+    "ad": "Güroymak",
+    "enlem": 38.5742,
+    "boylam": 42.0253
+   },
+   {
+    "ad": "Hizan",
+    "enlem": 38.225,
+    "boylam": 42.4263
+   },
+   {
+    "ad": "Mutki",
+    "enlem": 38.409,
+    "boylam": 41.9219
+   },
+   {
+    "ad": "Tatvan",
+    "enlem": 38.4932,
+    "boylam": 42.2878
+   }
+  ]
+ },
+ {
+  "plaka": 14,
+  "il": "Bolu",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 40.7333,
+    "boylam": 31.611
+   },
+   {
+    "ad": "Dörtdivan",
+    "enlem": 40.7207,
+    "boylam": 32.0627
+   },
+   {
+    "ad": "Gerede",
+    "enlem": 40.7988,
+    "boylam": 32.2009
+   },
+   {
+    "ad": "Göynük",
+    "enlem": 40.3983,
+    "boylam": 30.7866
+   },
+   {
+    "ad": "Kıbrıscık",
+    "enlem": 40.4088,
+    "boylam": 31.8487
+   },
+   {
+    "ad": "Mengen",
+    "enlem": 40.9397,
+    "boylam": 32.0748
+   },
+   {
+    "ad": "Mudurnu",
+    "enlem": 40.4657,
+    "boylam": 31.2112
+   },
+   {
+    "ad": "Seben",
+    "enlem": 40.4085,
+    "boylam": 31.5713
+   },
+   {
+    "ad": "Yeniçağa",
+    "enlem": 40.7704,
+    "boylam": 32.0336
+   }
+  ]
+ },
+ {
+  "plaka": 15,
+  "il": "Burdur",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 37.7248,
+    "boylam": 30.2887
+   },
+   {
+    "ad": "Ağlasun",
+    "enlem": 37.6497,
+    "boylam": 30.5332
+   },
+   {
+    "ad": "Altınyayla",
+    "enlem": 36.9962,
+    "boylam": 29.5468
+   },
+   {
+    "ad": "Bucak",
+    "enlem": 37.4567,
+    "boylam": 30.5855
+   },
+   {
+    "ad": "Çavdır",
+    "enlem": 37.155,
+    "boylam": 29.69
+   },
+   {
+    "ad": "Çeltikçi",
+    "enlem": 37.5338,
+    "boylam": 30.4826
+   },
+   {
+    "ad": "Gölhisar",
+    "enlem": 37.1511,
+    "boylam": 29.5107
+   },
+   {
+    "ad": "Karamanlı",
+    "enlem": 37.3709,
+    "boylam": 29.8226
+   },
+   {
+    "ad": "Kemer",
+    "enlem": 37.3539,
+    "boylam": 30.0611
+   },
+   {
+    "ad": "Tefenni",
+    "enlem": 37.3132,
+    "boylam": 29.776
+   },
+   {
+    "ad": "Yeşilova",
+    "enlem": 37.5064,
+    "boylam": 29.7552
+   }
+  ]
+ },
+ {
+  "plaka": 16,
+  "il": "Bursa",
+  "ilceler": [
+   {
+    "ad": "Büyükorhan",
+    "enlem": 39.7709,
+    "boylam": 28.8854
+   },
+   {
+    "ad": "Gemlik",
+    "enlem": 40.4302,
+    "boylam": 29.1571
+   },
+   {
+    "ad": "Gürsu",
+    "enlem": 40.2176,
+    "boylam": 29.1936
+   },
+   {
+    "ad": "Harmancık",
+    "enlem": 39.6772,
+    "boylam": 29.1538
+   },
+   {
+    "ad": "İnegöl",
+    "enlem": 40.08,
+    "boylam": 29.5097
+   },
+   {
+    "ad": "İznik",
+    "enlem": 40.4303,
+    "boylam": 29.7224
+   },
+   {
+    "ad": "Karacabey",
+    "enlem": 40.216,
+    "boylam": 28.3591
+   },
+   {
+    "ad": "Keles",
+    "enlem": 39.9129,
+    "boylam": 29.2342
+   },
+   {
+    "ad": "Kestel",
+    "enlem": 40.2008,
+    "boylam": 29.2129
+   },
+   {
+    "ad": "Mudanya",
+    "enlem": 40.3753,
+    "boylam": 28.8838
+   },
+   {
+    "ad": "Mustafakemalpaşa",
+    "enlem": 40.035,
+    "boylam": 28.4133
+   },
+   {
+    "ad": "Nilüfer",
+    "enlem": 40.217,
+    "boylam": 28.9848
+   },
+   {
+    "ad": "Orhaneli",
+    "enlem": 39.9027,
+    "boylam": 28.9867
+   },
+   {
+    "ad": "Orhangazi",
+    "enlem": 40.4955,
+    "boylam": 29.3108
+   },
+   {
+    "ad": "Osmangazi",
+    "enlem": 40.1982,
+    "boylam": 29.0612
+   },
+   {
+    "ad": "Yenişehir",
+    "enlem": 40.2626,
+    "boylam": 29.6522
+   },
+   {
+    "ad": "Yıldırım",
+    "enlem": 40.1866,
+    "boylam": 29.1282
+   }
+  ]
+ },
+ {
+  "plaka": 17,
+  "il": "Çanakkale",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 40.1463,
+    "boylam": 26.4029
+   },
+   {
+    "ad": "Ayvacık",
+    "enlem": 39.6012,
+    "boylam": 26.4031
+   },
+   {
+    "ad": "Bayramiç",
+    "enlem": 39.8086,
+    "boylam": 26.613
+   },
+   {
+    "ad": "Biga",
+    "enlem": 40.227,
+    "boylam": 27.2428
+   },
+   {
+    "ad": "Bozcaada",
+    "enlem": 39.8347,
+    "boylam": 26.0702
+   },
+   {
+    "ad": "Çan",
+    "enlem": 40.0289,
+    "boylam": 27.0512
+   },
+   {
+    "ad": "Eceabat",
+    "enlem": 40.1852,
+    "boylam": 26.3591
+   },
+   {
+    "ad": "Ezine",
+    "enlem": 39.7857,
+    "boylam": 26.3434
+   },
+   {
+    "ad": "Gelibolu",
+    "enlem": 40.5046,
+    "boylam": 26.7046
+   },
+   {
+    "ad": "Gökçeada",
+    "enlem": 40.166,
+    "boylam": 25.84
+   },
+   {
+    "ad": "Lapseki",
+    "enlem": 40.2571,
+    "boylam": 26.788
+   },
+   {
+    "ad": "Yenice",
+    "enlem": 39.9298,
+    "boylam": 27.2555
+   }
+  ]
+ },
+ {
+  "plaka": 18,
+  "il": "Çankırı",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 40.5972,
+    "boylam": 33.6213
+   },
+   {
+    "ad": "Atkaracalar",
+    "enlem": 40.8161,
+    "boylam": 33.0754
+   },
+   {
+    "ad": "Bayramören",
+    "enlem": 40.9431,
+    "boylam": 33.204
+   },
+   {
+    "ad": "Çerkeş",
+    "enlem": 40.8113,
+    "boylam": 32.8909
+   },
+   {
+    "ad": "Eldivan",
+    "enlem": 40.5307,
+    "boylam": 33.4966
+   },
+   {
+    "ad": "Ilgaz",
+    "enlem": 40.9249,
+    "boylam": 33.6253
+   },
+   {
+    "ad": "Kızılırmak",
+    "enlem": 40.346,
+    "boylam": 33.9872
+   },
+   {
+    "ad": "Korgun",
+    "enlem": 40.7348,
+    "boylam": 33.5185
+   },
+   {
+    "ad": "Kurşunlu",
+    "enlem": 40.8407,
+    "boylam": 33.2613
+   },
+   {
+    "ad": "Orta",
+    "enlem": 40.627,
+    "boylam": 33.1077
+   },
+   {
+    "ad": "Şabanözü",
+    "enlem": 40.4832,
+    "boylam": 33.2826
+   },
+   {
+    "ad": "Yapraklı",
+    "enlem": 40.7571,
+    "boylam": 33.7788
+   }
+  ]
+ },
+ {
+  "plaka": 19,
+  "il": "Çorum",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 40.6452,
+    "boylam": 34.9999
+   },
+   {
+    "ad": "Alaca",
+    "enlem": 40.169,
+    "boylam": 34.8415
+   },
+   {
+    "ad": "Bayat",
+    "enlem": 40.6446,
+    "boylam": 34.2567
+   },
+   {
+    "ad": "Boğazkale",
+    "enlem": 40.0215,
+    "boylam": 34.6092
+   },
+   {
+    "ad": "Dodurga",
+    "enlem": 40.8553,
+    "boylam": 34.8103
+   },
+   {
+    "ad": "İskilip",
+    "enlem": 40.7307,
+    "boylam": 34.471
+   },
+   {
+    "ad": "Kargı",
+    "enlem": 41.1327,
+    "boylam": 34.4912
+   },
+   {
+    "ad": "Laçin",
+    "enlem": 40.7912,
+    "boylam": 34.8771
+   },
+   {
+    "ad": "Mecitözü",
+    "enlem": 40.5206,
+    "boylam": 35.2953
+   },
+   {
+    "ad": "Oğuzlar",
+    "enlem": 40.7534,
+    "boylam": 34.7043
+   },
+   {
+    "ad": "Ortaköy",
+    "enlem": 40.2894,
+    "boylam": 35.231
+   },
+   {
+    "ad": "Osmancık",
+    "enlem": 40.9715,
+    "boylam": 34.801
+   },
+   {
+    "ad": "Sungurlu",
+    "enlem": 40.1638,
+    "boylam": 34.3753
+   },
+   {
+    "ad": "Uğurludağ",
+    "enlem": 40.4463,
+    "boylam": 34.4525
+   }
+  ]
+ },
+ {
+  "plaka": 20,
+  "il": "Denizli",
+  "ilceler": [
+   {
+    "ad": "Acıpayam",
+    "enlem": 37.4274,
+    "boylam": 29.3505
+   },
+   {
+    "ad": "Babadağ",
+    "enlem": 37.8077,
+    "boylam": 28.8564
+   },
+   {
+    "ad": "Baklan",
+    "enlem": 37.9767,
+    "boylam": 29.607
+   },
+   {
+    "ad": "Bekilli",
+    "enlem": 38.2295,
+    "boylam": 29.4208
+   },
+   {
+    "ad": "Beyağaç",
+    "enlem": 37.2357,
+    "boylam": 28.896
+   },
+   {
+    "ad": "Bozkurt",
+    "enlem": 37.8225,
+    "boylam": 29.6073
+   },
+   {
+    "ad": "Buldan",
+    "enlem": 38.0442,
+    "boylam": 28.8327
+   },
+   {
+    "ad": "Çal",
+    "enlem": 38.0814,
+    "boylam": 29.3973
+   },
+   {
+    "ad": "Çameli",
+    "enlem": 37.0761,
+    "boylam": 29.3447
+   },
+   {
+    "ad": "Çardak",
+    "enlem": 37.8276,
+    "boylam": 29.6734
+   },
+   {
+    "ad": "Çivril",
+    "enlem": 38.3006,
+    "boylam": 29.7374
+   },
+   {
+    "ad": "Güney",
+    "enlem": 38.1539,
+    "boylam": 29.0652
+   },
+   {
+    "ad": "Honaz",
+    "enlem": 37.7524,
+    "boylam": 29.2697
+   },
+   {
+    "ad": "Kale",
+    "enlem": 37.4377,
+    "boylam": 28.7762
+   },
+   {
+    "ad": "Merkezefendi",
+    "enlem": 37.7844,
+    "boylam": 29.0842
+   },
+   {
+    "ad": "Pamukkale",
+    "enlem": 37.9166,
+    "boylam": 29.1223
+   },
+   {
+    "ad": "Sarayköy",
+    "enlem": 37.9244,
+    "boylam": 28.9231
+   },
+   {
+    "ad": "Serinhisar",
+    "enlem": 37.5801,
+    "boylam": 29.2639
+   },
+   {
+    "ad": "Tavas",
+    "enlem": 37.5729,
+    "boylam": 29.0713
+   }
+  ]
+ },
+ {
+  "plaka": 21,
+  "il": "Diyarbakır",
+  "ilceler": [
+   {
+    "ad": "Bağlar",
+    "enlem": 37.9173,
+    "boylam": 40.2083
+   },
+   {
+    "ad": "Bismil",
+    "enlem": 37.8481,
+    "boylam": 40.6634
+   },
+   {
+    "ad": "Çermik",
+    "enlem": 38.1355,
+    "boylam": 39.4497
+   },
+   {
+    "ad": "Çınar",
+    "enlem": 37.7237,
+    "boylam": 40.4151
+   },
+   {
+    "ad": "Çüngüş",
+    "enlem": 38.2117,
+    "boylam": 39.2882
+   },
+   {
+    "ad": "Dicle",
+    "enlem": 38.3728,
+    "boylam": 40.0718
+   },
+   {
+    "ad": "Eğil",
+    "enlem": 38.2576,
+    "boylam": 40.0845
+   },
+   {
+    "ad": "Ergani",
+    "enlem": 38.0881,
+    "boylam": 39.7532
+   },
+   {
+    "ad": "Hani",
+    "enlem": 38.4332,
+    "boylam": 40.3793
+   },
+   {
+    "ad": "Hazro",
+    "enlem": 38.2538,
+    "boylam": 40.7809
+   },
+   {
+    "ad": "Kayapınar",
+    "enlem": 37.9438,
+    "boylam": 40.1846
+   },
+   {
+    "ad": "Kocaköy",
+    "enlem": 38.2906,
+    "boylam": 40.5043
+   },
+   {
+    "ad": "Kulp",
+    "enlem": 38.5004,
+    "boylam": 41.012
+   },
+   {
+    "ad": "Lice",
+    "enlem": 38.4603,
+    "boylam": 40.6477
+   },
+   {
+    "ad": "Silvan",
+    "enlem": 38.1412,
+    "boylam": 41.0056
+   },
+   {
+    "ad": "Sur",
+    "enlem": 37.9111,
+    "boylam": 40.2366
+   },
+   {
+    "ad": "Yenişehir",
+    "enlem": 37.92,
+    "boylam": 40.2299
+   }
+  ]
+ },
+ {
+  "plaka": 22,
+  "il": "Edirne",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 41.6759,
+    "boylam": 26.5587
+   },
+   {
+    "ad": "Enez",
+    "enlem": 40.725,
+    "boylam": 26.0846
+   },
+   {
+    "ad": "Havsa",
+    "enlem": 41.5493,
+    "boylam": 26.8206
+   },
+   {
+    "ad": "İpsala",
+    "enlem": 40.9217,
+    "boylam": 26.384
+   },
+   {
+    "ad": "Keşan",
+    "enlem": 40.8549,
+    "boylam": 26.6303
+   },
+   {
+    "ad": "Lalapaşa",
+    "enlem": 41.839,
+    "boylam": 26.7361
+   },
+   {
+    "ad": "Meriç",
+    "enlem": 41.1913,
+    "boylam": 26.4201
+   },
+   {
+    "ad": "Süloğlu",
+    "enlem": 41.7657,
+    "boylam": 26.908
+   },
+   {
+    "ad": "Uzunköprü",
+    "enlem": 41.2626,
+    "boylam": 26.6856
+   }
+  ]
+ },
+ {
+  "plaka": 23,
+  "il": "Elazığ",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 38.6747,
+    "boylam": 39.2227
+   },
+   {
+    "ad": "Ağın",
+    "enlem": 38.9439,
+    "boylam": 38.714
+   },
+   {
+    "ad": "Alacakaya",
+    "enlem": 38.4622,
+    "boylam": 39.8625
+   },
+   {
+    "ad": "Arıcak",
+    "enlem": 38.5634,
+    "boylam": 40.1345
+   },
+   {
+    "ad": "Baskil",
+    "enlem": 38.5739,
+    "boylam": 38.6669
+   },
+   {
+    "ad": "Karakoçan",
+    "enlem": 39.0017,
+    "boylam": 40.072
+   },
+   {
+    "ad": "Keban",
+    "enlem": 38.7705,
+    "boylam": 38.7161
+   },
+   {
+    "ad": "Kovancılar",
+    "enlem": 38.7189,
+    "boylam": 39.8659
+   },
+   {
+    "ad": "Maden",
+    "enlem": 38.3932,
+    "boylam": 39.6702
+   },
+   {
+    "ad": "Palu",
+    "enlem": 38.6935,
+    "boylam": 39.9289
+   },
+   {
+    "ad": "Sivrice",
+    "enlem": 38.4075,
+    "boylam": 39.157
+   }
+  ]
+ },
+ {
+  "plaka": 24,
+  "il": "Erzincan",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 39.7468,
+    "boylam": 39.491
+   },
+   {
+    "ad": "Çayırlı",
+    "enlem": 39.8041,
+    "boylam": 40.0372
+   },
+   {
+    "ad": "İliç",
+    "enlem": 39.4564,
+    "boylam": 38.5648
+   },
+   {
+    "ad": "Kemah",
+    "enlem": 39.6005,
+    "boylam": 39.0354
+   },
+   {
+    "ad": "Kemaliye",
+    "enlem": 39.2621,
+    "boylam": 38.4965
+   },
+   {
+    "ad": "Otlukbeli",
+    "enlem": 39.9719,
+    "boylam": 40.0217
+   },
+   {
+    "ad": "Refahiye",
+    "enlem": 39.9028,
+    "boylam": 38.7682
+   },
+   {
+    "ad": "Tercan",
+    "enlem": 39.7765,
+    "boylam": 40.383
+   },
+   {
+    "ad": "Üzümlü",
+    "enlem": 39.7101,
+    "boylam": 39.701
+   }
+  ]
+ },
+ {
+  "plaka": 25,
+  "il": "Erzurum",
+  "ilceler": [
+   {
+    "ad": "Aşkale",
+    "enlem": 39.9217,
+    "boylam": 40.6943
+   },
+   {
+    "ad": "Aziziye",
+    "enlem": 39.9455,
+    "boylam": 41.106
+   },
+   {
+    "ad": "Çat",
+    "enlem": 39.6119,
+    "boylam": 40.9774
+   },
+   {
+    "ad": "Hınıs",
+    "enlem": 39.3585,
+    "boylam": 41.7003
+   },
+   {
+    "ad": "Horasan",
+    "enlem": 40.04,
+    "boylam": 42.169
+   },
+   {
+    "ad": "İspir",
+    "enlem": 40.4834,
+    "boylam": 41.0
+   },
+   {
+    "ad": "Karaçoban",
+    "enlem": 39.3505,
+    "boylam": 42.1116
+   },
+   {
+    "ad": "Karayazı",
+    "enlem": 39.7017,
+    "boylam": 42.1431
+   },
+   {
+    "ad": "Köprüköy",
+    "enlem": 39.9706,
+    "boylam": 41.8728
+   },
+   {
+    "ad": "Narman",
+    "enlem": 40.3452,
+    "boylam": 41.8711
+   },
+   {
+    "ad": "Oltu",
+    "enlem": 40.5459,
+    "boylam": 41.996
+   },
+   {
+    "ad": "Olur",
+    "enlem": 40.8268,
+    "boylam": 42.1332
+   },
+   {
+    "ad": "Palandöken",
+    "enlem": 39.887,
+    "boylam": 41.2706
+   },
+   {
+    "ad": "Pasinler",
+    "enlem": 39.9773,
+    "boylam": 41.6745
+   },
+   {
+    "ad": "Pazaryolu",
+    "enlem": 40.4143,
+    "boylam": 40.7738
+   },
+   {
+    "ad": "Şenkaya",
+    "enlem": 40.5611,
+    "boylam": 42.3453
+   },
+   {
+    "ad": "Tekman",
+    "enlem": 39.6467,
+    "boylam": 41.5094
+   },
+   {
+    "ad": "Tortum",
+    "enlem": 40.2971,
+    "boylam": 41.5508
+   },
+   {
+    "ad": "Uzundere",
+    "enlem": 40.5327,
+    "boylam": 41.5483
+   },
+   {
+    "ad": "Yakutiye",
+    "enlem": 39.9183,
+    "boylam": 41.2794
+   }
+  ]
+ },
+ {
+  "plaka": 26,
+  "il": "Eskişehir",
+  "ilceler": [
+   {
+    "ad": "Alpu",
+    "enlem": 39.7658,
+    "boylam": 30.9584
+   },
+   {
+    "ad": "Beylikova",
+    "enlem": 39.6922,
+    "boylam": 31.2076
+   },
+   {
+    "ad": "Çifteler",
+    "enlem": 39.3757,
+    "boylam": 31.0379
+   },
+   {
+    "ad": "Günyüzü",
+    "enlem": 39.3843,
+    "boylam": 31.8097
+   },
+   {
+    "ad": "Han",
+    "enlem": 39.1584,
+    "boylam": 30.8634
+   },
+   {
+    "ad": "İnönü",
+    "enlem": 39.816,
+    "boylam": 30.1428
+   },
+   {
+    "ad": "Mahmudiye",
+    "enlem": 39.4947,
+    "boylam": 30.9876
+   },
+   {
+    "ad": "Mihalgazi",
+    "enlem": 40.0264,
+    "boylam": 30.5782
+   },
+   {
+    "ad": "Mihalıççık",
+    "enlem": 39.8666,
+    "boylam": 31.4961
+   },
+   {
+    "ad": "Odunpazarı",
+    "enlem": 39.7656,
+    "boylam": 30.5238
+   },
+   {
+    "ad": "Sarıcakaya",
+    "enlem": 40.0389,
+    "boylam": 30.6189
+   },
+   {
+    "ad": "Seyitgazi",
+    "enlem": 39.4443,
+    "boylam": 30.696
+   },
+   {
+    "ad": "Sivrihisar",
+    "enlem": 39.451,
+    "boylam": 31.5368
+   },
+   {
+    "ad": "Tepebaşı",
+    "enlem": 39.781,
+    "boylam": 30.5141
+   }
+  ]
+ },
+ {
+  "plaka": 27,
+  "il": "Gaziantep",
+  "ilceler": [
+   {
+    "ad": "Araban",
+    "enlem": 37.4253,
+    "boylam": 37.6894
+   },
+   {
+    "ad": "İslahiye",
+    "enlem": 37.0251,
+    "boylam": 36.6331
+   },
+   {
+    "ad": "Karkamış",
+    "enlem": 36.832,
+    "boylam": 37.9994
+   },
+   {
+    "ad": "Nizip",
+    "enlem": 37.0101,
+    "boylam": 37.7972
+   },
+   {
+    "ad": "Nurdağı",
+    "enlem": 37.1779,
+    "boylam": 36.7409
+   },
+   {
+    "ad": "Oğuzeli",
+    "enlem": 36.9651,
+    "boylam": 37.5085
+   },
+   {
+    "ad": "Şahinbey",
+    "enlem": 37.0576,
+    "boylam": 37.3794
+   },
+   {
+    "ad": "Şehitkamil",
+    "enlem": 37.0728,
+    "boylam": 37.395
+   },
+   {
+    "ad": "Yavuzeli",
+    "enlem": 37.3179,
+    "boylam": 37.5669
+   }
+  ]
+ },
+ {
+  "plaka": 28,
+  "il": "Giresun",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 40.9176,
+    "boylam": 38.3842
+   },
+   {
+    "ad": "Alucra",
+    "enlem": 40.3703,
+    "boylam": 38.7967
+   },
+   {
+    "ad": "Bulancak",
+    "enlem": 40.9389,
+    "boylam": 38.2319
+   },
+   {
+    "ad": "Çamoluk",
+    "enlem": 40.1352,
+    "boylam": 38.734
+   },
+   {
+    "ad": "Çanakçı",
+    "enlem": 40.917,
+    "boylam": 39.0093
+   },
+   {
+    "ad": "Dereli",
+    "enlem": 40.739,
+    "boylam": 38.4491
+   },
+   {
+    "ad": "Doğankent",
+    "enlem": 40.8099,
+    "boylam": 38.9147
+   },
+   {
+    "ad": "Espiye",
+    "enlem": 40.9483,
+    "boylam": 38.7117
+   },
+   {
+    "ad": "Eynesil",
+    "enlem": 41.0647,
+    "boylam": 39.1434
+   },
+   {
+    "ad": "Görele",
+    "enlem": 41.0335,
+    "boylam": 38.9986
+   },
+   {
+    "ad": "Güce",
+    "enlem": 40.894,
+    "boylam": 38.808
+   },
+   {
+    "ad": "Keşap",
+    "enlem": 40.9151,
+    "boylam": 38.5139
+   },
+   {
+    "ad": "Piraziz",
+    "enlem": 40.9526,
+    "boylam": 38.1248
+   },
+   {
+    "ad": "Şebinkarahisar",
+    "enlem": 40.2886,
+    "boylam": 38.4236
+   },
+   {
+    "ad": "Tirebolu",
+    "enlem": 41.0072,
+    "boylam": 38.8146
+   },
+   {
+    "ad": "Yağlıdere",
+    "enlem": 40.8605,
+    "boylam": 38.6252
+   }
+  ]
+ },
+ {
+  "plaka": 29,
+  "il": "Gümüşhane",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 40.4618,
+    "boylam": 39.4757
+   },
+   {
+    "ad": "Kelkit",
+    "enlem": 40.1255,
+    "boylam": 39.436
+   },
+   {
+    "ad": "Köse",
+    "enlem": 40.2096,
+    "boylam": 39.653
+   },
+   {
+    "ad": "Kürtün",
+    "enlem": 40.7019,
+    "boylam": 39.0857
+   },
+   {
+    "ad": "Şiran",
+    "enlem": 40.1898,
+    "boylam": 39.1252
+   },
+   {
+    "ad": "Torul",
+    "enlem": 40.5577,
+    "boylam": 39.2926
+   }
+  ]
+ },
+ {
+  "plaka": 30,
+  "il": "Hakkari",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 37.5767,
+    "boylam": 43.7378
+   },
+   {
+    "ad": "Çukurca",
+    "enlem": 37.2468,
+    "boylam": 43.611
+   },
+   {
+    "ad": "Derecik",
+    "enlem": 37.0813,
+    "boylam": 44.3119
+   },
+   {
+    "ad": "Şemdinli",
+    "enlem": 37.3068,
+    "boylam": 44.5725
+   },
+   {
+    "ad": "Yüksekova",
+    "enlem": 37.5718,
+    "boylam": 44.2822
+   }
+  ]
+ },
+ {
+  "plaka": 31,
+  "il": "Hatay",
+  "ilceler": [
+   {
+    "ad": "Altınözü",
+    "enlem": 36.1143,
+    "boylam": 36.2496
+   },
+   {
+    "ad": "Antakya",
+    "enlem": 36.2037,
+    "boylam": 36.1638
+   },
+   {
+    "ad": "Arsuz",
+    "enlem": 36.4126,
+    "boylam": 35.8865
+   },
+   {
+    "ad": "Belen",
+    "enlem": 36.4917,
+    "boylam": 36.1944
+   },
+   {
+    "ad": "Defne",
+    "enlem": 36.1952,
+    "boylam": 36.1477
+   },
+   {
+    "ad": "Dörtyol",
+    "enlem": 36.8512,
+    "boylam": 36.3014
+   },
+   {
+    "ad": "Erzin",
+    "enlem": 36.9559,
+    "boylam": 36.1991
+   },
+   {
+    "ad": "Hassa",
+    "enlem": 36.8001,
+    "boylam": 36.5172
+   },
+   {
+    "ad": "İskenderun",
+    "enlem": 36.5902,
+    "boylam": 36.171
+   },
+   {
+    "ad": "Kırıkhan",
+    "enlem": 36.499,
+    "boylam": 36.3622
+   },
+   {
+    "ad": "Kumlu",
+    "enlem": 36.3648,
+    "boylam": 36.4541
+   },
+   {
+    "ad": "Payas",
+    "enlem": 36.7559,
+    "boylam": 36.2152
+   },
+   {
+    "ad": "Reyhanlı",
+    "enlem": 36.2799,
+    "boylam": 36.5089
+   },
+   {
+    "ad": "Samandağ",
+    "enlem": 36.0852,
+    "boylam": 35.9799
+   },
+   {
+    "ad": "Yayladağı",
+    "enlem": 35.903,
+    "boylam": 36.0626
+   }
+  ]
+ },
+ {
+  "plaka": 32,
+  "il": "Isparta",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 37.7637,
+    "boylam": 30.5551
+   },
+   {
+    "ad": "Aksu",
+    "enlem": 37.7108,
+    "boylam": 31.1517
+   },
+   {
+    "ad": "Atabey",
+    "enlem": 37.9509,
+    "boylam": 30.6374
+   },
+   {
+    "ad": "Eğirdir",
+    "enlem": 37.8744,
+    "boylam": 30.85
+   },
+   {
+    "ad": "Gelendost",
+    "enlem": 38.1215,
+    "boylam": 31.0137
+   },
+   {
+    "ad": "Gönen",
+    "enlem": 37.9575,
+    "boylam": 30.5129
+   },
+   {
+    "ad": "Keçiborlu",
+    "enlem": 37.9128,
+    "boylam": 30.2482
+   },
+   {
+    "ad": "Şarkikaraağaç",
+    "enlem": 38.0807,
+    "boylam": 31.3661
+   },
+   {
+    "ad": "Senirkent",
+    "enlem": 38.1078,
+    "boylam": 30.5503
+   },
+   {
+    "ad": "Sütçüler",
+    "enlem": 37.495,
+    "boylam": 30.9806
+   },
+   {
+    "ad": "Uluborlu",
+    "enlem": 38.0787,
+    "boylam": 30.4492
+   },
+   {
+    "ad": "Yalvaç",
+    "enlem": 38.3003,
+    "boylam": 31.1743
+   },
+   {
+    "ad": "Yenişarbademli",
+    "enlem": 37.7073,
+    "boylam": 31.3878
+   }
+  ]
+ },
+ {
+  "plaka": 33,
+  "il": "Mersin",
+  "ilceler": [
+   {
+    "ad": "Akdeniz",
+    "enlem": 36.8021,
+    "boylam": 34.6332
+   },
+   {
+    "ad": "Anamur",
+    "enlem": 36.0803,
+    "boylam": 32.8312
+   },
+   {
+    "ad": "Aydıncık",
+    "enlem": 36.1452,
+    "boylam": 33.3224
+   },
+   {
+    "ad": "Bozyazı",
+    "enlem": 36.1048,
+    "boylam": 32.9743
+   },
+   {
+    "ad": "Çamlıyayla",
+    "enlem": 37.1665,
+    "boylam": 34.5934
+   },
+   {
+    "ad": "Erdemli",
+    "enlem": 36.6057,
+    "boylam": 34.3103
+   },
+   {
+    "ad": "Gülnar",
+    "enlem": 36.3387,
+    "boylam": 33.399
+   },
+   {
+    "ad": "Mezitli",
+    "enlem": 36.7495,
+    "boylam": 34.5307
+   },
+   {
+    "ad": "Mut",
+    "enlem": 36.6434,
+    "boylam": 33.4373
+   },
+   {
+    "ad": "Silifke",
+    "enlem": 36.5858,
+    "boylam": 33.8443
+   },
+   {
+    "ad": "Tarsus",
+    "enlem": 36.9165,
+    "boylam": 34.8951
+   },
+   {
+    "ad": "Toroslar",
+    "enlem": 36.8208,
+    "boylam": 34.6104
+   },
+   {
+    "ad": "Yenişehir",
+    "enlem": 36.7823,
+    "boylam": 34.5924
+   }
+  ]
+ },
+ {
+  "plaka": 34,
+  "il": "İstanbul",
+  "ilceler": [
+   {
+    "ad": "Adalar",
+    "enlem": 40.8742,
+    "boylam": 29.1293
+   },
+   {
+    "ad": "Arnavutköy",
+    "enlem": 41.1845,
+    "boylam": 28.7412
+   },
+   {
+    "ad": "Ataşehir",
+    "enlem": 40.9929,
+    "boylam": 29.1135
+   },
+   {
+    "ad": "Avcılar",
+    "enlem": 40.9799,
+    "boylam": 28.7217
+   },
+   {
+    "ad": "Bağcılar",
+    "enlem": 41.0345,
+    "boylam": 28.8568
+   },
+   {
+    "ad": "Bahçelievler",
+    "enlem": 41.003,
+    "boylam": 28.8658
+   },
+   {
+    "ad": "Bakırköy",
+    "enlem": 40.9783,
+    "boylam": 28.8744
+   },
+   {
+    "ad": "Başakşehir",
+    "enlem": 41.1076,
+    "boylam": 28.7951
+   },
+   {
+    "ad": "Bayrampaşa",
+    "enlem": 41.0346,
+    "boylam": 28.9118
+   },
+   {
+    "ad": "Beşiktaş",
+    "enlem": 41.0428,
+    "boylam": 29.0075
+   },
+   {
+    "ad": "Beykoz",
+    "enlem": 41.1343,
+    "boylam": 29.092
+   },
+   {
+    "ad": "Beylikdüzü",
+    "enlem": 41.0038,
+    "boylam": 28.6373
+   },
+   {
+    "ad": "Beyoğlu",
+    "enlem": 41.0284,
+    "boylam": 28.9737
+   },
+   {
+    "ad": "Büyükçekmece",
+    "enlem": 41.0217,
+    "boylam": 28.5798
+   },
+   {
+    "ad": "Çatalca",
+    "enlem": 41.1437,
+    "boylam": 28.4605
+   },
+   {
+    "ad": "Çekmeköy",
+    "enlem": 41.0352,
+    "boylam": 29.1739
+   },
+   {
+    "ad": "Esenler",
+    "enlem": 41.0376,
+    "boylam": 28.8825
+   },
+   {
+    "ad": "Esenyurt",
+    "enlem": 41.0343,
+    "boylam": 28.6801
+   },
+   {
+    "ad": "Eyüpsultan",
+    "enlem": 41.0478,
+    "boylam": 28.9327
+   },
+   {
+    "ad": "Fatih",
+    "enlem": 41.0193,
+    "boylam": 28.9479
+   },
+   {
+    "ad": "Gaziosmanpaşa",
+    "enlem": 41.0578,
+    "boylam": 28.9122
+   },
+   {
+    "ad": "Güngören",
+    "enlem": 41.0253,
+    "boylam": 28.8726
+   },
+   {
+    "ad": "Kadıköy",
+    "enlem": 40.9913,
+    "boylam": 29.0246
+   },
+   {
+    "ad": "Kâğıthane",
+    "enlem": 41.0812,
+    "boylam": 28.973
+   },
+   {
+    "ad": "Kartal",
+    "enlem": 40.8885,
+    "boylam": 29.1859
+   },
+   {
+    "ad": "Küçükçekmece",
+    "enlem": 40.9919,
+    "boylam": 28.7712
+   },
+   {
+    "ad": "Maltepe",
+    "enlem": 40.9248,
+    "boylam": 29.1311
+   },
+   {
+    "ad": "Pendik",
+    "enlem": 40.8769,
+    "boylam": 29.235
+   },
+   {
+    "ad": "Sancaktepe",
+    "enlem": 40.9905,
+    "boylam": 29.2289
+   },
+   {
+    "ad": "Sarıyer",
+    "enlem": 41.1686,
+    "boylam": 29.0573
+   },
+   {
+    "ad": "Şile",
+    "enlem": 41.1744,
+    "boylam": 29.6125
+   },
+   {
+    "ad": "Silivri",
+    "enlem": 41.0742,
+    "boylam": 28.2482
+   },
+   {
+    "ad": "Şişli",
+    "enlem": 41.0638,
+    "boylam": 28.9832
+   },
+   {
+    "ad": "Sultanbeyli",
+    "enlem": 40.967,
+    "boylam": 29.2671
+   },
+   {
+    "ad": "Sultangazi",
+    "enlem": 41.1043,
+    "boylam": 28.8614
+   },
+   {
+    "ad": "Tuzla",
+    "enlem": 40.8162,
+    "boylam": 29.3034
+   },
+   {
+    "ad": "Ümraniye",
+    "enlem": 41.0256,
+    "boylam": 29.0963
+   },
+   {
+    "ad": "Üsküdar",
+    "enlem": 41.0265,
+    "boylam": 29.0151
+   },
+   {
+    "ad": "Zeytinburnu",
+    "enlem": 40.9899,
+    "boylam": 28.9037
+   }
+  ]
+ },
+ {
+  "plaka": 35,
+  "il": "İzmir",
+  "ilceler": [
+   {
+    "ad": "Aliağa",
+    "enlem": 38.8034,
+    "boylam": 26.9714
+   },
+   {
+    "ad": "Balçova",
+    "enlem": 38.3953,
+    "boylam": 27.0579
+   },
+   {
+    "ad": "Bayındır",
+    "enlem": 38.22,
+    "boylam": 27.6484
+   },
+   {
+    "ad": "Bayraklı",
+    "enlem": 38.4651,
+    "boylam": 27.1634
+   },
+   {
+    "ad": "Bergama",
+    "enlem": 39.1189,
+    "boylam": 27.1774
+   },
+   {
+    "ad": "Beydağ",
+    "enlem": 38.087,
+    "boylam": 28.2107
+   },
+   {
+    "ad": "Bornova",
+    "enlem": 38.4662,
+    "boylam": 27.2192
+   },
+   {
+    "ad": "Buca",
+    "enlem": 38.3835,
+    "boylam": 27.1687
+   },
+   {
+    "ad": "Çeşme",
+    "enlem": 38.3244,
+    "boylam": 26.303
+   },
+   {
+    "ad": "Çiğli",
+    "enlem": 38.4944,
+    "boylam": 27.0616
+   },
+   {
+    "ad": "Dikili",
+    "enlem": 39.075,
+    "boylam": 26.8892
+   },
+   {
+    "ad": "Foça",
+    "enlem": 38.6689,
+    "boylam": 26.7548
+   },
+   {
+    "ad": "Gaziemir",
+    "enlem": 38.3213,
+    "boylam": 27.1269
+   },
+   {
+    "ad": "Güzelbahçe",
+    "enlem": 38.3755,
+    "boylam": 26.8756
+   },
+   {
+    "ad": "Karabağlar",
+    "enlem": 38.399,
+    "boylam": 27.1269
+   },
+   {
+    "ad": "Karaburun",
+    "enlem": 38.6354,
+    "boylam": 26.5098
+   },
+   {
+    "ad": "Karşıyaka",
+    "enlem": 38.4554,
+    "boylam": 27.1196
+   },
+   {
+    "ad": "Kemalpaşa",
+    "enlem": 38.4276,
+    "boylam": 27.4164
+   },
+   {
+    "ad": "Kınık",
+    "enlem": 39.0876,
+    "boylam": 27.3805
+   },
+   {
+    "ad": "Kiraz",
+    "enlem": 38.2304,
+    "boylam": 28.2016
+   },
+   {
+    "ad": "Konak",
+    "enlem": 38.4187,
+    "boylam": 27.1283
+   },
+   {
+    "ad": "Menderes",
+    "enlem": 38.2552,
+    "boylam": 27.1381
+   },
+   {
+    "ad": "Menemen",
+    "enlem": 38.6114,
+    "boylam": 27.0718
+   },
+   {
+    "ad": "Narlıdere",
+    "enlem": 38.3954,
+    "boylam": 27.0011
+   },
+   {
+    "ad": "Ödemiş",
+    "enlem": 38.2282,
+    "boylam": 27.9772
+   },
+   {
+    "ad": "Seferihisar",
+    "enlem": 38.195,
+    "boylam": 26.8342
+   },
+   {
+    "ad": "Selçuk",
+    "enlem": 37.948,
+    "boylam": 27.3685
+   },
+   {
+    "ad": "Tire",
+    "enlem": 38.0895,
+    "boylam": 27.7318
+   },
+   {
+    "ad": "Torbalı",
+    "enlem": 38.15,
+    "boylam": 27.3616
+   },
+   {
+    "ad": "Urla",
+    "enlem": 38.3228,
+    "boylam": 26.7673
+   }
+  ]
+ },
+ {
+  "plaka": 36,
+  "il": "Kars",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 40.6071,
+    "boylam": 43.0948
+   },
+   {
+    "ad": "Akyaka",
+    "enlem": 40.74,
+    "boylam": 43.6238
+   },
+   {
+    "ad": "Arpaçay",
+    "enlem": 40.8464,
+    "boylam": 43.329
+   },
+   {
+    "ad": "Digor",
+    "enlem": 40.3765,
+    "boylam": 43.4119
+   },
+   {
+    "ad": "Kağızman",
+    "enlem": 40.1407,
+    "boylam": 43.1205
+   },
+   {
+    "ad": "Sarıkamış",
+    "enlem": 40.3337,
+    "boylam": 42.5895
+   },
+   {
+    "ad": "Selim",
+    "enlem": 40.4641,
+    "boylam": 42.7908
+   },
+   {
+    "ad": "Susuz",
+    "enlem": 40.7792,
+    "boylam": 43.1287
+   }
+  ]
+ },
+ {
+  "plaka": 37,
+  "il": "Kastamonu",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 41.3765,
+    "boylam": 33.777
+   },
+   {
+    "ad": "Abana",
+    "enlem": 41.9785,
+    "boylam": 34.0077
+   },
+   {
+    "ad": "Ağlı",
+    "enlem": 41.6872,
+    "boylam": 33.5538
+   },
+   {
+    "ad": "Araç",
+    "enlem": 41.2412,
+    "boylam": 33.3249
+   },
+   {
+    "ad": "Azdavay",
+    "enlem": 41.6421,
+    "boylam": 33.3009
+   },
+   {
+    "ad": "Bozkurt",
+    "enlem": 41.9588,
+    "boylam": 34.0126
+   },
+   {
+    "ad": "Çatalzeytin",
+    "enlem": 41.9531,
+    "boylam": 34.2227
+   },
+   {
+    "ad": "Cide",
+    "enlem": 41.8916,
+    "boylam": 33.0037
+   },
+   {
+    "ad": "Daday",
+    "enlem": 41.4752,
+    "boylam": 33.4637
+   },
+   {
+    "ad": "Devrekani",
+    "enlem": 41.6911,
+    "boylam": 33.9231
+   },
+   {
+    "ad": "Doğanyurt",
+    "enlem": 42.0056,
+    "boylam": 33.4605
+   },
+   {
+    "ad": "Hanönü",
+    "enlem": 41.6256,
+    "boylam": 34.468
+   },
+   {
+    "ad": "İhsangazi",
+    "enlem": 41.204,
+    "boylam": 33.5559
+   },
+   {
+    "ad": "İnebolu",
+    "enlem": 41.9786,
+    "boylam": 33.7599
+   },
+   {
+    "ad": "Küre",
+    "enlem": 41.8059,
+    "boylam": 33.7103
+   },
+   {
+    "ad": "Pınarbaşı",
+    "enlem": 41.6036,
+    "boylam": 33.1109
+   },
+   {
+    "ad": "Şenpazar",
+    "enlem": 41.8086,
+    "boylam": 33.2329
+   },
+   {
+    "ad": "Seydiler",
+    "enlem": 41.6188,
+    "boylam": 33.7186
+   },
+   {
+    "ad": "Taşköprü",
+    "enlem": 41.5075,
+    "boylam": 34.2128
+   },
+   {
+    "ad": "Tosya",
+    "enlem": 40.998,
+    "boylam": 34.0703
+   }
+  ]
+ },
+ {
+  "plaka": 38,
+  "il": "Kayseri",
+  "ilceler": [
+   {
+    "ad": "Akkışla",
+    "enlem": 39.0015,
+    "boylam": 36.171
+   },
+   {
+    "ad": "Bünyan",
+    "enlem": 38.8458,
+    "boylam": 35.8577
+   },
+   {
+    "ad": "Develi",
+    "enlem": 38.3879,
+    "boylam": 35.4901
+   },
+   {
+    "ad": "Felahiye",
+    "enlem": 39.0907,
+    "boylam": 35.5675
+   },
+   {
+    "ad": "Hacılar",
+    "enlem": 38.6443,
+    "boylam": 35.4498
+   },
+   {
+    "ad": "İncesu",
+    "enlem": 38.6234,
+    "boylam": 35.1838
+   },
+   {
+    "ad": "Kocasinan",
+    "enlem": 38.7363,
+    "boylam": 35.495
+   },
+   {
+    "ad": "Melikgazi",
+    "enlem": 38.7199,
+    "boylam": 35.5057
+   },
+   {
+    "ad": "Özvatan",
+    "enlem": 39.1059,
+    "boylam": 35.6992
+   },
+   {
+    "ad": "Pınarbaşı",
+    "enlem": 38.7214,
+    "boylam": 36.3941
+   },
+   {
+    "ad": "Sarıoğlan",
+    "enlem": 39.0771,
+    "boylam": 35.9672
+   },
+   {
+    "ad": "Sarız",
+    "enlem": 38.4802,
+    "boylam": 36.497
+   },
+   {
+    "ad": "Talas",
+    "enlem": 38.6929,
+    "boylam": 35.5495
+   },
+   {
+    "ad": "Tomarza",
+    "enlem": 38.4477,
+    "boylam": 35.8009
+   },
+   {
+    "ad": "Yahyalı",
+    "enlem": 38.1003,
+    "boylam": 35.3541
+   },
+   {
+    "ad": "Yeşilhisar",
+    "enlem": 38.3523,
+    "boylam": 35.0887
+   }
+  ]
+ },
+ {
+  "plaka": 39,
+  "il": "Kırklareli",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 41.737,
+    "boylam": 27.2236
+   },
+   {
+    "ad": "Babaeski",
+    "enlem": 41.4303,
+    "boylam": 27.0918
+   },
+   {
+    "ad": "Demirköy",
+    "enlem": 41.8716,
+    "boylam": 27.7695
+   },
+   {
+    "ad": "Kofçaz",
+    "enlem": 41.945,
+    "boylam": 27.1579
+   },
+   {
+    "ad": "Lüleburgaz",
+    "enlem": 41.4041,
+    "boylam": 27.3555
+   },
+   {
+    "ad": "Pehlivanköy",
+    "enlem": 41.347,
+    "boylam": 26.9202
+   },
+   {
+    "ad": "Pınarhisar",
+    "enlem": 41.6557,
+    "boylam": 27.5369
+   },
+   {
+    "ad": "Vize",
+    "enlem": 41.5729,
+    "boylam": 27.767
+   }
+  ]
+ },
+ {
+  "plaka": 40,
+  "il": "Kırşehir",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 39.1461,
+    "boylam": 34.1606
+   },
+   {
+    "ad": "Akçakent",
+    "enlem": 39.625,
+    "boylam": 34.0962
+   },
+   {
+    "ad": "Akpınar",
+    "enlem": 39.448,
+    "boylam": 33.9639
+   },
+   {
+    "ad": "Boztepe",
+    "enlem": 39.2716,
+    "boylam": 34.264
+   },
+   {
+    "ad": "Çiçekdağı",
+    "enlem": 39.6036,
+    "boylam": 34.4158
+   },
+   {
+    "ad": "Kaman",
+    "enlem": 39.3589,
+    "boylam": 33.7244
+   },
+   {
+    "ad": "Mucur",
+    "enlem": 39.0599,
+    "boylam": 34.38
+   }
+  ]
+ },
+ {
+  "plaka": 41,
+  "il": "Kocaeli",
+  "ilceler": [
+   {
+    "ad": "Başiskele",
+    "enlem": 40.7129,
+    "boylam": 29.9287
+   },
+   {
+    "ad": "Çayırova",
+    "enlem": 40.8337,
+    "boylam": 29.3815
+   },
+   {
+    "ad": "Darıca",
+    "enlem": 40.7575,
+    "boylam": 29.3841
+   },
+   {
+    "ad": "Derince",
+    "enlem": 40.7574,
+    "boylam": 29.8308
+   },
+   {
+    "ad": "Dilovası",
+    "enlem": 40.7756,
+    "boylam": 29.5261
+   },
+   {
+    "ad": "Gebze",
+    "enlem": 40.8007,
+    "boylam": 29.4318
+   },
+   {
+    "ad": "Gölcük",
+    "enlem": 40.7169,
+    "boylam": 29.8196
+   },
+   {
+    "ad": "İzmit",
+    "enlem": 40.7721,
+    "boylam": 29.9506
+   },
+   {
+    "ad": "Kandıra",
+    "enlem": 41.0704,
+    "boylam": 30.1523
+   },
+   {
+    "ad": "Karamürsel",
+    "enlem": 40.6913,
+    "boylam": 29.6166
+   },
+   {
+    "ad": "Kartepe",
+    "enlem": 40.7454,
+    "boylam": 30.0113
+   },
+   {
+    "ad": "Körfez",
+    "enlem": 40.7608,
+    "boylam": 29.7839
+   }
+  ]
+ },
+ {
+  "plaka": 42,
+  "il": "Konya",
+  "ilceler": [
+   {
+    "ad": "Ahırlı",
+    "enlem": 37.2387,
+    "boylam": 32.1189
+   },
+   {
+    "ad": "Akören",
+    "enlem": 37.4523,
+    "boylam": 32.3725
+   },
+   {
+    "ad": "Akşehir",
+    "enlem": 38.3781,
+    "boylam": 31.4748
+   },
+   {
+    "ad": "Altınekin",
+    "enlem": 38.3073,
+    "boylam": 32.8691
+   },
+   {
+    "ad": "Beyşehir",
+    "enlem": 37.6802,
+    "boylam": 31.7228
+   },
+   {
+    "ad": "Bozkır",
+    "enlem": 37.1899,
+    "boylam": 32.2472
+   },
+   {
+    "ad": "Çeltik",
+    "enlem": 39.0234,
+    "boylam": 31.7906
+   },
+   {
+    "ad": "Cihanbeyli",
+    "enlem": 38.659,
+    "boylam": 32.9237
+   },
+   {
+    "ad": "Çumra",
+    "enlem": 37.5713,
+    "boylam": 32.7812
+   },
+   {
+    "ad": "Derbent",
+    "enlem": 37.9943,
+    "boylam": 31.9912
+   },
+   {
+    "ad": "Derebucak",
+    "enlem": 37.3915,
+    "boylam": 31.5107
+   },
+   {
+    "ad": "Doğanhisar",
+    "enlem": 38.146,
+    "boylam": 31.6769
+   },
+   {
+    "ad": "Emirgazi",
+    "enlem": 37.9035,
+    "boylam": 33.836
+   },
+   {
+    "ad": "Ereğli",
+    "enlem": 37.5141,
+    "boylam": 34.0473
+   },
+   {
+    "ad": "Güneysınır",
+    "enlem": 37.2981,
+    "boylam": 32.7211
+   },
+   {
+    "ad": "Hadim",
+    "enlem": 36.9861,
+    "boylam": 32.4558
+   },
+   {
+    "ad": "Halkapınar",
+    "enlem": 37.4335,
+    "boylam": 34.1866
+   },
+   {
+    "ad": "Hüyük",
+    "enlem": 37.9548,
+    "boylam": 31.5973
+   },
+   {
+    "ad": "Ilgın",
+    "enlem": 38.2832,
+    "boylam": 31.9065
+   },
+   {
+    "ad": "Kadınhanı",
+    "enlem": 38.2401,
+    "boylam": 32.2122
+   },
+   {
+    "ad": "Karapınar",
+    "enlem": 37.7324,
+    "boylam": 33.5465
+   },
+   {
+    "ad": "Karatay",
+    "enlem": 37.871,
+    "boylam": 32.503
+   },
+   {
+    "ad": "Kulu",
+    "enlem": 39.0903,
+    "boylam": 33.0805
+   },
+   {
+    "ad": "Meram",
+    "enlem": 37.868,
+    "boylam": 32.4947
+   },
+   {
+    "ad": "Sarayönü",
+    "enlem": 38.4793,
+    "boylam": 32.4692
+   },
+   {
+    "ad": "Selçuklu",
+    "enlem": 37.8769,
+    "boylam": 32.4874
+   },
+   {
+    "ad": "Seydişehir",
+    "enlem": 37.459,
+    "boylam": 31.917
+   },
+   {
+    "ad": "Taşkent",
+    "enlem": 36.9239,
+    "boylam": 32.4926
+   },
+   {
+    "ad": "Tuzlukçu",
+    "enlem": 38.4729,
+    "boylam": 31.6271
+   },
+   {
+    "ad": "Yalıhüyük",
+    "enlem": 37.3006,
+    "boylam": 32.0854
+   },
+   {
+    "ad": "Yunak",
+    "enlem": 38.8109,
+    "boylam": 31.738
+   }
+  ]
+ },
+ {
+  "plaka": 43,
+  "il": "Kütahya",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 39.4199,
+    "boylam": 29.9858
+   },
+   {
+    "ad": "Altıntaş",
+    "enlem": 39.0604,
+    "boylam": 30.1076
+   },
+   {
+    "ad": "Aslanapa",
+    "enlem": 39.2152,
+    "boylam": 29.8696
+   },
+   {
+    "ad": "Çavdarhisar",
+    "enlem": 39.1944,
+    "boylam": 29.6195
+   },
+   {
+    "ad": "Domaniç",
+    "enlem": 39.8014,
+    "boylam": 29.6119
+   },
+   {
+    "ad": "Dumlupınar",
+    "enlem": 38.8544,
+    "boylam": 29.9776
+   },
+   {
+    "ad": "Emet",
+    "enlem": 39.3415,
+    "boylam": 29.2586
+   },
+   {
+    "ad": "Gediz",
+    "enlem": 38.9898,
+    "boylam": 29.394
+   },
+   {
+    "ad": "Hisarcık",
+    "enlem": 39.2505,
+    "boylam": 29.2313
+   },
+   {
+    "ad": "Pazarlar",
+    "enlem": 38.9946,
+    "boylam": 29.1231
+   },
+   {
+    "ad": "Şaphane",
+    "enlem": 39.0254,
+    "boylam": 29.22
+   },
+   {
+    "ad": "Simav",
+    "enlem": 39.0887,
+    "boylam": 28.98
+   },
+   {
+    "ad": "Tavşanlı",
+    "enlem": 39.5451,
+    "boylam": 29.4955
+   }
+  ]
+ },
+ {
+  "plaka": 44,
+  "il": "Malatya",
+  "ilceler": [
+   {
+    "ad": "Akçadağ",
+    "enlem": 38.3444,
+    "boylam": 37.9711
+   },
+   {
+    "ad": "Arapgir",
+    "enlem": 39.0422,
+    "boylam": 38.4898
+   },
+   {
+    "ad": "Arguvan",
+    "enlem": 38.7818,
+    "boylam": 38.2628
+   },
+   {
+    "ad": "Battalgazi",
+    "enlem": 38.425,
+    "boylam": 38.3655
+   },
+   {
+    "ad": "Darende",
+    "enlem": 38.5573,
+    "boylam": 37.4927
+   },
+   {
+    "ad": "Doğanşehir",
+    "enlem": 38.0934,
+    "boylam": 37.8784
+   },
+   {
+    "ad": "Doğanyol",
+    "enlem": 38.31,
+    "boylam": 39.0381
+   },
+   {
+    "ad": "Hekimhan",
+    "enlem": 38.8165,
+    "boylam": 37.9307
+   },
+   {
+    "ad": "Kale",
+    "enlem": 38.4175,
+    "boylam": 38.7687
+   },
+   {
+    "ad": "Kuluncak",
+    "enlem": 38.8849,
+    "boylam": 37.6707
+   },
+   {
+    "ad": "Pütürge",
+    "enlem": 38.1973,
+    "boylam": 38.8702
+   },
+   {
+    "ad": "Yazıhan",
+    "enlem": 38.5957,
+    "boylam": 38.1801
+   },
+   {
+    "ad": "Yeşilyurt",
+    "enlem": 38.2955,
+    "boylam": 38.2475
+   }
+  ]
+ },
+ {
+  "plaka": 45,
+  "il": "Manisa",
+  "ilceler": [
+   {
+    "ad": "Ahmetli",
+    "enlem": 38.5203,
+    "boylam": 27.9386
+   },
+   {
+    "ad": "Akhisar",
+    "enlem": 38.9241,
+    "boylam": 27.8402
+   },
+   {
+    "ad": "Alaşehir",
+    "enlem": 38.3507,
+    "boylam": 28.5166
+   },
+   {
+    "ad": "Demirci",
+    "enlem": 39.0474,
+    "boylam": 28.6584
+   },
+   {
+    "ad": "Gölmarmara",
+    "enlem": 38.7122,
+    "boylam": 27.9157
+   },
+   {
+    "ad": "Gördes",
+    "enlem": 38.933,
+    "boylam": 28.2886
+   },
+   {
+    "ad": "Kırkağaç",
+    "enlem": 39.1099,
+    "boylam": 27.673
+   },
+   {
+    "ad": "Köprübaşı",
+    "enlem": 38.748,
+    "boylam": 28.403
+   },
+   {
+    "ad": "Kula",
+    "enlem": 38.5469,
+    "boylam": 28.6474
+   },
+   {
+    "ad": "Salihli",
+    "enlem": 38.4861,
+    "boylam": 28.139
+   },
+   {
+    "ad": "Sarıgöl",
+    "enlem": 38.2382,
+    "boylam": 28.6966
+   },
+   {
+    "ad": "Saruhanlı",
+    "enlem": 38.7349,
+    "boylam": 27.5719
+   },
+   {
+    "ad": "Şehzadeler",
+    "enlem": 38.6459,
+    "boylam": 27.5028
+   },
+   {
+    "ad": "Selendi",
+    "enlem": 38.7434,
+    "boylam": 28.8702
+   },
+   {
+    "ad": "Soma",
+    "enlem": 39.1852,
+    "boylam": 27.6089
+   },
+   {
+    "ad": "Turgutlu",
+    "enlem": 38.5,
+    "boylam": 27.7084
+   },
+   {
+    "ad": "Yunus Emre",
+    "enlem": 38.6087,
+    "boylam": 27.4195
+   }
+  ]
+ },
+ {
+  "plaka": 46,
+  "il": "Kahramanmaraş",
+  "ilceler": [
+   {
+    "ad": "Afşin",
+    "enlem": 38.2439,
+    "boylam": 36.9153
+   },
+   {
+    "ad": "Andırın",
+    "enlem": 37.575,
+    "boylam": 36.3552
+   },
+   {
+    "ad": "Çağlayancerit",
+    "enlem": 37.75,
+    "boylam": 37.2928
+   },
+   {
+    "ad": "Dulkadiroğlu",
+    "enlem": 37.5798,
+    "boylam": 36.9312
+   },
+   {
+    "ad": "Ekinözü",
+    "enlem": 38.0079,
+    "boylam": 37.083
+   },
+   {
+    "ad": "Elbistan",
+    "enlem": 38.2022,
+    "boylam": 37.1903
+   },
+   {
+    "ad": "Göksun",
+    "enlem": 38.0213,
+    "boylam": 36.4946
+   },
+   {
+    "ad": "Nurhak",
+    "enlem": 37.9774,
+    "boylam": 37.4291
+   },
+   {
+    "ad": "Onikişubat",
+    "enlem": 37.5778,
+    "boylam": 36.9237
+   },
+   {
+    "ad": "Pazarcık",
+    "enlem": 37.4895,
+    "boylam": 37.2935
+   },
+   {
+    "ad": "Türkoğlu",
+    "enlem": 37.3865,
+    "boylam": 36.8474
+   }
+  ]
+ },
+ {
+  "plaka": 47,
+  "il": "Mardin",
+  "ilceler": [
+   {
+    "ad": "Artuklu",
+    "enlem": 37.321,
+    "boylam": 40.7251
+   },
+   {
+    "ad": "Dargeçit",
+    "enlem": 37.5459,
+    "boylam": 41.7206
+   },
+   {
+    "ad": "Derik",
+    "enlem": 37.3647,
+    "boylam": 40.2699
+   },
+   {
+    "ad": "Kızıltepe",
+    "enlem": 37.1917,
+    "boylam": 40.5848
+   },
+   {
+    "ad": "Mazıdağı",
+    "enlem": 37.4773,
+    "boylam": 40.4865
+   },
+   {
+    "ad": "Midyat",
+    "enlem": 37.4153,
+    "boylam": 41.3733
+   },
+   {
+    "ad": "Nusaybin",
+    "enlem": 37.0667,
+    "boylam": 41.2166
+   },
+   {
+    "ad": "Ömerli",
+    "enlem": 37.4021,
+    "boylam": 40.9539
+   },
+   {
+    "ad": "Savur",
+    "enlem": 37.5368,
+    "boylam": 40.8874
+   },
+   {
+    "ad": "Yeşilli",
+    "enlem": 37.3396,
+    "boylam": 40.823
+   }
+  ]
+ },
+ {
+  "plaka": 48,
+  "il": "Muğla",
+  "ilceler": [
+   {
+    "ad": "Bodrum",
+    "enlem": 37.0344,
+    "boylam": 27.4307
+   },
+   {
+    "ad": "Dalaman",
+    "enlem": 36.7672,
+    "boylam": 28.8003
+   },
+   {
+    "ad": "Datça",
+    "enlem": 36.7263,
+    "boylam": 27.6874
+   },
+   {
+    "ad": "Fethiye",
+    "enlem": 36.6221,
+    "boylam": 29.1153
+   },
+   {
+    "ad": "Kara Ada",
+    "enlem": 36.9774,
+    "boylam": 27.4584
+   },
+   {
+    "ad": "Kavaklıdere",
+    "enlem": 37.4456,
+    "boylam": 28.3649
+   },
+   {
+    "ad": "Köyceğiz",
+    "enlem": 36.9585,
+    "boylam": 28.6889
+   },
+   {
+    "ad": "Marmaris",
+    "enlem": 36.8523,
+    "boylam": 28.2743
+   },
+   {
+    "ad": "Menteşe",
+    "enlem": 37.2179,
+    "boylam": 28.3646
+   },
+   {
+    "ad": "Milas",
+    "enlem": 37.3163,
+    "boylam": 27.78
+   },
+   {
+    "ad": "Ortaca",
+    "enlem": 36.8389,
+    "boylam": 28.7654
+   },
+   {
+    "ad": "Seydikemer",
+    "enlem": 36.6482,
+    "boylam": 29.3622
+   },
+   {
+    "ad": "Ula",
+    "enlem": 37.1029,
+    "boylam": 28.4164
+   },
+   {
+    "ad": "Yatağan",
+    "enlem": 37.3417,
+    "boylam": 28.1395
+   },
+   {
+    "ad": "Περιφερειακή Ενότητα Καλύμνου",
+    "enlem": 36.7111,
+    "boylam": 26.6289
+   }
+  ]
+ },
+ {
+  "plaka": 49,
+  "il": "Muş",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 38.7322,
+    "boylam": 41.4899
+   },
+   {
+    "ad": "Bulanık",
+    "enlem": 39.0924,
+    "boylam": 42.2708
+   },
+   {
+    "ad": "Hasköy",
+    "enlem": 38.6826,
+    "boylam": 41.6885
+   },
+   {
+    "ad": "Korkut",
+    "enlem": 38.7388,
+    "boylam": 41.783
+   },
+   {
+    "ad": "Malazgirt",
+    "enlem": 39.1461,
+    "boylam": 42.5409
+   },
+   {
+    "ad": "Varto",
+    "enlem": 39.1721,
+    "boylam": 41.4547
+   }
+  ]
+ },
+ {
+  "plaka": 50,
+  "il": "Nevşehir",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 38.625,
+    "boylam": 34.7151
+   },
+   {
+    "ad": "Acıgöl",
+    "enlem": 38.5502,
+    "boylam": 34.509
+   },
+   {
+    "ad": "Avanos",
+    "enlem": 38.7187,
+    "boylam": 34.8469
+   },
+   {
+    "ad": "Derinkuyu",
+    "enlem": 38.3744,
+    "boylam": 34.7336
+   },
+   {
+    "ad": "Gülşehir",
+    "enlem": 38.7426,
+    "boylam": 34.6193
+   },
+   {
+    "ad": "Hacıbektaş",
+    "enlem": 38.9429,
+    "boylam": 34.5609
+   },
+   {
+    "ad": "Kozaklı",
+    "enlem": 39.2147,
+    "boylam": 34.8532
+   },
+   {
+    "ad": "Ürgüp",
+    "enlem": 38.6301,
+    "boylam": 34.9116
+   }
+  ]
+ },
+ {
+  "plaka": 51,
+  "il": "Niğde",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 37.9698,
+    "boylam": 34.6764
+   },
+   {
+    "ad": "Altunhisar",
+    "enlem": 37.999,
+    "boylam": 34.3715
+   },
+   {
+    "ad": "Bor",
+    "enlem": 37.8963,
+    "boylam": 34.5627
+   },
+   {
+    "ad": "Çamardı",
+    "enlem": 37.8585,
+    "boylam": 35.0814
+   },
+   {
+    "ad": "Çiftlik",
+    "enlem": 38.175,
+    "boylam": 34.4848
+   },
+   {
+    "ad": "Ulukışla",
+    "enlem": 37.5465,
+    "boylam": 34.4843
+   }
+  ]
+ },
+ {
+  "plaka": 52,
+  "il": "Ordu",
+  "ilceler": [
+   {
+    "ad": "Akkuş",
+    "enlem": 40.7925,
+    "boylam": 37.0177
+   },
+   {
+    "ad": "Altınordu",
+    "enlem": 40.9787,
+    "boylam": 37.8964
+   },
+   {
+    "ad": "Aybastı",
+    "enlem": 40.6846,
+    "boylam": 37.3988
+   },
+   {
+    "ad": "Çamaş",
+    "enlem": 40.9026,
+    "boylam": 37.5281
+   },
+   {
+    "ad": "Çatalpınar",
+    "enlem": 40.879,
+    "boylam": 37.4532
+   },
+   {
+    "ad": "Çaybaşı",
+    "enlem": 41.0172,
+    "boylam": 37.0987
+   },
+   {
+    "ad": "Fatsa",
+    "enlem": 41.0309,
+    "boylam": 37.5002
+   },
+   {
+    "ad": "Gölköy",
+    "enlem": 40.6873,
+    "boylam": 37.6156
+   },
+   {
+    "ad": "Gülyalı",
+    "enlem": 40.9663,
+    "boylam": 38.0586
+   },
+   {
+    "ad": "Gürgentepe",
+    "enlem": 40.7886,
+    "boylam": 37.6009
+   },
+   {
+    "ad": "İkizce",
+    "enlem": 41.0544,
+    "boylam": 37.0778
+   },
+   {
+    "ad": "Kabadüz",
+    "enlem": 40.8598,
+    "boylam": 37.8909
+   },
+   {
+    "ad": "Kabataş",
+    "enlem": 40.7524,
+    "boylam": 37.4499
+   },
+   {
+    "ad": "Korgan",
+    "enlem": 40.8296,
+    "boylam": 37.3441
+   },
+   {
+    "ad": "Kumru",
+    "enlem": 40.872,
+    "boylam": 37.2618
+   },
+   {
+    "ad": "Mesudiye",
+    "enlem": 40.4636,
+    "boylam": 37.7736
+   },
+   {
+    "ad": "Perşembe",
+    "enlem": 41.0161,
+    "boylam": 37.7232
+   },
+   {
+    "ad": "Ulubey",
+    "enlem": 40.873,
+    "boylam": 37.7585
+   },
+   {
+    "ad": "Ünye",
+    "enlem": 41.1262,
+    "boylam": 37.2854
+   }
+  ]
+ },
+ {
+  "plaka": 53,
+  "il": "Rize",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 40.9498,
+    "boylam": 40.5487
+   },
+   {
+    "ad": "Ardeşen",
+    "enlem": 41.1919,
+    "boylam": 40.9894
+   },
+   {
+    "ad": "Çamlıhemşin",
+    "enlem": 41.0456,
+    "boylam": 41.0057
+   },
+   {
+    "ad": "Çayeli",
+    "enlem": 41.0878,
+    "boylam": 40.7237
+   },
+   {
+    "ad": "Derepazarı",
+    "enlem": 41.0243,
+    "boylam": 40.4216
+   },
+   {
+    "ad": "Fındıklı",
+    "enlem": 41.2712,
+    "boylam": 41.1414
+   },
+   {
+    "ad": "Güneysu",
+    "enlem": 40.9772,
+    "boylam": 40.6136
+   },
+   {
+    "ad": "Hemşin",
+    "enlem": 41.0475,
+    "boylam": 40.8988
+   },
+   {
+    "ad": "İkizdere",
+    "enlem": 40.778,
+    "boylam": 40.5596
+   },
+   {
+    "ad": "İyidere",
+    "enlem": 41.012,
+    "boylam": 40.361
+   },
+   {
+    "ad": "Kalkandere",
+    "enlem": 40.9279,
+    "boylam": 40.4425
+   },
+   {
+    "ad": "Pazar",
+    "enlem": 41.1803,
+    "boylam": 40.8868
+   }
+  ]
+ },
+ {
+  "plaka": 54,
+  "il": "Sakarya",
+  "ilceler": [
+   {
+    "ad": "Adapazarı",
+    "enlem": 40.7755,
+    "boylam": 30.402
+   },
+   {
+    "ad": "Akyazı",
+    "enlem": 40.6814,
+    "boylam": 30.6246
+   },
+   {
+    "ad": "Arifiye",
+    "enlem": 40.7145,
+    "boylam": 30.3621
+   },
+   {
+    "ad": "Erenler",
+    "enlem": 40.7564,
+    "boylam": 30.4109
+   },
+   {
+    "ad": "Ferizli",
+    "enlem": 40.9402,
+    "boylam": 30.4846
+   },
+   {
+    "ad": "Geyve",
+    "enlem": 40.5091,
+    "boylam": 30.2903
+   },
+   {
+    "ad": "Hendek",
+    "enlem": 40.7955,
+    "boylam": 30.7453
+   },
+   {
+    "ad": "Karapürçek",
+    "enlem": 40.6422,
+    "boylam": 30.5375
+   },
+   {
+    "ad": "Karasu",
+    "enlem": 41.0941,
+    "boylam": 30.6917
+   },
+   {
+    "ad": "Kaynarca",
+    "enlem": 41.034,
+    "boylam": 30.3055
+   },
+   {
+    "ad": "Kocaali",
+    "enlem": 41.0543,
+    "boylam": 30.8507
+   },
+   {
+    "ad": "Pamukova",
+    "enlem": 40.5056,
+    "boylam": 30.1693
+   },
+   {
+    "ad": "Sapanca",
+    "enlem": 40.6916,
+    "boylam": 30.2674
+   },
+   {
+    "ad": "Serdivan",
+    "enlem": 40.7604,
+    "boylam": 30.363
+   },
+   {
+    "ad": "Söğütlü",
+    "enlem": 40.9039,
+    "boylam": 30.4717
+   },
+   {
+    "ad": "Taraklı",
+    "enlem": 40.3966,
+    "boylam": 30.4922
+   }
+  ]
+ },
+ {
+  "plaka": 55,
+  "il": "Samsun",
+  "ilceler": [
+   {
+    "ad": "19 Mayıs",
+    "enlem": 41.4937,
+    "boylam": 36.081
+   },
+   {
+    "ad": "Alaçam",
+    "enlem": 41.6069,
+    "boylam": 35.5973
+   },
+   {
+    "ad": "Asarcık",
+    "enlem": 41.036,
+    "boylam": 36.2348
+   },
+   {
+    "ad": "Atakum",
+    "enlem": 41.3323,
+    "boylam": 36.2705
+   },
+   {
+    "ad": "Ayvacık",
+    "enlem": 40.9891,
+    "boylam": 36.6305
+   },
+   {
+    "ad": "Bafra",
+    "enlem": 41.5666,
+    "boylam": 35.9025
+   },
+   {
+    "ad": "Canik",
+    "enlem": 41.2671,
+    "boylam": 36.3556
+   },
+   {
+    "ad": "Çarşamba",
+    "enlem": 41.1983,
+    "boylam": 36.727
+   },
+   {
+    "ad": "Havza",
+    "enlem": 40.9661,
+    "boylam": 35.6653
+   },
+   {
+    "ad": "İlkadım",
+    "enlem": 41.2902,
+    "boylam": 36.3347
+   },
+   {
+    "ad": "Kavak",
+    "enlem": 41.0773,
+    "boylam": 36.0431
+   },
+   {
+    "ad": "Ladik",
+    "enlem": 40.9082,
+    "boylam": 35.8946
+   },
+   {
+    "ad": "Salıpazarı",
+    "enlem": 41.0813,
+    "boylam": 36.8257
+   },
+   {
+    "ad": "Tekkeköy",
+    "enlem": 41.2135,
+    "boylam": 36.4578
+   },
+   {
+    "ad": "Terme",
+    "enlem": 41.209,
+    "boylam": 36.9722
+   },
+   {
+    "ad": "Vezirköprü",
+    "enlem": 41.1434,
+    "boylam": 35.4605
+   },
+   {
+    "ad": "Yakakent",
+    "enlem": 41.633,
+    "boylam": 35.5316
+   }
+  ]
+ },
+ {
+  "plaka": 56,
+  "il": "Siirt",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 37.9274,
+    "boylam": 41.9422
+   },
+   {
+    "ad": "Baykan",
+    "enlem": 38.1629,
+    "boylam": 41.7857
+   },
+   {
+    "ad": "Eruh",
+    "enlem": 37.7506,
+    "boylam": 42.1808
+   },
+   {
+    "ad": "Kurtalan",
+    "enlem": 37.9261,
+    "boylam": 41.7002
+   },
+   {
+    "ad": "Pervari",
+    "enlem": 37.9325,
+    "boylam": 42.548
+   },
+   {
+    "ad": "Şirvan",
+    "enlem": 38.0618,
+    "boylam": 42.0299
+   },
+   {
+    "ad": "Tillo",
+    "enlem": 37.9501,
+    "boylam": 42.0125
+   }
+  ]
+ },
+ {
+  "plaka": 57,
+  "il": "Sinop",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 42.0266,
+    "boylam": 35.1512
+   },
+   {
+    "ad": "Ayancık",
+    "enlem": 41.9461,
+    "boylam": 34.5883
+   },
+   {
+    "ad": "Boyabat",
+    "enlem": 41.469,
+    "boylam": 34.7672
+   },
+   {
+    "ad": "Dikmen",
+    "enlem": 41.6516,
+    "boylam": 35.2651
+   },
+   {
+    "ad": "Durağan",
+    "enlem": 41.4146,
+    "boylam": 35.1953
+   },
+   {
+    "ad": "Erfelek",
+    "enlem": 41.8794,
+    "boylam": 34.9081
+   },
+   {
+    "ad": "Gerze",
+    "enlem": 41.8033,
+    "boylam": 35.1996
+   },
+   {
+    "ad": "Saraydüzü",
+    "enlem": 41.3039,
+    "boylam": 34.7837
+   },
+   {
+    "ad": "Türkeli",
+    "enlem": 41.9483,
+    "boylam": 34.3396
+   }
+  ]
+ },
+ {
+  "plaka": 58,
+  "il": "Sivas",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 39.7504,
+    "boylam": 37.0145
+   },
+   {
+    "ad": "Akıncılar",
+    "enlem": 40.0787,
+    "boylam": 38.3468
+   },
+   {
+    "ad": "Altınyayla",
+    "enlem": 39.2717,
+    "boylam": 36.7515
+   },
+   {
+    "ad": "Divriği",
+    "enlem": 39.3712,
+    "boylam": 38.1155
+   },
+   {
+    "ad": "Doğanşar",
+    "enlem": 40.2142,
+    "boylam": 37.5365
+   },
+   {
+    "ad": "Gemerek",
+    "enlem": 39.1831,
+    "boylam": 36.0711
+   },
+   {
+    "ad": "Gölova",
+    "enlem": 40.0613,
+    "boylam": 38.6084
+   },
+   {
+    "ad": "Gürün",
+    "enlem": 38.7213,
+    "boylam": 37.2709
+   },
+   {
+    "ad": "Hafik",
+    "enlem": 39.8546,
+    "boylam": 37.389
+   },
+   {
+    "ad": "İmranlı",
+    "enlem": 39.876,
+    "boylam": 38.1129
+   },
+   {
+    "ad": "Kangal",
+    "enlem": 39.2357,
+    "boylam": 37.3909
+   },
+   {
+    "ad": "Koyulhisar",
+    "enlem": 40.3013,
+    "boylam": 37.8323
+   },
+   {
+    "ad": "Şarkışla",
+    "enlem": 39.3505,
+    "boylam": 36.4098
+   },
+   {
+    "ad": "Suşehri",
+    "enlem": 40.1627,
+    "boylam": 38.0856
+   },
+   {
+    "ad": "Ulaş",
+    "enlem": 39.4444,
+    "boylam": 37.0412
+   },
+   {
+    "ad": "Yıldızeli",
+    "enlem": 39.8667,
+    "boylam": 36.6016
+   },
+   {
+    "ad": "Zara",
+    "enlem": 39.8972,
+    "boylam": 37.7591
+   }
+  ]
+ },
+ {
+  "plaka": 59,
+  "il": "Tekirdağ",
+  "ilceler": [
+   {
+    "ad": "Çerkezköy",
+    "enlem": 41.2862,
+    "boylam": 27.9995
+   },
+   {
+    "ad": "Çorlu",
+    "enlem": 41.1591,
+    "boylam": 27.8041
+   },
+   {
+    "ad": "Ergene",
+    "enlem": 41.1877,
+    "boylam": 27.7678
+   },
+   {
+    "ad": "Hayrabolu",
+    "enlem": 41.2147,
+    "boylam": 27.1082
+   },
+   {
+    "ad": "Kapaklı",
+    "enlem": 41.3269,
+    "boylam": 27.9762
+   },
+   {
+    "ad": "Malkara",
+    "enlem": 40.8931,
+    "boylam": 26.9024
+   },
+   {
+    "ad": "Marmaraereğlisi",
+    "enlem": 40.9694,
+    "boylam": 27.955
+   },
+   {
+    "ad": "Muratlı",
+    "enlem": 41.1723,
+    "boylam": 27.5015
+   },
+   {
+    "ad": "Saray",
+    "enlem": 41.4427,
+    "boylam": 27.9214
+   },
+   {
+    "ad": "Şarköy",
+    "enlem": 40.6149,
+    "boylam": 27.1122
+   },
+   {
+    "ad": "Süleymanpaşa",
+    "enlem": 40.9772,
+    "boylam": 27.5039
+   }
+  ]
+ },
+ {
+  "plaka": 60,
+  "il": "Tokat",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 40.3234,
+    "boylam": 36.5522
+   },
+   {
+    "ad": "Almus",
+    "enlem": 40.3121,
+    "boylam": 37.1075
+   },
+   {
+    "ad": "Artova",
+    "enlem": 40.1295,
+    "boylam": 36.2471
+   },
+   {
+    "ad": "Başçiftlik",
+    "enlem": 40.5469,
+    "boylam": 37.1683
+   },
+   {
+    "ad": "Erbaa",
+    "enlem": 40.6728,
+    "boylam": 36.5715
+   },
+   {
+    "ad": "Niksar",
+    "enlem": 40.5913,
+    "boylam": 36.9435
+   },
+   {
+    "ad": "Pazar",
+    "enlem": 40.2501,
+    "boylam": 36.2363
+   },
+   {
+    "ad": "Reşadiye",
+    "enlem": 40.3921,
+    "boylam": 37.3383
+   },
+   {
+    "ad": "Sulusaray",
+    "enlem": 39.9975,
+    "boylam": 36.0836
+   },
+   {
+    "ad": "Turhal",
+    "enlem": 40.3878,
+    "boylam": 36.0834
+   },
+   {
+    "ad": "Yeşilyurt",
+    "enlem": 39.9872,
+    "boylam": 36.2613
+   },
+   {
+    "ad": "Zile",
+    "enlem": 40.2543,
+    "boylam": 35.7793
+   }
+  ]
+ },
+ {
+  "plaka": 61,
+  "il": "Trabzon",
+  "ilceler": [
+   {
+    "ad": "Akçaabat",
+    "enlem": 41.0216,
+    "boylam": 39.5707
+   },
+   {
+    "ad": "Araklı",
+    "enlem": 40.9358,
+    "boylam": 40.058
+   },
+   {
+    "ad": "Arsin",
+    "enlem": 40.9537,
+    "boylam": 39.9326
+   },
+   {
+    "ad": "Beşikdüzü",
+    "enlem": 41.0527,
+    "boylam": 39.228
+   },
+   {
+    "ad": "Çarşıbaşı",
+    "enlem": 41.0826,
+    "boylam": 39.3785
+   },
+   {
+    "ad": "Çaykara",
+    "enlem": 40.7479,
+    "boylam": 40.242
+   },
+   {
+    "ad": "Dernekpazarı",
+    "enlem": 40.7996,
+    "boylam": 40.2479
+   },
+   {
+    "ad": "Düzköy",
+    "enlem": 40.8738,
+    "boylam": 39.4261
+   },
+   {
+    "ad": "Hayrat",
+    "enlem": 40.8892,
+    "boylam": 40.368
+   },
+   {
+    "ad": "Köprübaşı",
+    "enlem": 40.8072,
+    "boylam": 40.1242
+   },
+   {
+    "ad": "Maçka",
+    "enlem": 40.812,
+    "boylam": 39.6127
+   },
+   {
+    "ad": "Of",
+    "enlem": 40.9476,
+    "boylam": 40.2694
+   },
+   {
+    "ad": "Ortahisar",
+    "enlem": 41.0062,
+    "boylam": 39.7258
+   },
+   {
+    "ad": "Şalpazarı",
+    "enlem": 40.9418,
+    "boylam": 39.1938
+   },
+   {
+    "ad": "Sürmene",
+    "enlem": 40.9128,
+    "boylam": 40.1135
+   },
+   {
+    "ad": "Tonya",
+    "enlem": 40.8863,
+    "boylam": 39.2908
+   },
+   {
+    "ad": "Vakfıkebir",
+    "enlem": 41.0472,
+    "boylam": 39.2762
+   },
+   {
+    "ad": "Yomra",
+    "enlem": 40.9592,
+    "boylam": 39.8471
+   }
+  ]
+ },
+ {
+  "plaka": 62,
+  "il": "Tunceli",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 39.1061,
+    "boylam": 39.5483
+   },
+   {
+    "ad": "Çemişgezek",
+    "enlem": 39.0629,
+    "boylam": 38.9104
+   },
+   {
+    "ad": "Hozat",
+    "enlem": 39.1145,
+    "boylam": 39.1371
+   },
+   {
+    "ad": "Mazgirt",
+    "enlem": 38.939,
+    "boylam": 39.7062
+   },
+   {
+    "ad": "Nazmiye",
+    "enlem": 39.1794,
+    "boylam": 39.8288
+   },
+   {
+    "ad": "Ovacık",
+    "enlem": 39.3584,
+    "boylam": 39.2144
+   },
+   {
+    "ad": "Pertek",
+    "enlem": 38.8656,
+    "boylam": 39.3277
+   },
+   {
+    "ad": "Pülümür",
+    "enlem": 39.4583,
+    "boylam": 40.009
+   }
+  ]
+ },
+ {
+  "plaka": 63,
+  "il": "Şanlıurfa",
+  "ilceler": [
+   {
+    "ad": "Akçakale",
+    "enlem": 36.8071,
+    "boylam": 39.0446
+   },
+   {
+    "ad": "Birecik",
+    "enlem": 37.0315,
+    "boylam": 37.98
+   },
+   {
+    "ad": "Bozova",
+    "enlem": 37.362,
+    "boylam": 38.5254
+   },
+   {
+    "ad": "Ceylanpınar",
+    "enlem": 36.8433,
+    "boylam": 40.0514
+   },
+   {
+    "ad": "Eyyübiye",
+    "enlem": 37.1481,
+    "boylam": 38.7825
+   },
+   {
+    "ad": "Halfeti",
+    "enlem": 37.2309,
+    "boylam": 37.9457
+   },
+   {
+    "ad": "Haliliye",
+    "enlem": 37.1675,
+    "boylam": 38.7956
+   },
+   {
+    "ad": "Harran",
+    "enlem": 36.8438,
+    "boylam": 39.2372
+   },
+   {
+    "ad": "Hilvan",
+    "enlem": 37.5862,
+    "boylam": 38.9547
+   },
+   {
+    "ad": "Karaköprü",
+    "enlem": 37.2047,
+    "boylam": 38.7959
+   },
+   {
+    "ad": "Siverek",
+    "enlem": 37.7541,
+    "boylam": 39.3177
+   },
+   {
+    "ad": "Suruç",
+    "enlem": 36.9752,
+    "boylam": 38.4243
+   },
+   {
+    "ad": "Viranşehir",
+    "enlem": 37.2329,
+    "boylam": 39.762
+   }
+  ]
+ },
+ {
+  "plaka": 64,
+  "il": "Uşak",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 38.674,
+    "boylam": 29.4058
+   },
+   {
+    "ad": "Banaz",
+    "enlem": 38.74,
+    "boylam": 29.7532
+   },
+   {
+    "ad": "Eşme",
+    "enlem": 38.3999,
+    "boylam": 28.967
+   },
+   {
+    "ad": "Karahallı",
+    "enlem": 38.3206,
+    "boylam": 29.5313
+   },
+   {
+    "ad": "Sivaslı",
+    "enlem": 38.5,
+    "boylam": 29.684
+   },
+   {
+    "ad": "Ulubey",
+    "enlem": 38.4193,
+    "boylam": 29.2909
+   }
+  ]
+ },
+ {
+  "plaka": 65,
+  "il": "Van",
+  "ilceler": [
+   {
+    "ad": "Bahçesaray",
+    "enlem": 38.1237,
+    "boylam": 42.8077
+   },
+   {
+    "ad": "Başkale",
+    "enlem": 38.0449,
+    "boylam": 44.0163
+   },
+   {
+    "ad": "Çaldıran",
+    "enlem": 39.1276,
+    "boylam": 43.9803
+   },
+   {
+    "ad": "Çatak",
+    "enlem": 38.0069,
+    "boylam": 43.0592
+   },
+   {
+    "ad": "Edremit",
+    "enlem": 38.4258,
+    "boylam": 43.2602
+   },
+   {
+    "ad": "Erciş",
+    "enlem": 39.029,
+    "boylam": 43.3591
+   },
+   {
+    "ad": "Gevaş",
+    "enlem": 38.375,
+    "boylam": 43.0085
+   },
+   {
+    "ad": "Gürpınar",
+    "enlem": 38.324,
+    "boylam": 43.4092
+   },
+   {
+    "ad": "İpekyolu",
+    "enlem": 38.5038,
+    "boylam": 43.3955
+   },
+   {
+    "ad": "Muradiye",
+    "enlem": 38.9741,
+    "boylam": 43.6738
+   },
+   {
+    "ad": "Özalp",
+    "enlem": 38.7076,
+    "boylam": 44.0501
+   },
+   {
+    "ad": "Saray",
+    "enlem": 38.6494,
+    "boylam": 44.1695
+   },
+   {
+    "ad": "Tuşba",
+    "enlem": 38.5123,
+    "boylam": 43.3753
+   }
+  ]
+ },
+ {
+  "plaka": 66,
+  "il": "Yozgat",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 39.8222,
+    "boylam": 34.8081
+   },
+   {
+    "ad": "Akdağmadeni",
+    "enlem": 39.6612,
+    "boylam": 35.8805
+   },
+   {
+    "ad": "Aydıncık",
+    "enlem": 40.1303,
+    "boylam": 35.2852
+   },
+   {
+    "ad": "Boğazlıyan",
+    "enlem": 39.1913,
+    "boylam": 35.2463
+   },
+   {
+    "ad": "Çandır",
+    "enlem": 39.2446,
+    "boylam": 35.5139
+   },
+   {
+    "ad": "Çayıralan",
+    "enlem": 39.3048,
+    "boylam": 35.6464
+   },
+   {
+    "ad": "Çekerek",
+    "enlem": 40.065,
+    "boylam": 35.5073
+   },
+   {
+    "ad": "Kadışehri",
+    "enlem": 39.9975,
+    "boylam": 35.7918
+   },
+   {
+    "ad": "Saraykent",
+    "enlem": 39.6932,
+    "boylam": 35.5108
+   },
+   {
+    "ad": "Sarıkaya Deresi",
+    "enlem": 39.4936,
+    "boylam": 35.3755
+   },
+   {
+    "ad": "Şefaatli",
+    "enlem": 39.4961,
+    "boylam": 34.7565
+   },
+   {
+    "ad": "Sorgun",
+    "enlem": 39.8099,
+    "boylam": 35.1854
+   },
+   {
+    "ad": "Yenifakılı",
+    "enlem": 39.2111,
+    "boylam": 35.0019
+   },
+   {
+    "ad": "Yerköy",
+    "enlem": 39.6414,
+    "boylam": 34.4684
+   }
+  ]
+ },
+ {
+  "plaka": 67,
+  "il": "Zonguldak",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 41.4527,
+    "boylam": 31.7876
+   },
+   {
+    "ad": "Alaplı",
+    "enlem": 41.1804,
+    "boylam": 31.3862
+   },
+   {
+    "ad": "Çaycuma",
+    "enlem": 41.4269,
+    "boylam": 32.0728
+   },
+   {
+    "ad": "Devrek",
+    "enlem": 41.2189,
+    "boylam": 31.9558
+   },
+   {
+    "ad": "Ereğli",
+    "enlem": 41.2445,
+    "boylam": 31.6261
+   },
+   {
+    "ad": "Gökçebey",
+    "enlem": 41.3056,
+    "boylam": 32.143
+   },
+   {
+    "ad": "Kilimli",
+    "enlem": 41.487,
+    "boylam": 31.8384
+   },
+   {
+    "ad": "Kozlu",
+    "enlem": 41.4339,
+    "boylam": 31.7473
+   }
+  ]
+ },
+ {
+  "plaka": 68,
+  "il": "Aksaray",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 38.3705,
+    "boylam": 34.0269
+   },
+   {
+    "ad": "Ağaçören",
+    "enlem": 38.869,
+    "boylam": 33.9156
+   },
+   {
+    "ad": "Eskil",
+    "enlem": 38.4017,
+    "boylam": 33.4128
+   },
+   {
+    "ad": "Gülağaç",
+    "enlem": 38.3941,
+    "boylam": 34.3461
+   },
+   {
+    "ad": "Güzelyurt",
+    "enlem": 38.2613,
+    "boylam": 34.2898
+   },
+   {
+    "ad": "Ortaköy",
+    "enlem": 38.7366,
+    "boylam": 34.0412
+   },
+   {
+    "ad": "Sarıyahşi",
+    "enlem": 38.9665,
+    "boylam": 33.8657
+   },
+   {
+    "ad": "Sultanhanı",
+    "enlem": 38.2474,
+    "boylam": 33.549
+   }
+  ]
+ },
+ {
+  "plaka": 69,
+  "il": "Bayburt",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 40.2552,
+    "boylam": 40.2205
+   },
+   {
+    "ad": "Aydıntepe",
+    "enlem": 40.389,
+    "boylam": 40.1474
+   },
+   {
+    "ad": "Demirözü",
+    "enlem": 40.163,
+    "boylam": 39.8913
+   }
+  ]
+ },
+ {
+  "plaka": 70,
+  "il": "Karaman",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 37.1809,
+    "boylam": 33.2195
+   },
+   {
+    "ad": "Ayrancı",
+    "enlem": 37.3602,
+    "boylam": 33.6894
+   },
+   {
+    "ad": "Başyayla",
+    "enlem": 36.753,
+    "boylam": 32.6798
+   },
+   {
+    "ad": "Ermenek",
+    "enlem": 36.6389,
+    "boylam": 32.8889
+   },
+   {
+    "ad": "Kazımkarabekir",
+    "enlem": 37.2265,
+    "boylam": 32.9583
+   },
+   {
+    "ad": "Sarıveliler",
+    "enlem": 36.6985,
+    "boylam": 32.6182
+   }
+  ]
+ },
+ {
+  "plaka": 71,
+  "il": "Kırıkkale",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 39.841,
+    "boylam": 33.5059
+   },
+   {
+    "ad": "Bahşılı",
+    "enlem": 39.8133,
+    "boylam": 33.4718
+   },
+   {
+    "ad": "Balışıh",
+    "enlem": 39.9097,
+    "boylam": 33.7183
+   },
+   {
+    "ad": "Çelebi",
+    "enlem": 39.4637,
+    "boylam": 33.5244
+   },
+   {
+    "ad": "Delice",
+    "enlem": 39.9455,
+    "boylam": 34.0313
+   },
+   {
+    "ad": "Karakeçili",
+    "enlem": 39.5932,
+    "boylam": 33.378
+   },
+   {
+    "ad": "Keskin",
+    "enlem": 39.674,
+    "boylam": 33.6152
+   },
+   {
+    "ad": "Sulakyurt",
+    "enlem": 40.1577,
+    "boylam": 33.7157
+   },
+   {
+    "ad": "Yahşihan",
+    "enlem": 39.8498,
+    "boylam": 33.4524
+   }
+  ]
+ },
+ {
+  "plaka": 72,
+  "il": "Batman",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 37.8836,
+    "boylam": 41.1278
+   },
+   {
+    "ad": "Beşiri",
+    "enlem": 37.9162,
+    "boylam": 41.2928
+   },
+   {
+    "ad": "Gercüş",
+    "enlem": 37.5683,
+    "boylam": 41.3852
+   },
+   {
+    "ad": "Hasankeyf",
+    "enlem": 37.7305,
+    "boylam": 41.4161
+   },
+   {
+    "ad": "Kozluk",
+    "enlem": 38.1926,
+    "boylam": 41.4883
+   },
+   {
+    "ad": "Sason",
+    "enlem": 38.3339,
+    "boylam": 41.4202
+   }
+  ]
+ },
+ {
+  "plaka": 73,
+  "il": "Şırnak",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 37.522,
+    "boylam": 42.457
+   },
+   {
+    "ad": "Beytüşşebap",
+    "enlem": 37.5795,
+    "boylam": 43.0647
+   },
+   {
+    "ad": "Cizre",
+    "enlem": 37.3324,
+    "boylam": 42.1855
+   },
+   {
+    "ad": "Güçlükonak",
+    "enlem": 37.4712,
+    "boylam": 41.9111
+   },
+   {
+    "ad": "İdil",
+    "enlem": 37.3402,
+    "boylam": 41.8924
+   },
+   {
+    "ad": "Silopi",
+    "enlem": 37.2492,
+    "boylam": 42.4708
+   },
+   {
+    "ad": "Uludere",
+    "enlem": 37.4174,
+    "boylam": 42.9861
+   }
+  ]
+ },
+ {
+  "plaka": 74,
+  "il": "Bartın",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 41.635,
+    "boylam": 32.3366
+   },
+   {
+    "ad": "Amasra",
+    "enlem": 41.7489,
+    "boylam": 32.3867
+   },
+   {
+    "ad": "Kurucaşile",
+    "enlem": 41.7821,
+    "boylam": 32.6685
+   },
+   {
+    "ad": "Ulus",
+    "enlem": 41.5839,
+    "boylam": 32.641
+   }
+  ]
+ },
+ {
+  "plaka": 75,
+  "il": "Ardahan",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 41.0687,
+    "boylam": 42.7054
+   },
+   {
+    "ad": "Çıldır",
+    "enlem": 41.1799,
+    "boylam": 43.1954
+   },
+   {
+    "ad": "Damal",
+    "enlem": 41.3423,
+    "boylam": 42.841
+   },
+   {
+    "ad": "Göle",
+    "enlem": 40.7931,
+    "boylam": 42.6078
+   },
+   {
+    "ad": "Hanak",
+    "enlem": 41.2368,
+    "boylam": 42.8449
+   },
+   {
+    "ad": "Posof",
+    "enlem": 41.5084,
+    "boylam": 42.728
+   }
+  ]
+ },
+ {
+  "plaka": 76,
+  "il": "Iğdır",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 39.9219,
+    "boylam": 44.0468
+   },
+   {
+    "ad": "Aralık",
+    "enlem": 39.8737,
+    "boylam": 44.516
+   },
+   {
+    "ad": "Karakoyunlu",
+    "enlem": 39.9711,
+    "boylam": 44.1737
+   },
+   {
+    "ad": "Tuzluca",
+    "enlem": 40.0402,
+    "boylam": 43.6638
+   }
+  ]
+ },
+ {
+  "plaka": 77,
+  "il": "Yalova",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 40.6583,
+    "boylam": 29.27
+   },
+   {
+    "ad": "Altınova",
+    "enlem": 40.6963,
+    "boylam": 29.5099
+   },
+   {
+    "ad": "Armutlu",
+    "enlem": 40.524,
+    "boylam": 28.8956
+   },
+   {
+    "ad": "Çiftlikköy",
+    "enlem": 40.6645,
+    "boylam": 29.3229
+   },
+   {
+    "ad": "Çınarcık",
+    "enlem": 40.6434,
+    "boylam": 29.1193
+   },
+   {
+    "ad": "Termal",
+    "enlem": 40.6062,
+    "boylam": 29.1743
+   }
+  ]
+ },
+ {
+  "plaka": 78,
+  "il": "Karabük",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 41.1955,
+    "boylam": 32.6231
+   },
+   {
+    "ad": "Eflani",
+    "enlem": 41.4229,
+    "boylam": 32.9582
+   },
+   {
+    "ad": "Eskipazar",
+    "enlem": 40.9447,
+    "boylam": 32.5314
+   },
+   {
+    "ad": "Ovacık",
+    "enlem": 41.0759,
+    "boylam": 32.92
+   },
+   {
+    "ad": "Safranbolu",
+    "enlem": 41.2457,
+    "boylam": 32.693
+   },
+   {
+    "ad": "Yenice",
+    "enlem": 41.2007,
+    "boylam": 32.3279
+   }
+  ]
+ },
+ {
+  "plaka": 79,
+  "il": "Kilis",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 36.7166,
+    "boylam": 37.1146
+   },
+   {
+    "ad": "Elbeyli",
+    "enlem": 36.675,
+    "boylam": 37.4669
+   },
+   {
+    "ad": "Musabeyli",
+    "enlem": 36.8861,
+    "boylam": 36.9156
+   },
+   {
+    "ad": "Polateli",
+    "enlem": 36.8446,
+    "boylam": 37.1353
+   }
+  ]
+ },
+ {
+  "plaka": 80,
+  "il": "Osmaniye",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 37.0734,
+    "boylam": 36.2508
+   },
+   {
+    "ad": "Bahçe",
+    "enlem": 37.2042,
+    "boylam": 36.582
+   },
+   {
+    "ad": "Düziçi",
+    "enlem": 37.2401,
+    "boylam": 36.4534
+   },
+   {
+    "ad": "Hasanbeyli",
+    "enlem": 37.1309,
+    "boylam": 36.5555
+   },
+   {
+    "ad": "Kadirli",
+    "enlem": 37.374,
+    "boylam": 36.0975
+   },
+   {
+    "ad": "Sumbas",
+    "enlem": 37.4536,
+    "boylam": 36.0248
+   },
+   {
+    "ad": "Toprakkale",
+    "enlem": 37.0673,
+    "boylam": 36.1458
+   }
+  ]
+ },
+ {
+  "plaka": 81,
+  "il": "Düzce",
+  "ilceler": [
+   {
+    "ad": "Merkez",
+    "enlem": 40.8392,
+    "boylam": 31.1595
+   },
+   {
+    "ad": "Akçakoca",
+    "enlem": 41.0882,
+    "boylam": 31.124
+   },
+   {
+    "ad": "Çilimli",
+    "enlem": 40.8933,
+    "boylam": 31.0466
+   },
+   {
+    "ad": "Cumayeri",
+    "enlem": 40.8747,
+    "boylam": 30.9504
+   },
+   {
+    "ad": "Gölyaka",
+    "enlem": 40.7767,
+    "boylam": 30.9964
+   },
+   {
+    "ad": "Gümüşova",
+    "enlem": 40.8466,
+    "boylam": 30.9386
+   },
+   {
+    "ad": "Kaynaşlı",
+    "enlem": 40.7721,
+    "boylam": 31.3192
+   },
+   {
+    "ad": "Yığılca",
+    "enlem": 40.96,
+    "boylam": 31.4447
+   }
+  ]
+ }
+]

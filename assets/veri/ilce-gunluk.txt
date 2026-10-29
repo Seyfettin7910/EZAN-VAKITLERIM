@@ -1,5 +1,84 @@
-1413 satır geldi
-UYARI: Konya için ilçe yok
-UYARI: Uşak için ilçe yok
-81 il, 980 ilçe
-koordinatı olmayan ilçeler: Aksaray/Gülağaç, Balıkesir/Erdek, Siirt/Eruh, Siirt/Pervari, Siirt/Tillo'nun, Siirt/Şirvan'ın, Hakkari/Derecik, Mardin/Mazıdağı, Siirt/Kurtalan
+1998 öğe geldi
+ 1 Adana: 15
+ 2 Adıyaman: 9
+ 3 Afyonkarahisar: 18
+ 4 Ağrı: 8
+ 5 Amasya: 7
+ 6 Ankara: 25
+ 7 Antalya: 19
+ 8 Artvin: 9
+ 9 Aydın: 17
+10 Balıkesir: 20
+11 Bilecik: 8
+12 Bingöl: 8
+13 Bitlis: 7
+14 Bolu: 9
+15 Burdur: 11
+16 Bursa: 17
+17 Çanakkale: 12
+18 Çankırı: 12
+19 Çorum: 14
+20 Denizli: 19
+21 Diyarbakır: 17
+22 Edirne: 9
+23 Elazığ: 11
+24 Erzincan: 9
+25 Erzurum: 20
+26 Eskişehir: 14
+27 Gaziantep: 9
+28 Giresun: 16
+29 Gümüşhane: 6
+30 Hakkari: 5
+31 Hatay: 15
+32 Isparta: 13
+33 Mersin: 13
+34 İstanbul: 39
+35 İzmir: 30
+36 Kars: 8
+37 Kastamonu: 20
+38 Kayseri: 16
+39 Kırklareli: 8
+40 Kırşehir: 7
+41 Kocaeli: 12
+42 Konya: 31
+43 Kütahya: 13
+44 Malatya: 13
+45 Manisa: 17
+46 Kahramanmaraş: 11
+47 Mardin: 10
+48 Muğla: 15
+49 Muş: 6
+50 Nevşehir: 8
+51 Niğde: 6
+52 Ordu: 19
+53 Rize: 12
+54 Sakarya: 16
+55 Samsun: 17
+56 Siirt: 7
+57 Sinop: 9
+58 Sivas: 17
+59 Tekirdağ: 11
+60 Tokat: 12
+61 Trabzon: 18
+62 Tunceli: 8
+63 Şanlıurfa: 13
+64 Uşak: 6
+65 Van: 13
+66 Yozgat: 14
+67 Zonguldak: 8
+68 Aksaray: 8
+69 Bayburt: 3
+70 Karaman: 6
+71 Kırıkkale: 9
+72 Batman: 6
+73 Şırnak: 7
+74 Bartın: 4
+75 Ardahan: 6
+76 Iğdır: 4
+77 Yalova: 6
+78 Karabük: 6
+79 Kilis: 4
+80 Osmaniye: 7
+81 Düzce: 8
+TOPLAM: 81 il, 975 ilçe
+eşleşmeyen iller: Ege
