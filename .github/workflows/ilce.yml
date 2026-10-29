@@ -1,0 +1,24 @@
+# Türkiye'nin il ve ilçelerini Wikidata'dan çekip assets/veri/ilceler.json'a yazar ve depoya kaydeder.
+name: İlçe verisi üret
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  uret:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: İl ve ilçeleri çek
+        run: python3 tool/ilce_uret.py | tee ilce-gunluk.txt
+      - name: Depoya kaydet
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          mkdir -p assets/veri && cp ilce-gunluk.txt assets/veri/ilce-gunluk.txt
+          git add assets/veri
+          git commit -m "İl ve ilçe verisi güncellendi" || echo "değişiklik yok"
+          git push
