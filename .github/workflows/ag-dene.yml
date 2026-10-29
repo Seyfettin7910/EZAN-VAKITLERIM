@@ -25,7 +25,7 @@ jobs:
           python3 ag_ozet.py photon yanit.txt >> sonuc.txt
           rm -f yanit.txt
           echo "== nominatim" >> sonuc.txt
-          curl -sS -G -A "$UA" -m 30 -o yanit.txt -w "kod=%{http_code} sure=%{time_total}\n" -d format=jsonv2 -d q="[amenity=place_of_worship]" -d viewbox=32.8278,39.9449,32.8978,39.8909 -d bounded=1 -d limit=40 "https://nominatim.openstreetmap.org/search" >> sonuc.txt 2>&1 || true
+          curl -sS -G -A "$UA" -m 30 -o yanit.txt -w "kod=%{http_code} sure=%{time_total}\n" -d format=jsonv2 -d q="[amenity=place_of_worship]" -d viewbox=32.8277,39.9449,32.8979,39.8909 -d bounded=1 -d limit=50 -d extratags=1 -d accept-language=tr "https://nominatim.openstreetmap.org/search" >> sonuc.txt 2>&1 || true
           python3 ag_ozet.py nominatim yanit.txt >> sonuc.txt
           rm -f yanit.txt
           echo "== OSM harita karosu" >> sonuc.txt
