@@ -48,6 +48,7 @@ class _AcilisEkraniState extends State<AcilisEkrani> with SingleTickerProviderSt
       if (izinVerildi) return;
       izinVerildi = true;
       WidgetsBinding.instance.allowFirstFrame();
+      debugPrint('Açılış ekranı: ilk kare');
       _anim.forward();
     }
 
@@ -84,6 +85,7 @@ class _AcilisEkraniState extends State<AcilisEkrani> with SingleTickerProviderSt
       if (kalan > Duration.zero) await Future.delayed(kalan);
     }
     if (!mounted) return;
+    debugPrint('Açılış ekranı: ${DateTime.now().difference(baslangic).inMilliseconds} ms sonra ana ekrana geçiliyor');
     Navigator.of(context).pushReplacement(PageRouteBuilder(
       transitionDuration: const Duration(milliseconds: 450),
       pageBuilder: (_, _, _) => Kabuk(acilisVakti: vakit),

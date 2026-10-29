@@ -23,10 +23,17 @@ cek() { adb exec-out screencap -p > $O/$1.png; }
 adb install -r $O/Ezan-Vakitlerim.apk > $O/kurulum.txt 2>&1
 adb shell pm grant $P android.permission.POST_NOTIFICATIONS
 adb logcat -c
+# Açılış ekranını videoya al, sonra saniyede 4 kare çıkar
+adb shell screenrecord --time-limit 9 /sdcard/acilis.mp4 &
+KAYIT=$!
+sleep 1
 adb shell am start -n $P/.MainActivity
-# Açılış ekranı birkaç saniye görünür: art arda kareler al
-for i in 1 2 3 4 5 6 7 8 9 10; do cek 0-acilis-$i; sleep 0.6; done
-sleep 10
+wait $KAYIT
+sleep 1
+adb pull /sdcard/acilis.mp4 $O/acilis.mp4 > /dev/null 2>&1
+mkdir -p $O/acilis && ffmpeg -loglevel error -i $O/acilis.mp4 -vf "fps=4,scale=160:-1,tile=9x4" -frames:v 1 $O/acilis-seridi.png || true
+rm -rf $O/acilis $O/acilis.mp4
+sleep 8
 cek 1-acilis
 dokun "Ankara"
 sleep 3
