@@ -19,6 +19,24 @@ jobs:
             curl -sS -G -A "$UA" -m 30 -o yanit.txt -w "kod=%{http_code} sure=%{time_total}\n" --data-urlencode "data=$Q" "https://$s" >> sonuc.txt 2>&1 || true
             head -c 300 yanit.txt >> sonuc.txt 2>/dev/null || true; rm -f yanit.txt; echo >> sonuc.txt
           done
+          echo "== photon" >> sonuc.txt
+          curl -sS -G -A "$UA" -m 30 -o yanit.txt -w "kod=%{http_code} sure=%{time_total}\n" --data-urlencode "q=camii" -d lat=39.9179 -d lon=32.8628 -d limit=50 -d osm_tag=amenity:place_of_worship -d location_bias_scale=0.1 -d zoom=14 "https://photon.komoot.io/api/" >> sonuc.txt 2>&1 || true
+          python3 -c "
+import json,math
+d=json.load(open('yanit.txt'));f=d['features'];print('adet',len(f))
+for x in f[:12]:
+  lo,la=x['geometry']['coordinates'];m=math.hypot((la-39.9179)*111000,(lo-32.8628)*85000)
+  print(round(m),x['properties'].get('name'))
+" >> sonuc.txt 2>&1 || true
+          rm -f yanit.txt
+          echo "== nominatim" >> sonuc.txt
+          curl -sS -G -A "$UA" -m 30 -o yanit.txt -w "kod=%{http_code} sure=%{time_total}\n" -d format=jsonv2 -d q="[amenity=place_of_worship]" -d viewbox=32.8278,39.9449,32.8978,39.8909 -d bounded=1 -d limit=40 "https://nominatim.openstreetmap.org/search" >> sonuc.txt 2>&1 || true
+          python3 -c "
+import json
+d=json.load(open('yanit.txt'));print('adet',len(d))
+for x in d[:8]: print(x.get('name'),x.get('type'))
+" >> sonuc.txt 2>&1 || true
+          rm -f yanit.txt
           echo "== OSM harita karosu" >> sonuc.txt
           curl -sS -A "$UA" -m 20 -o /dev/null -w "kod=%{http_code}\n" https://tile.openstreetmap.org/15/19374/12428.png >> sonuc.txt 2>&1 || true
           echo "== yol" >> sonuc.txt
