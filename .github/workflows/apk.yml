@@ -9,6 +9,8 @@ on:
     paths-ignore:
       - '**.md'
       - '.github/workflows/apk-kontrol.yml'
+      - '.github/workflows/icerik.yml'
+      - 'tool/**'
       - 'tasarim/**'
   workflow_dispatch:
 

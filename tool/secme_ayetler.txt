@@ -1,0 +1,101 @@
+# Seçme ayet grupları: sûre:ilk-son | konu
+# Her grup kendi içinde anlamı tamamlanan ardışık ayetlerdir. Kısa sûreler bütün olarak alınır.
+# Metinler tool/icerik_uret.py ile AlQuran Cloud'dan (Arapça: quran-uthmani, Türkçe: tr.diyanet) çekilir.
+1:1-7 | Fâtiha
+2:1-5 | Takva sahiplerinin vasıfları
+2:21-22 | Rabbinize kulluk edin
+2:45-46 | Sabır ve namaz ile yardım dileyin
+2:152-157 | Anmak, şükür ve sabır
+2:177 | Asıl iyilik
+2:183-185 | Ramazan orucu
+2:186 | Ben kullarıma yakınım
+2:201-202 | Dünyada da ahirette de iyilik
+2:238-239 | Namazlara devam edin
+2:255 | Âyetü'l-Kürsî
+2:261-263 | Allah yolunda harcamak
+2:285-286 | Âmenerrasûlü
+3:8-9 | Kalplerimizi kaydırma
+3:26-27 | Mülkün sahibi Allah
+3:102-105 | Allah'ın ipine sarılın
+3:133-136 | Öfkesini yenenler, affedenler
+3:159-160 | Yumuşaklık ve tevekkül
+3:190-195 | Akıl sahiplerinin duası
+3:200 | Sabredin, sebat edin
+4:36 | Allah'a kulluk ve insanlara iyilik
+4:135 | Adaleti ayakta tutun
+5:8 | Adaletli olun
+6:59 | Gaybın anahtarları
+6:151-153 | Allah'ın haram kıldıkları ve dosdoğru yol
+6:162-163 | Namazım, ibadetim, hayatım ve ölümüm
+7:23 | Âdem ile eşinin duası
+7:55-56 | Rabbinize yalvararak dua edin
+7:199-201 | Affı esas al
+7:204-206 | Kur'an okunduğunda
+9:71-72 | Mümin erkekler ve mümin kadınlar
+10:57-58 | Öğüt ve şifa
+11:114-115 | İyilikler kötülükleri giderir
+13:28-29 | Kalpler Allah'ı anmakla huzur bulur
+14:7 | Şükrederseniz artırırım
+14:35-41 | Hz. İbrâhim'in duası
+16:90 | Adalet ve iyilik
+16:97 | Güzel bir hayat
+16:125-128 | Hikmetle ve güzel öğütle davet
+17:23-25 | Anne babaya iyilik
+17:78-82 | Namaz vakitleri ve Kur'an'ın şifası
+17:110-111 | En güzel isimler O'nundur
+18:107-110 | Salih amel
+20:13-16 | Beni anmak için namaz kıl
+20:114 | Rabbim, ilmimi artır
+20:130-132 | Sabır, tesbih ve namaz
+21:83-84 | Hz. Eyyûb'un duası
+21:87-88 | Hz. Yûnus'un duası
+21:89-90 | Hz. Zekeriyyâ'nın duası
+22:77-78 | Rükû edin, secde edin
+23:1-11 | Kurtuluşa eren müminler
+23:115-118 | Boşuna mı yarattık
+24:35 | Nûr ayeti
+24:36-38 | Mescitlerde Allah'ı ananlar
+25:63-77 | Rahmân'ın kulları
+29:45 | Namaz kötülükten alıkoyar
+29:69 | Bizim uğrumuzda çaba gösterenler
+30:17-18 | Akşam ve sabah tesbih
+30:21 | Eşler arasında sevgi ve merhamet
+31:12-19 | Lokmân'ın oğluna öğütleri
+33:35 | Allah'ın mağfiret hazırladıkları
+33:41-44 | Allah'ı çokça anın
+33:56 | Salât ve selâm
+33:70-71 | Doğru söz söyleyin
+35:5 | Dünya hayatı sizi aldatmasın
+39:9 | Bilenlerle bilmeyenler bir olur mu
+39:10 | Sabredenlerin mükâfatı
+39:53-55 | Allah'ın rahmetinden ümit kesmeyin
+40:60 | Bana dua edin
+41:30-32 | Rabbimiz Allah'tır deyip dosdoğru olanlar
+41:34-35 | Kötülüğü en güzel şekilde sav
+42:36-43 | Müminlerin vasıfları
+49:10-13 | Kardeşlik ve güzel ahlak
+50:16-18 | Şah damarından daha yakın
+55:1-13 | Rahmân Kur'an'ı öğretti
+57:16 | Kalplerin yumuşama vakti
+57:20-21 | Dünya hayatı bir oyundur
+59:18-24 | Yarın için ne hazırladınız
+62:9-10 | Cuma namazı
+64:14-18 | Mal ve evlat bir imtihandır
+67:1-4 | Mülk O'nun elindedir
+73:1-9 | Gece namazı ve tertil
+87:1-19 | A'lâ sûresi
+93:1-11 | Duhâ sûresi
+94:1-8 | İnşirâh sûresi
+95:1-8 | Tîn sûresi
+96:1-5 | İlk vahiy: Oku
+97:1-5 | Kadir sûresi
+99:1-8 | Zilzâl sûresi
+102:1-8 | Tekâsür sûresi
+103:1-3 | Asr sûresi
+107:1-7 | Mâûn sûresi
+108:1-3 | Kevser sûresi
+109:1-6 | Kâfirûn sûresi
+110:1-3 | Nasr sûresi
+112:1-4 | İhlâs sûresi
+113:1-5 | Felak sûresi
+114:1-6 | Nâs sûresi

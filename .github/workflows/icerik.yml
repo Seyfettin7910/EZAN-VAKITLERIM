@@ -1,0 +1,24 @@
+# Ayet ve hadis içeriğini kaynaklarından çekip assets/icerik/ altına yazar ve depoya kaydeder.
+# Elle çalıştırılır (Actions > İçerik üret > Run workflow). Sonra APK derlemesi bu dosyaları uygulamaya koyar.
+name: İçerik üret
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  uret:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Ayet ve hadisleri çek
+        run: python3 tool/icerik_uret.py
+      - name: Depoya kaydet
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add assets/icerik
+          git commit -m "Ayet ve hadis içeriği güncellendi" || echo "değişiklik yok"
+          git push
