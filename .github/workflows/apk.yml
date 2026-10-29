@@ -10,6 +10,7 @@ on:
       - '**.md'
       - '.github/workflows/apk-kontrol.yml'
       - '.github/workflows/icerik.yml'
+      - '.github/workflows/ilce.yml'
       - 'tool/**'
       - 'tasarim/**'
   workflow_dispatch:

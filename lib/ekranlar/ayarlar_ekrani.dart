@@ -68,6 +68,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> with WidgetsBindingObserv
 
   // Ezanı hemen okutur ve tam ekran uyarıyı açar (sesi denemek için)
   Future<void> _sesiDene() async {
+    await BildirimServisi.planla(); // son ses seviyesi ayarı Android tarafına geçsin
     await Yerel.sesiDene(3);
     if (!mounted) return;
     await Navigator.of(context).push(MaterialPageRoute(builder: (_) => const TamEkranEkrani(vakit: 3)));
@@ -92,7 +93,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> with WidgetsBindingObserv
               ListTile(
                 leading: Icon(konum.gps ? Icons.my_location : Icons.location_on_outlined, color: Renk.ana),
                 title: Text(konum.ad, style: const TextStyle(fontWeight: FontWeight.w700)),
-                subtitle: Text(konum.gps ? 'GPS ile bulundu' : 'İl merkezine göre'),
+                subtitle: Text(konum.gps ? 'GPS ile bulundu, tam bulunduğun noktaya göre' : 'Seçilen yerin merkezine göre'),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const KonumSecEkrani())),
               ),
@@ -123,6 +124,23 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> with WidgetsBindingObserv
                 aciklama: 'Telefon sessiz ya da titreşimdeyken de ezan okunur',
                 deger: durum.sessizdeOku,
                 degisti: durum.sesliEzan ? (v) => durum.ezanAyarla(sessiz: v) : null,
+              ),
+              ListTile(
+                title: const Text('Ezan ses seviyesi', style: TextStyle(fontWeight: FontWeight.w600)),
+                subtitle: Text(durum.ezanSesi == 0
+                    ? 'Telefonun kendi alarm sesi'
+                    : 'Ezan okunurken alarm sesi %${durum.ezanSesi} olur, bitince eski haline döner'),
+                trailing: Text(durum.ezanSesi == 0 ? 'Telefon' : '%${durum.ezanSesi}',
+                    style: const TextStyle(fontWeight: FontWeight.w800, color: Renk.ana)),
+              ),
+              Slider(
+                value: durum.ezanSesi.toDouble(),
+                min: 0,
+                max: 100,
+                divisions: 20,
+                activeColor: Renk.ana,
+                label: durum.ezanSesi == 0 ? 'Telefon' : '%${durum.ezanSesi}',
+                onChanged: durum.sesliEzan ? (v) => durum.ezanAyarla(ses: v.round()) : null,
               ),
               ListTile(
                 title: const Text('Vakitten önce hatırlat', style: TextStyle(fontWeight: FontWeight.w600)),
@@ -277,7 +295,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> with WidgetsBindingObserv
               ),
               ListTile(
                 title: Text('Kaynaklar', style: TextStyle(fontWeight: FontWeight.w600)),
-                subtitle: Text('Meal: Diyanet İşleri (AlQuran Cloud) · Hadisler: HadeethEnc (Hadis Ansiklopedisi) · Cami bilgisi: © OpenStreetMap katkıcıları'),
+                subtitle: Text('Meal: Diyanet İşleri (AlQuran Cloud) · Hadisler: HadeethEnc (Hadis Ansiklopedisi) · Cami ve ilçe bilgisi: © OpenStreetMap katkıcıları'),
               ),
             ]),
             const SizedBox(height: 18),

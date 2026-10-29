@@ -1,8 +1,8 @@
-• Kıble pusulası: Kâbe'nin yönünü ve uzaklığını gösterir, kıbleye dönünce telefon hafifçe titrer.
-• Yakındaki camiler: Mesafesiyle listelenir; dokununca harita, yürüyen adam simgesiyle yol tarifi açılır.
-• Widget'lar: Ana ekrana küçük (2×2) ve orta (4×2) widget ekleyebilirsin; geri sayım canlı akar.
-• Ayet ve hadis: Her vakit yeni bir ayet grubu ve sahih bir hadis. Ana ekranda ve tam ekran uyarıda görünür.
-• Ayarlar > Ayet ve hadis: "Seçme ayetler" ya da "Sırayla (hatim)" seçebilir, Arapçasını açıp kapatabilirsin.
-• Ayetler anlam bütünlüğüyle gösterilir; "Önceki / Sonraki ayet" ile öncesine ve sonrasına bakabilirsin.
+• İl ve ilçe seçimi: Konumu artık ilçe ilçe seçebilirsin (81 il, 973 ilçe). Vakitler seçtiğin ilçenin merkezine göre hesaplanır. Arama kutusuna doğrudan ilçe adını da yazabilirsin.
+• GPS ile seçince en yakın ilçenin adı görünür.
+• Ezan sesi yükseltildi: Ezan ve ezan duası daha gür okunur.
+• Ezan ses seviyesi: Ayarlar > Ezan ve uyarı'dan seçebilirsin. Ezan okunurken alarm sesi o seviyeye çıkar, bitince eski haline döner.
+
+1.2.0 ile gelenler: Kıble pusulası, yakındaki camiler, ana ekran widget'ları, her vakit bir ayet ve sahih bir hadis.
 
 Uygulamanın yapımında katkısı olan müezzinlerimize çok teşekkür ederiz. Allah onlardan razı olsun.

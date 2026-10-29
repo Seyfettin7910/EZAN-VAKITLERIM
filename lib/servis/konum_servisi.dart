@@ -2,6 +2,7 @@
 
 import 'package:geolocator/geolocator.dart';
 
+import '../veri/ilceler.dart';
 import '../yardimci.dart';
 import 'durum.dart';
 
@@ -39,7 +40,9 @@ class KonumServisi {
       throw 'Konum bulunamadı. Açık havada tekrar dene.';
     }
 
-    final il = enYakinIl(konum.latitude, konum.longitude);
-    return Konum('Konumum (${il.ad})', konum.latitude, konum.longitude, gps: true);
+    // Ekranda en yakın ilçenin adı görünür; vakitler ise tam bulunduğun noktaya göre hesaplanır
+    final ilce = IlceVerisi.enYakin(konum.latitude, konum.longitude);
+    final ad = ilce != null ? ilce.tamAd : enYakinIl(konum.latitude, konum.longitude).ad;
+    return Konum('Konumum ($ad)', konum.latitude, konum.longitude, gps: true);
   }
 }

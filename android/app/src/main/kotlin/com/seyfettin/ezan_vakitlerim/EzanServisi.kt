@@ -58,6 +58,7 @@ class EzanServisi : Service() {
     private var baslik = ""
     private var metin = ""
     private var vakit = 2
+    private var eskiSes = -1 // ezan öncesi telefonun alarm ses seviyesi (bitince geri konur)
 
     override fun onBind(intent: Intent?): IBinder? = null
 
@@ -90,6 +91,7 @@ class EzanServisi : Service() {
     private fun ezanOku(duaOkunsunMu: Boolean) {
         calanVakit = vakit
         durum = "ezan"
+        sesSeviyesiniAyarla()
         sesOdagiAl()
         val dosya = if (vakit == 0) R.raw.ezan_sabah else R.raw.ezan
         cal(dosya) {
@@ -131,6 +133,30 @@ class EzanServisi : Service() {
         }
     }
 
+    // Ayarlardaki "Ezan ses seviyesi" (yüzde) için alarm sesini geçici olarak o seviyeye getirir
+    private fun sesSeviyesiniAyarla() {
+        val yuzde = getSharedPreferences(EzanZamanlayici.DEPO, Context.MODE_PRIVATE).getInt("sesSeviyesi", 85)
+        if (yuzde <= 0) return // 0 = telefonun kendi alarm sesi
+        val ses = getSystemService(AudioManager::class.java)
+        try {
+            val enFazla = ses.getStreamMaxVolume(AudioManager.STREAM_ALARM)
+            eskiSes = ses.getStreamVolume(AudioManager.STREAM_ALARM)
+            val hedef = maxOf(1, Math.round(enFazla * yuzde / 100f))
+            ses.setStreamVolume(AudioManager.STREAM_ALARM, hedef, 0)
+        } catch (e: Exception) {
+            eskiSes = -1 // "Rahatsız etmeyin" açıkken değiştirilemeyebilir
+        }
+    }
+
+    // Telefonun alarm sesini ezandan önceki haline döndürür
+    private fun sesSeviyesiniGeriAl() {
+        if (eskiSes < 0) return
+        try {
+            getSystemService(AudioManager::class.java).setStreamVolume(AudioManager.STREAM_ALARM, eskiSes, 0)
+        } catch (e: Exception) { }
+        eskiSes = -1
+    }
+
     // Müzik vs. çalıyorsa ezan boyunca durmasını ister
     private fun sesOdagiAl() {
         val ses = getSystemService(AudioManager::class.java)
@@ -167,6 +193,7 @@ class EzanServisi : Service() {
         }
         oynatici = null
         sesOdaginiBirak()
+        sesSeviyesiniGeriAl()
         durum = null
         if (kullaniciDurdurdu) {
             ServiceCompat.stopForeground(this, ServiceCompat.STOP_FOREGROUND_REMOVE)
@@ -234,6 +261,7 @@ class EzanServisi : Service() {
     }
 
     override fun onDestroy() {
+        sesSeviyesiniGeriAl()
         oynatici?.release()
         oynatici = null
         durum = null

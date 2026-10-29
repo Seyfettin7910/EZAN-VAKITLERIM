@@ -32,6 +32,7 @@ class UygulamaDurumu extends ChangeNotifier {
   bool tamEkran = true; // vakit girince tam ekran uyarı açılsın
   bool sessizdeOku = false; // telefon sessizdeyken de ezan okunsun
   int hatirlatmaDk = 0; // vakitten kaç dakika önce hatırlatılsın
+  int ezanSesi = 85; // ezan okunurken alarm sesi yüzdesi (0 = telefonun kendi alarm sesi)
   bool otomatikGuncelle = true; // açılışta yeni sürüm denetlensin
 
   // Ayet ve hadis gösterimi
@@ -59,6 +60,7 @@ class UygulamaDurumu extends ChangeNotifier {
     tamEkran = _depo.getBool('tam_ekran') ?? tamEkran;
     sessizdeOku = _depo.getBool('sessizde_oku') ?? sessizdeOku;
     hatirlatmaDk = _depo.getInt('hatirlatma_dk') ?? hatirlatmaDk;
+    ezanSesi = _depo.getInt('ezan_sesi') ?? ezanSesi;
     otomatikGuncelle = _depo.getBool('otomatik_guncelle') ?? otomatikGuncelle;
     ayetModu = _depo.getString('ayet_modu') ?? ayetModu;
     hatimBaslangic = _depo.getInt('hatim_baslangic') ?? hatimBaslangic;
@@ -88,7 +90,11 @@ class UygulamaDurumu extends ChangeNotifier {
   }
 
   /// Ezan ve uyarı ayarlarından birini değiştirir, kaydeder ve uyarıları yeniden kurar.
-  Future<void> ezanAyarla({bool? sesli, bool? dua, bool? tam, bool? sessiz, int? hatirlatma}) async {
+  Future<void> ezanAyarla({bool? sesli, bool? dua, bool? tam, bool? sessiz, int? hatirlatma, int? ses}) async {
+    if (ses != null) {
+      ezanSesi = ses;
+      await _depo.setInt('ezan_sesi', ses);
+    }
     if (sesli != null) {
       sesliEzan = sesli;
       await _depo.setBool('sesli_ezan', sesli);

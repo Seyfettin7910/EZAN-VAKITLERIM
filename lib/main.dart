@@ -16,6 +16,7 @@ import 'servis/durum.dart';
 import 'servis/icerik_servisi.dart';
 import 'servis/yerel.dart';
 import 'tema.dart';
+import 'veri/ilceler.dart';
 
 /// Tam ekran uyarıyı her yerden açabilmek için uygulamanın gezinme anahtarı.
 final GlobalKey<NavigatorState> gezinme = GlobalKey<NavigatorState>();
@@ -26,6 +27,7 @@ Future<void> main() async {
   await durum.yukle();
   await BildirimServisi.baslat();
   await IcerikServisi.yukle();
+  await IlceVerisi.yukle();
   runApp(const EzanVakitlerimUygulamasi());
 }
 

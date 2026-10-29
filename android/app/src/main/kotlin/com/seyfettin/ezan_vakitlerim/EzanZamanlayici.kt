@@ -16,9 +16,10 @@ object EzanZamanlayici {
     private const val ANAHTAR_LISTE = "liste"
     private const val ANAHTAR_SAYI = "sayi"
 
-    // Ezan ayarlarını (dua, sessizde oku, tam ekran) saklar; servis çalarken bunları okur
-    fun ayarla(context: Context, dua: Boolean, sessizdeOku: Boolean, tamEkran: Boolean) {
+    // Ezan ayarlarını (dua, sessizde oku, tam ekran, ses seviyesi) saklar; servis çalarken bunları okur
+    fun ayarla(context: Context, dua: Boolean, sessizdeOku: Boolean, tamEkran: Boolean, sesSeviyesi: Int) {
         context.getSharedPreferences(DEPO, Context.MODE_PRIVATE).edit()
+            .putInt("sesSeviyesi", sesSeviyesi)
             .putBoolean("dua", dua)
             .putBoolean("sessizdeOku", sessizdeOku)
             .putBoolean("tamEkran", tamEkran)

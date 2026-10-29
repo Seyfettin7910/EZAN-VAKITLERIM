@@ -43,6 +43,10 @@ def overpass(sorgu):
     raise SystemExit("Overpass'a ulaşılamadı")
 
 
+# OSM'de ilçe sınırı gibi görünen ama ilçe olmayan yerler
+ILCE_DEGIL = {"Kara Ada"}
+
+
 def il_adi_temizle(ad):
     return re.sub(r"\s+(ili|İli)$", "", ad).strip()
 
@@ -96,7 +100,8 @@ foreach .iller -> .il (
             continue
         il_adi = sonuc[gecerli_il]["il"]
         ad = ilce_adi_temizle(etiket.get("name:tr") or etiket.get("name", ""), il_adi)
-        if not ad:
+        # Boş adları, Latin harfli olmayanları (komşu ülke bölgeleri) ve ilçe olmayan adaları alma
+        if not ad or re.search(r"[^A-Za-zÇĞİÖŞÜçğıöşüÂâÎîÛû0-9' .-]", ad) or ad in ILCE_DEGIL:
             continue
         # İlçe merkezi noktası varsa onu, yoksa bölgenin ortasını kullan
         konum = None
@@ -109,7 +114,7 @@ foreach .iller -> .il (
                 break
         if konum is None and "center" in o:
             konum = (o["center"]["lat"], o["center"]["lon"])
-        if konum is None:
+        if konum is None or not (35.5 <= konum[0] <= 42.5 and 25.5 <= konum[1] <= 45.0):
             continue
         sonuc[gecerli_il]["ilceler"].setdefault(ad, (round(konum[0], 4), round(konum[1], 4)))
 
