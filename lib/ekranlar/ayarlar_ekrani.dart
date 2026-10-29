@@ -9,6 +9,7 @@ import '../servis/icerik_servisi.dart';
 import '../servis/yerel.dart';
 import '../surum.dart';
 import '../tema.dart';
+import '../yardimci.dart';
 import 'guncelleme.dart';
 import 'konum_sec_ekrani.dart';
 import 'tam_ekran.dart';
@@ -67,6 +68,14 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> with WidgetsBindingObserv
   }
 
   // Ezanı hemen okutur ve tam ekran uyarıyı açar (sesi denemek için)
+  // "Teheccüd" satırının altındaki yazı: bu geceki vakti de gösterir
+  String _teheccudAciklamasi() {
+    final k = durum.konum;
+    const metin = 'Gecenin son üçte birinde ezan okunur';
+    if (k == null) return metin;
+    return '$metin · bu gece ${saatYaz(VakitHesap.buGeceTeheccud(DateTime.now(), k.enlem, k.boylam))}';
+  }
+
   Future<void> _sesiDene() async {
     await BildirimServisi.planla(); // son ses seviyesi ayarı Android tarafına geçsin
     await Yerel.sesiDene(3);
@@ -176,6 +185,22 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> with WidgetsBindingObserv
                 deger: durum.sesGuclendir,
                 degisti: durum.sesliEzan ? (v) => durum.ezanAyarla(guclendir: v) : null,
               ),
+              if (durum.teheccud) ...[
+                ListTile(
+                  title: const Text('Teheccüd ezanı ses seviyesi', style: TextStyle(fontWeight: FontWeight.w600)),
+                  subtitle: const Text('Gece okunduğu için ayrı ve daha kısık; evdekiler uyanmasın'),
+                  trailing: Text('%${durum.teheccudSes}', style: const TextStyle(fontWeight: FontWeight.w800, color: Renk.ana)),
+                ),
+                Slider(
+                  value: durum.teheccudSes.toDouble().clamp(5, 100),
+                  min: 5,
+                  max: 100,
+                  divisions: 19,
+                  activeColor: Renk.ana,
+                  label: '%${durum.teheccudSes}',
+                  onChanged: durum.sesliEzan ? (v) => durum.teheccudAyarla(ses: v.round()) : null,
+                ),
+              ],
               ListTile(
                 title: const Text('Vakitten önce hatırlat', style: TextStyle(fontWeight: FontWeight.w600)),
                 subtitle: const Text('Uyarısı açık vakitler için'),
@@ -207,6 +232,13 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> with WidgetsBindingObserv
                   activeTrackColor: Renk.ana,
                   onChanged: (acik) => durum.bildirimAyarla(i, acik),
                 ),
+              SwitchListTile(
+                title: const Text('Teheccüd', style: TextStyle(fontWeight: FontWeight.w600)),
+                subtitle: Text(_teheccudAciklamasi()),
+                value: durum.teheccud,
+                activeTrackColor: Renk.ana,
+                onChanged: (acik) => durum.teheccudAyarla(acik: acik),
+              ),
             ]),
 
             const _Baslik('Ayet ve hadis'),

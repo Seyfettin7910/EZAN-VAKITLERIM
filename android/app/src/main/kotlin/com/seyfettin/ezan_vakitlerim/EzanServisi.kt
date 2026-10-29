@@ -89,7 +89,7 @@ class EzanServisi : Service() {
         return START_NOT_STICKY
     }
 
-    // Sabah vaktinde sabah ezanını, diğer vakitlerde ezanı okur; bitince istenirse duaya geçer
+    // Sabah vaktinde sabah ezanını, diğer vakitlerde (teheccüd = 6 dahil) ezanı okur; bitince istenirse duaya geçer
     private fun ezanOku(duaOkunsunMu: Boolean) {
         calanVakit = vakit
         durum = "ezan"
@@ -141,7 +141,7 @@ class EzanServisi : Service() {
     // Güçlendirici kendi içinde sınırlayıcı kullanır, ses patlamaz.
     private fun guclendir(mp: MediaPlayer) {
         val acik = getSharedPreferences(EzanZamanlayici.DEPO, Context.MODE_PRIVATE).getBoolean("sesGuclendir", true)
-        if (!acik) return
+        if (!acik || vakit == 6) return // teheccüd gece okunur, güçlendirilmez
         try {
             guclendirici = LoudnessEnhancer(mp.audioSessionId).apply {
                 setTargetGain(700) // milibel: 700 = 7 dB
@@ -159,7 +159,9 @@ class EzanServisi : Service() {
 
     // Ayarlardaki "Ezan ses seviyesi" (yüzde) için alarm sesini geçici olarak o seviyeye getirir
     private fun sesSeviyesiniAyarla() {
-        val yuzde = getSharedPreferences(EzanZamanlayici.DEPO, Context.MODE_PRIVATE).getInt("sesSeviyesi", 100)
+        val depo = getSharedPreferences(EzanZamanlayici.DEPO, Context.MODE_PRIVATE)
+        // Teheccüd ezanının kendi (daha kısık) ses seviyesi var
+        val yuzde = if (vakit == 6) depo.getInt("teheccudSes", 50) else depo.getInt("sesSeviyesi", 100)
         if (yuzde <= 0) return // 0 = telefonun kendi alarm sesi
         val ses = getSystemService(AudioManager::class.java)
         try {

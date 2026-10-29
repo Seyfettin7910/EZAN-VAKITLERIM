@@ -77,7 +77,8 @@ class MainActivity : FlutterActivity() {
                             cagri.argument<Boolean>("sessizdeOku") ?: false,
                             cagri.argument<Boolean>("tamEkran") ?: true,
                             cagri.argument<Int>("sesSeviyesi") ?: 100,
-                            cagri.argument<Boolean>("sesGuclendir") ?: true
+                            cagri.argument<Boolean>("sesGuclendir") ?: true,
+                            cagri.argument<Int>("teheccudSes") ?: 50
                         )
                         EzanZamanlayici.kur(this, liste)
                         sonuc.success(null)

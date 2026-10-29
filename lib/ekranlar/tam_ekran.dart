@@ -63,8 +63,17 @@ class _TamEkranEkraniState extends State<TamEkranEkrani> {
   Widget build(BuildContext context) {
     final konum = durum.konum;
     final simdi = DateTime.now();
-    final zaman = konum == null ? simdi : VakitHesap.hesapla(simdi, konum.enlem, konum.boylam).vakitler[widget.vakit];
-    final baslik = widget.vakit == 1 ? 'Güneş doğdu' : '${vakitAdlari[widget.vakit]} vakti girdi';
+    final teheccud = widget.vakit == 6;
+    final zaman = konum == null
+        ? simdi
+        : teheccud
+            ? VakitHesap.buGeceTeheccud(simdi, konum.enlem, konum.boylam)
+            : VakitHesap.hesapla(simdi, konum.enlem, konum.boylam).vakitler[widget.vakit];
+    final baslik = teheccud
+        ? 'Teheccüd vakti'
+        : widget.vakit == 1
+            ? 'Güneş doğdu'
+            : '${vakitAdlari[widget.vakit]} vakti girdi';
 
     final caliyor = _calan != null;
     final durumYazisi = switch (_calan) {

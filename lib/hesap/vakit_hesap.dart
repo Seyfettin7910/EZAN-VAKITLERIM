@@ -112,6 +112,25 @@ class VakitHesap {
     return GunlukVakitler(gece, vakitler);
   }
 
+  /// Teheccüd vakti: [gun] sabahından önceki gecenin son üçte biri.
+  /// Gece = önceki günün akşamından [gun] günün imsakına kadar; son üçte birinin başladığı dakika döner.
+  static DateTime teheccud(DateTime gun, double enlem, double boylam) {
+    final g = DateTime(gun.year, gun.month, gun.day);
+    final imsak = hesapla(g, enlem, boylam).vakitler[0];
+    final aksam = hesapla(DateTime(g.year, g.month, g.day - 1), enlem, boylam).vakitler[4];
+    final t = imsak.subtract(imsak.difference(aksam) ~/ 3);
+    return DateTime(t.year, t.month, t.day, t.hour, t.minute); // saniyeleri at
+  }
+
+  /// Bu gecenin teheccüd vakti: bugünün imsakı geçmediyse bugünkü, geçtiyse yarınki.
+  static DateTime buGeceTeheccud(DateTime an, double enlem, double boylam) {
+    final bugun = DateTime(an.year, an.month, an.day);
+    final imsak = hesapla(bugun, enlem, boylam).vakitler[0];
+    return an.isBefore(imsak)
+        ? teheccud(bugun, enlem, boylam)
+        : teheccud(DateTime(bugun.year, bugun.month, bugun.day + 1), enlem, boylam);
+  }
+
   /// Şu an hangi vakitteyiz ve sıradaki vakit ne, onu bulur.
   static VakitDurumu durum(DateTime an, double enlem, double boylam) {
     final bugun = hesapla(DateTime(an.year, an.month, an.day), enlem, boylam);

@@ -187,6 +187,48 @@ class _AnaEkranState extends State<AnaEkran> {
               suAn: oncekiBugun && d.onceki == i,
               gecti: bugun.vakitler[i].isBefore(simdi) && !(oncekiBugun && d.onceki == i),
             ),
+          const Divider(height: 10, indent: 14, endIndent: 14, color: Renk.cizgi),
+          _teheccudSatiri(simdi),
+        ],
+      ),
+    );
+  }
+
+  // Teheccüd satırı: bu gecenin son üçte birinin başladığı saat; zil ile açılıp kapanır
+  Widget _teheccudSatiri(DateTime simdi) {
+    final konum = durum.konum!;
+    final zaman = VakitHesap.buGeceTeheccud(simdi, konum.enlem, konum.boylam);
+    final acik = durum.teheccud;
+    final imsak = VakitHesap.hesapla(simdi, konum.enlem, konum.boylam).vakitler[0];
+    final suAn = !simdi.isBefore(zaman) && simdi.isBefore(imsak); // gecenin son üçte birindeyiz
+    return Padding(
+      padding: const EdgeInsets.only(left: 14, right: 4),
+      child: Row(
+        children: [
+          const Icon(Icons.nightlight_round, size: 18, color: Renk.soluk),
+          const SizedBox(width: 6),
+          const Expanded(
+            child: Text('Teheccüd', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Renk.yazi)),
+          ),
+          if (suAn) const _Etiket('Şu an', zemin: Renk.etiket, renk: Renk.yazi),
+          const SizedBox(width: 8),
+          Text(
+            saatYaz(zaman),
+            style: const TextStyle(
+              fontSize: 17,
+              fontWeight: FontWeight.w700,
+              color: Renk.yazi,
+              fontFeatures: [FontFeature.tabularFigures()],
+            ),
+          ),
+          IconButton(
+            tooltip: acik ? 'Teheccüd uyarısını kapat' : 'Teheccüd uyarısını aç',
+            onPressed: () => durum.teheccudAyarla(acik: !acik),
+            icon: Icon(
+              !acik ? Icons.notifications_off_outlined : (durum.sesliEzan ? Icons.volume_up_outlined : Icons.notifications_active_outlined),
+              color: acik ? Renk.yazi : Renk.soluk,
+            ),
+          ),
         ],
       ),
     );

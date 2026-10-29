@@ -1,3 +1,5 @@
+• Yeni: Teheccüd ezanı. Gecenin son üçte biri girince ezan okunur (Kâbe'deki ilk ezan gibi). Ana ekrandaki "Teheccüd" satırının zilinden ya da Ayarlar > Hangi vakitlerde uyarı'dan açılır; kapalı gelir.
+• Teheccüd ezanının kendi ses seviyesi var (%50 gelir, Ayarlar'dan değişir); gece evdekiler uyanmasın diye güçlendirilmez.
 • Ezan sesi daha yüksek: ezan okunurken telefonun alarm sesi artık tam seviyeye (%100) çıkar, ses dosyaları da güçlendirildi.
 • Yeni "Sesi güçlendir" ayarı (açık gelir): ezan, telefonun en yüksek sesinden de yüksek okunur. Cızırtı olursa Ayarlar'dan kapatabilirsin.
 • Camiler artık haritada: üstteki "Harita" düğmesine bas, yakındaki camileri ve kendi yerini haritada gör.

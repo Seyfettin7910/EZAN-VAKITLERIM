@@ -27,9 +27,9 @@ class Yerel {
 
   /// Ezan alarmlarını kurar. Her öğe: zaman (ms), vakit (0-5), baslik, metin.
   static Future<void> ezanlariKur(List<Map<String, Object>> liste,
-          {required bool dua, required bool sessizdeOku, required bool tamEkran, required int sesSeviyesi, required bool sesGuclendir}) =>
+          {required bool dua, required bool sessizdeOku, required bool tamEkran, required int sesSeviyesi, required bool sesGuclendir, required int teheccudSes}) =>
       _cagir<void>('ezanlariKur', null,
-          {'liste': liste, 'dua': dua, 'sessizdeOku': sessizdeOku, 'tamEkran': tamEkran, 'sesSeviyesi': sesSeviyesi, 'sesGuclendir': sesGuclendir});
+          {'liste': liste, 'dua': dua, 'sessizdeOku': sessizdeOku, 'tamEkran': tamEkran, 'sesSeviyesi': sesSeviyesi, 'sesGuclendir': sesGuclendir, 'teheccudSes': teheccudSes});
 
   static Future<void> ezanlariSil() => _cagir<void>('ezanlariSil', null);
 

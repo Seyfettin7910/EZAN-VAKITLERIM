@@ -12,6 +12,10 @@ on:
         description: 'Ezan denemesi yerine sekmeleri gezip ekran görüntüsü al'
         required: false
         default: 'hayir'
+      vakit:
+        description: 'Denenecek vakit (0 imsak ... 5 yatsı, 6 teheccüd)'
+        required: false
+        default: '3'
       bekle:
         description: 'Ezan başladıktan sonra ikinci ekran görüntüsü için bekleme (saniye)'
         required: false
@@ -64,7 +68,7 @@ jobs:
             sleep 2
             adb shell input keyevent KEYCODE_SLEEP
             sleep 3
-            adb shell am broadcast -n com.seyfettin.ezan_vakitlerim/.DenemeAlici --ei vakit 3 --ei saniye 5 > /tmp/k/deneme.txt 2>&1 || true
+            adb shell am broadcast -n com.seyfettin.ezan_vakitlerim/.DenemeAlici --ei vakit ${{ inputs.vakit }} --ei saniye 5 > /tmp/k/deneme.txt 2>&1 || true
             sleep 15
             adb exec-out screencap -p > /tmp/k/ekran-ezan.png
             adb shell dumpsys audio > /tmp/k/ses-tam.txt 2>&1 || true

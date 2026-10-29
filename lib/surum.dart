@@ -1,5 +1,5 @@
 // Ayarlar > Hakkında kısmında görünen sürüm. pubspec.yaml'daki "version" ile aynı tutulur.
-const String uygulamaSurumu = '1.2.5';
+const String uygulamaSurumu = '1.2.6';
 
 /// GitHub'ın verdiği derleme numarası (derlerken --dart-define=DERLEME_NO=... ile gelir).
 /// Güncelleme denetimi, telefondaki sürümün yenisini bu numarayla anlar.

@@ -33,6 +33,8 @@ class UygulamaDurumu extends ChangeNotifier {
   bool sessizdeOku = false; // telefon sessizdeyken de ezan okunsun
   int hatirlatmaDk = 0; // vakitten kaç dakika önce hatırlatılsın
   int ezanSesi = 100; // ezan okunurken alarm sesi yüzdesi (0 = telefonun kendi alarm sesi)
+  bool teheccud = false; // gecenin son üçte birinde teheccüd ezanı okunsun
+  int teheccudSes = 50; // teheccüd ezanının ses yüzdesi (gece olduğu için daha kısık)
   bool sesGuclendir = true; // ezanı telefonun en yüksek sesinin de üstüne çıkar (Android ses güçlendiricisi)
   bool otomatikGuncelle = true; // açılışta yeni sürüm denetlensin
   double yaziBoyutu = 1.0; // uygulamadaki yazıların büyüklüğü: 1.0 normal, 1.2 büyük, 1.4 çok büyük
@@ -70,6 +72,8 @@ class UygulamaDurumu extends ChangeNotifier {
       await _depo.setBool('ses_100_yapildi', true);
     }
     sesGuclendir = _depo.getBool('ses_guclendir') ?? sesGuclendir;
+    teheccud = _depo.getBool('teheccud') ?? teheccud;
+    teheccudSes = _depo.getInt('teheccud_ses') ?? teheccudSes;
     otomatikGuncelle = _depo.getBool('otomatik_guncelle') ?? otomatikGuncelle;
     yaziBoyutu = _depo.getDouble('yazi_boyutu') ?? yaziBoyutu;
     ayetModu = _depo.getString('ayet_modu') ?? ayetModu;
@@ -95,6 +99,20 @@ class UygulamaDurumu extends ChangeNotifier {
   Future<void> bildirimAyarla(int vakit, bool acik) async {
     bildirimler[vakit] = acik;
     await _depo.setBool('bildirim_$vakit', acik);
+    notifyListeners();
+    await BildirimServisi.planla();
+  }
+
+  /// Teheccüd ezanını açar/kapatır ya da ses seviyesini değiştirir, uyarıları yeniden kurar.
+  Future<void> teheccudAyarla({bool? acik, int? ses}) async {
+    if (acik != null) {
+      teheccud = acik;
+      await _depo.setBool('teheccud', acik);
+    }
+    if (ses != null) {
+      teheccudSes = ses;
+      await _depo.setInt('teheccud_ses', ses);
+    }
     notifyListeners();
     await BildirimServisi.planla();
   }

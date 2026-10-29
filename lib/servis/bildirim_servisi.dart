@@ -93,10 +93,11 @@ class BildirimServisi {
           'baslik': '${vakitAdlari[i]} vakti girdi',
           'metin': '${saatYaz(zaman)} · ${konum.ad}',
         });
-      }
+      }      final t = VakitHesap.teheccud(DateTime(simdi.year, simdi.month, simdi.day + g), konum.enlem, konum.boylam);
+      if (durum.teheccud && t.isAfter(simdi)) ezanlar.add(_teheccudOgesi(t, konum.ad));
     }
     await Yerel.ezanlariKur(ezanlar,
-        dua: durum.duaOtomatik, sessizdeOku: durum.sessizdeOku, tamEkran: durum.tamEkran, sesSeviyesi: durum.ezanSesi, sesGuclendir: durum.sesGuclendir);
+        dua: durum.duaOtomatik, sessizdeOku: durum.sessizdeOku, tamEkran: durum.tamEkran, sesSeviyesi: durum.ezanSesi, sesGuclendir: durum.sesGuclendir, teheccudSes: durum.teheccudSes);
   }
 
   // Asıl kurma işi (hatası planla() içinde yakalanır).
@@ -152,8 +153,33 @@ class BildirimServisi {
           );
         }
       }
+
+      // Teheccüd: bu günün sabahından önceki gecenin son üçte biri
+      final t = VakitHesap.teheccud(gun, konum.enlem, konum.boylam);
+      if (durum.teheccud && t.isAfter(simdi)) {
+        if (durum.sesliEzan) {
+          ezanlar.add(_teheccudOgesi(t, konum.ad));
+        } else {
+          await _eklenti.zonedSchedule(
+            id: 3000 + g,
+            title: 'Teheccüd vakti',
+            body: 'Gecenin son üçte biri girdi · ${saatYaz(t)} · ${konum.ad}',
+            scheduledDate: tz.TZDateTime.from(t, tz.local),
+            notificationDetails: _detay,
+            androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+          );
+        }
+      }
     }
     await Yerel.ezanlariKur(ezanlar,
-        dua: durum.duaOtomatik, sessizdeOku: durum.sessizdeOku, tamEkran: durum.tamEkran, sesSeviyesi: durum.ezanSesi, sesGuclendir: durum.sesGuclendir);
+        dua: durum.duaOtomatik, sessizdeOku: durum.sessizdeOku, tamEkran: durum.tamEkran, sesSeviyesi: durum.ezanSesi, sesGuclendir: durum.sesGuclendir, teheccudSes: durum.teheccudSes);
   }
+
+  // Teheccüd ezanı alarmı (Android tarafında 6 numaralı vakit olarak okunur, kendi ses seviyesiyle)
+  static Map<String, Object> _teheccudOgesi(DateTime t, String yer) => {
+        'zaman': t.millisecondsSinceEpoch,
+        'vakit': 6,
+        'baslik': 'Teheccüd vakti',
+        'metin': 'Gecenin son üçte biri girdi · ${saatYaz(t)} · $yer',
+      };
 }
