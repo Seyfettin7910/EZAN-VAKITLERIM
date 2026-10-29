@@ -5,12 +5,15 @@ import 'package:flutter/material.dart';
 
 import 'ekranlar/ana_ekran.dart';
 import 'ekranlar/ayarlar_ekrani.dart';
+import 'ekranlar/camiler_ekrani.dart';
 import 'ekranlar/guncelleme.dart';
 import 'ekranlar/imsakiye_ekrani.dart';
+import 'ekranlar/kible_ekrani.dart';
 import 'ekranlar/konum_sec_ekrani.dart';
 import 'ekranlar/tam_ekran.dart';
 import 'servis/bildirim_servisi.dart';
 import 'servis/durum.dart';
+import 'servis/icerik_servisi.dart';
 import 'servis/yerel.dart';
 import 'tema.dart';
 
@@ -22,6 +25,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await durum.yukle();
   await BildirimServisi.baslat();
+  await IcerikServisi.yukle();
   runApp(const EzanVakitlerimUygulamasi());
 }
 
@@ -40,7 +44,7 @@ class EzanVakitlerimUygulamasi extends StatelessWidget {
   }
 }
 
-/// Alt menülü ana iskelet: Vakitler, İmsakiye, Ayarlar.
+/// Alt menülü ana iskelet: Vakitler, Kıble, Camiler, İmsakiye, Ayarlar.
 class Kabuk extends StatefulWidget {
   const Kabuk({super.key});
 
@@ -64,6 +68,7 @@ class _KabukState extends State<Kabuk> {
       if (vakit >= 0) _tamEkraniAc(vakit);
       await BildirimServisi.izinIste();
       await BildirimServisi.planla();
+      IcerikServisi.hatimOncedenIndir();
       if (!mounted || _tamEkranAcik) return;
       await yeniliklerGerekirseGoster(context, ilkKurulum: ilkKurulum);
       if (!mounted || _tamEkranAcik) return;
@@ -92,7 +97,13 @@ class _KabukState extends State<Kabuk> {
           body: SafeArea(
             child: IndexedStack(
               index: _sekme,
-              children: const [AnaEkran(), ImsakiyeEkrani(), AyarlarEkrani()],
+              children: [
+                const AnaEkran(),
+                KibleEkrani(aktif: _sekme == 1), // pusula sadece bu sekme açıkken çalışır
+                CamilerEkrani(aktif: _sekme == 2),
+                const ImsakiyeEkrani(),
+                const AyarlarEkrani(),
+              ],
             ),
           ),
           bottomNavigationBar: NavigationBar(
@@ -100,6 +111,8 @@ class _KabukState extends State<Kabuk> {
             onDestinationSelected: (i) => setState(() => _sekme = i),
             destinations: const [
               NavigationDestination(icon: Icon(Icons.schedule_outlined), selectedIcon: Icon(Icons.schedule), label: 'Vakitler'),
+              NavigationDestination(icon: Icon(Icons.explore_outlined), selectedIcon: Icon(Icons.explore), label: 'Kıble'),
+              NavigationDestination(icon: Icon(Icons.mosque_outlined), selectedIcon: Icon(Icons.mosque), label: 'Camiler'),
               NavigationDestination(icon: Icon(Icons.calendar_month_outlined), selectedIcon: Icon(Icons.calendar_month), label: 'İmsakiye'),
               NavigationDestination(icon: Icon(Icons.tune), label: 'Ayarlar'),
             ],

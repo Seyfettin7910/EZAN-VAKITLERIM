@@ -34,6 +34,14 @@ class UygulamaDurumu extends ChangeNotifier {
   int hatirlatmaDk = 0; // vakitten kaç dakika önce hatırlatılsın
   bool otomatikGuncelle = true; // açılışta yeni sürüm denetlensin
 
+  // Ayet ve hadis gösterimi
+  String ayetModu = 'secme'; // 'secme' = seçme ayet grupları, 'hatim' = Kur'an sırayla, rükû rükû
+  int hatimBaslangic = 0; // hatime başlanan vaktin sıra numarası
+  bool arapcaGoster = true; // ayetlerin Arapçası da görünsün
+  bool hadisGoster = true; // hadis de gösterilsin
+  bool icerikAnaEkran = true; // ana ekranda "bu vaktin ayeti/hadisi" kartı
+  bool icerikTamEkran = true; // tam ekran uyarıda ayet/hadis
+
   /// Uygulama açılırken kayıtlı ayarları telefondan okur.
   Future<void> yukle() async {
     _depo = await SharedPreferences.getInstance();
@@ -52,6 +60,12 @@ class UygulamaDurumu extends ChangeNotifier {
     sessizdeOku = _depo.getBool('sessizde_oku') ?? sessizdeOku;
     hatirlatmaDk = _depo.getInt('hatirlatma_dk') ?? hatirlatmaDk;
     otomatikGuncelle = _depo.getBool('otomatik_guncelle') ?? otomatikGuncelle;
+    ayetModu = _depo.getString('ayet_modu') ?? ayetModu;
+    hatimBaslangic = _depo.getInt('hatim_baslangic') ?? hatimBaslangic;
+    arapcaGoster = _depo.getBool('arapca_goster') ?? arapcaGoster;
+    hadisGoster = _depo.getBool('hadis_goster') ?? hadisGoster;
+    icerikAnaEkran = _depo.getBool('icerik_ana_ekran') ?? icerikAnaEkran;
+    icerikTamEkran = _depo.getBool('icerik_tam_ekran') ?? icerikTamEkran;
   }
 
   /// Yeni konumu kaydeder ve bildirimleri yeni vakitlere göre baştan kurar.
@@ -103,6 +117,35 @@ class UygulamaDurumu extends ChangeNotifier {
   Future<void> otomatikGuncelleAyarla(bool acik) async {
     otomatikGuncelle = acik;
     await _depo.setBool('otomatik_guncelle', acik);
+    notifyListeners();
+  }
+
+  /// Ayet ve hadis ayarlarından birini değiştirir ve kaydeder.
+  Future<void> icerikAyarla({String? mod, int? hatimBas, bool? arapca, bool? hadis, bool? anaEkran, bool? tamEkranda}) async {
+    if (mod != null) {
+      ayetModu = mod;
+      await _depo.setString('ayet_modu', mod);
+    }
+    if (hatimBas != null) {
+      hatimBaslangic = hatimBas;
+      await _depo.setInt('hatim_baslangic', hatimBas);
+    }
+    if (arapca != null) {
+      arapcaGoster = arapca;
+      await _depo.setBool('arapca_goster', arapca);
+    }
+    if (hadis != null) {
+      hadisGoster = hadis;
+      await _depo.setBool('hadis_goster', hadis);
+    }
+    if (anaEkran != null) {
+      icerikAnaEkran = anaEkran;
+      await _depo.setBool('icerik_ana_ekran', anaEkran);
+    }
+    if (tamEkranda != null) {
+      icerikTamEkran = tamEkranda;
+      await _depo.setBool('icerik_tam_ekran', tamEkranda);
+    }
     notifyListeners();
   }
 

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../hesap/vakit_hesap.dart';
 import '../servis/bildirim_servisi.dart';
 import '../servis/durum.dart';
+import '../servis/icerik_servisi.dart';
 import '../servis/yerel.dart';
 import '../surum.dart';
 import '../tema.dart';
@@ -156,6 +157,63 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> with WidgetsBindingObserv
                 ),
             ]),
 
+            const _Baslik('Ayet ve hadis'),
+            _Kart(children: [
+              RadioGroup<String>(
+                groupValue: durum.ayetModu,
+                onChanged: (m) {
+                  if (m == null) return;
+                  // Hatime geçilince bu vakitten itibaren 1. rükûdan başlar
+                  durum.icerikAyarla(mod: m, hatimBas: m == 'hatim' && durum.ayetModu != 'hatim' ? IcerikServisi.simdikiSlot() : null);
+                  if (m == 'hatim') IcerikServisi.hatimOncedenIndir();
+                },
+                child: const Column(children: [
+                  RadioListTile<String>(
+                    value: 'secme',
+                    title: Text('Seçme ayetler', style: TextStyle(fontWeight: FontWeight.w600)),
+                    subtitle: Text('Anlam bütünlüğü olan 98 ayet grubu; internet gerekmez'),
+                  ),
+                  RadioListTile<String>(
+                    value: 'hatim',
+                    title: Text('Sırayla (hatim)', style: TextStyle(fontWeight: FontWeight.w600)),
+                    subtitle: Text('Her vakit bir rükû; 556 rükûda hatim biter. İnternetten çekilir'),
+                  ),
+                ]),
+              ),
+              if (durum.ayetModu == 'hatim')
+                ListTile(
+                  leading: const Icon(Icons.menu_book_outlined, color: Renk.ana),
+                  title: Text('Şu an ${IcerikServisi.rukuNo(IcerikServisi.simdikiSlot())}. rükû / 556',
+                      style: const TextStyle(fontWeight: FontWeight.w600)),
+                  subtitle: const Text('Dokun: hatime baştan başla'),
+                  onTap: () => durum.icerikAyarla(hatimBas: IcerikServisi.simdikiSlot()),
+                ),
+              _Anahtar(
+                baslik: 'Arapçasını da göster',
+                aciklama: 'Ayetin aslı ve Diyanet meali birlikte',
+                deger: durum.arapcaGoster,
+                degisti: (v) => durum.icerikAyarla(arapca: v),
+              ),
+              _Anahtar(
+                baslik: 'Hadis göster',
+                aciklama: 'Sadece sahih, Buhârî ve Müslim kaynaklı hadisler',
+                deger: durum.hadisGoster,
+                degisti: (v) => durum.icerikAyarla(hadis: v),
+              ),
+              _Anahtar(
+                baslik: 'Ana ekranda göster',
+                aciklama: '"Bu vaktin ayeti / hadisi" kartı',
+                deger: durum.icerikAnaEkran,
+                degisti: (v) => durum.icerikAyarla(anaEkran: v),
+              ),
+              _Anahtar(
+                baslik: 'Tam ekran uyarıda göster',
+                aciklama: 'Vakit girince açılan ekranda',
+                deger: durum.icerikTamEkran,
+                degisti: (v) => durum.icerikAyarla(tamEkranda: v),
+              ),
+            ]),
+
             const _Baslik('Telefon izinleri'),
             _Kart(children: [
               ListTile(
@@ -216,6 +274,10 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> with WidgetsBindingObserv
                 leading: Icon(Icons.favorite_outline, color: Renk.altinYazi),
                 title: Text('Teşekkür', style: TextStyle(fontWeight: FontWeight.w600)),
                 subtitle: Text('Uygulamanın yapımında katkısı olan müezzinlerimize çok teşekkür ederiz. Allah onlardan razı olsun.'),
+              ),
+              ListTile(
+                title: Text('Kaynaklar', style: TextStyle(fontWeight: FontWeight.w600)),
+                subtitle: Text('Meal: Diyanet İşleri (AlQuran Cloud) · Hadisler: HadeethEnc (Hadis Ansiklopedisi) · Cami bilgisi: © OpenStreetMap katkıcıları'),
               ),
             ]),
             const SizedBox(height: 18),

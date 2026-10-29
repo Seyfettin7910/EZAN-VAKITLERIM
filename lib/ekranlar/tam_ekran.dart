@@ -7,10 +7,12 @@ import 'package:flutter/material.dart';
 
 import '../hesap/vakit_hesap.dart';
 import '../servis/durum.dart';
+import '../servis/icerik_servisi.dart';
 import '../servis/yerel.dart';
 import '../tema.dart';
 import '../veri/ezan_duasi.dart';
 import '../yardimci.dart';
+import 'icerik_karti.dart';
 
 class TamEkranEkrani extends StatefulWidget {
   final int vakit; // 0 = imsak ... 5 = yatsı
@@ -128,6 +130,12 @@ class _TamEkranEkraniState extends State<TamEkranEkrani> {
               ),
             ),
             const SizedBox(height: 16),
+
+            // Bu vaktin ayeti ve hadisi
+            if (durum.icerikTamEkran) ...[
+              IcerikKarti(slot: IcerikServisi.slot(simdi, widget.vakit), koyu: true),
+              const SizedBox(height: 16),
+            ],
 
             // Ezan duası: dua başlayınca kendiliğinden açılır, istenirse elle de açılır
             if (_duaGoster)

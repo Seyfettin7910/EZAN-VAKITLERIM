@@ -14,7 +14,15 @@ import urllib.request
 
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CIKTI = os.path.join(KOK, "assets", "icerik")
-BESMELE = "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ"
+
+
+def besmelesiz(sure, no, metin):
+    """Sûrelerin 1. ayetinin başındaki besmele ayetten sayılmaz (Fâtiha hariç).
+    Kaynak besmeleyi farklı harf biçimleriyle yazabildiği için ilk dört kelime atılır."""
+    metin = metin.replace("\ufeff", "").strip()
+    if no == 1 and sure != 1 and metin.startswith("بِسْمِ"):
+        return " ".join(metin.split()[4:])
+    return metin
 
 SURELER = [
     "Fâtiha", "Bakara", "Âl-i İmrân", "Nisâ", "Mâide", "En'âm", "A'râf", "Enfâl", "Tevbe", "Yûnus",
@@ -71,10 +79,7 @@ def ayetleri_uret():
                 no = a["numberInSurah"]
                 if no != t["numberInSurah"]:
                     raise SystemExit(f"{ref}: ayet numaraları uyuşmuyor")
-                arapca = a["text"]
-                # Sûrelerin 1. ayetinin başındaki besmele ayetten sayılmaz (Fâtiha hariç)
-                if no == 1 and sure != 1 and arapca.startswith(BESMELE):
-                    arapca = arapca[len(BESMELE):].strip()
+                arapca = besmelesiz(sure, no, a["text"])
                 ayetler.append({"no": no, "ar": arapca, "tr": t["text"].strip()})
             if [x["no"] for x in ayetler] != list(range(bas, son + 1)):
                 raise SystemExit(f"{ref}: yanlış ayetler geldi")
@@ -91,23 +96,25 @@ def sade(s):
     return s.lower().replace("ı", "i")
 
 
+BASKA_KAYNAKLAR = ("ahmed", "darimi", "tirmizi", "ebu davud", "ebû davud", "nesai", "ibn mace", "ibni mace", "malik", "hakim", "beyhaki", "taberani", "edeb")
+
+
 def kabul_mu(h):
-    """Sadece sahih ve Buhârî/Müslim kaynaklı hadisler alınır."""
-    derece, kaynak = sade(h.get("grade")), sade(h.get("attribution"))
-    if not derece.startswith("sahih"):
+    """Sadece "Sahih Hadis" dereceli ve yalnızca Buhârî/Müslim kaynaklı hadisler alınır."""
+    derece, kaynak = sade(h.get("grade")).strip(), sade(h.get("attribution"))
+    if derece != "sahih hadis":
         return False
-    if "muttefek" in kaynak:
-        return True
-    if "edeb" in kaynak:  # Buhârî'nin el-Edebü'l-Müfred'i Sahîh-i Buhârî değildir
+    if any(b in kaynak for b in BASKA_KAYNAKLAR):  # başka kitaplar da karışmışsa alma
         return False
-    return "buhari" in kaynak or "muslim" in kaynak
+    return "muttefek" in kaynak or "buhari" in kaynak or "muslim" in kaynak
 
 
 def kaynak_yazisi(attribution):
-    a = (attribution or "").strip()
-    if "muttefek" in sade(a):
-        return "Buhârî ve Müslim (Müttefekun aleyh)"
-    return a
+    a = sade(attribution)
+    buhari, muslim = "buhari" in a, "muslim" in a
+    if "muttefek" in a or (buhari and muslim):
+        return "Buhârî ve Müslim"
+    return "Buhârî" if buhari else "Müslim"
 
 
 def hadisleri_uret(kategoriler=(5, 1)):

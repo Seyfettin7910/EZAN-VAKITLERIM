@@ -53,4 +53,18 @@ class Yerel {
   static Future<void> kurulumIzniAc() => _cagir<void>('kurulumIzniAc', null);
   static Future<void> apkKur(String yol) => _cagir<void>('apkKur', null, {'yol': yol});
   static Future<String> onbellekKlasoru() => _cagir<String>('onbellekKlasoru', '');
+
+  /// Widget'ların kullanacağı konumu Android tarafına bildirir.
+  static Future<void> konumKaydet(String ad, double enlem, double boylam) =>
+      _cagir<void>('konumKaydet', null, {'ad': ad, 'enlem': enlem, 'boylam': boylam});
+
+  /// Bir yeri harita uygulamasında açar; [yolTarifi] ise yürüyerek yol tarifi verir.
+  static Future<void> haritadaAc(double enlem, double boylam, String ad, {bool yolTarifi = false}) =>
+      _cagir<void>('haritadaAc', null, {'enlem': enlem, 'boylam': boylam, 'ad': ad, 'yolTarifi': yolTarifi});
+
+  static const EventChannel _pusula = EventChannel('ezan_vakitlerim/pusula');
+
+  /// Pusula yönü akışı: her olay {aci: derece (gerçek kuzeye göre), dogruluk: 0-3}.
+  static Stream<Map<dynamic, dynamic>> pusula(double enlem, double boylam) =>
+      _pusula.receiveBroadcastStream({'enlem': enlem, 'boylam': boylam}).map((o) => o as Map<dynamic, dynamic>);
 }

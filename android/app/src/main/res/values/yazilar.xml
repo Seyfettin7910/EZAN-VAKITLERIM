@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_kucuk_aciklama">Sıradaki vakit ve kalan süre</string>
+    <string name="widget_orta_aciklama">Sıradaki vakit, kalan süre ve günün vakitleri</string>
+</resources>

@@ -8,6 +8,10 @@ on:
         description: 'Denenecek sürüm etiketi (boş = son sürüm)'
         required: false
         default: ''
+      gezinti:
+        description: 'Ezan denemesi yerine sekmeleri gezip ekran görüntüsü al'
+        required: false
+        default: 'hayir'
       bekle:
         description: 'Ezan başladıktan sonra ikinci ekran görüntüsü için bekleme (saniye)'
         required: false
@@ -49,6 +53,7 @@ jobs:
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: true
           script: |
+            if [ "${{ inputs.gezinti }}" = "evet" ]; then bash tool/emulator_gezinti.sh; exit 0; fi
             adb install -r /tmp/k/Ezan-Vakitlerim.apk > /tmp/k/kurulum.txt 2>&1 || true
             adb shell pm grant com.seyfettin.ezan_vakitlerim android.permission.POST_NOTIFICATIONS || true
             adb logcat -c

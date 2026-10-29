@@ -61,6 +61,9 @@ class BildirimServisi {
 
   /// Eski bildirimleri siler, önümüzdeki günlerin bildirimlerini yeniden kurar.
   static Future<void> planla() async {
+    // Widget'lar da aynı konuma göre hesaplasın
+    final k = durum.konum;
+    if (k != null) await Yerel.konumKaydet(k.ad, k.enlem, k.boylam);
     if (!_hazir) {
       // Bildirim sistemi açılamadıysa bile sesli ezan alarmları kurulabilir
       await _sadeceEzanlariKur();

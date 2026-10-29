@@ -20,6 +20,7 @@ class EzanAlici : BroadcastReceiver() {
 class AcilisAlici : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         EzanZamanlayici.yenidenKur(context)
+        WidgetGuncelleyici.hepsiniGuncelle(context)
     }
 }
 

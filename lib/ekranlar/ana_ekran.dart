@@ -6,8 +6,10 @@ import 'package:flutter/material.dart';
 
 import '../hesap/vakit_hesap.dart';
 import '../servis/durum.dart';
+import '../servis/icerik_servisi.dart';
 import '../tema.dart';
 import '../yardimci.dart';
+import 'icerik_karti.dart';
 import 'konum_sec_ekrani.dart';
 
 class AnaEkran extends StatefulWidget {
@@ -63,6 +65,13 @@ class _AnaEkranState extends State<AnaEkran> {
             _geriSayimKarti(d, simdi, ilerleme),
             const SizedBox(height: 16),
             _vakitListesi(bugun, d, simdi),
+            if (durum.icerikAnaEkran) ...[
+              const SizedBox(height: 16),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: IcerikKarti(slot: IcerikServisi.slot(d.oncekiZaman, d.onceki)),
+              ),
+            ],
           ],
         );
       },

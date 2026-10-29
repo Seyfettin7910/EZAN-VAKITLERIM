@@ -12,6 +12,7 @@ import android.view.WindowManager
 import androidx.core.content.FileProvider
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
+import io.flutter.plugin.common.EventChannel
 import io.flutter.plugin.common.MethodChannel
 import java.io.File
 
@@ -59,6 +60,8 @@ class MainActivity : FlutterActivity() {
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
+        // Kıble pusulası için sensör akışı
+        EventChannel(flutterEngine.dartExecutor.binaryMessenger, "ezan_vakitlerim/pusula").setStreamHandler(Pusula(this))
         val k = MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "ezan_vakitlerim/yerel")
         kanal = k
         k.setMethodCallHandler { cagri, sonuc ->
@@ -132,6 +135,33 @@ class MainActivity : FlutterActivity() {
                         sonuc.success(null)
                     }
                     "onbellekKlasoru" -> sonuc.success(cacheDir.absolutePath)
+                    // Widget'ların kullanacağı konumu kaydeder ve widget'ları yeniler
+                    "konumKaydet" -> {
+                        WidgetGuncelleyici.konumKaydet(
+                            this,
+                            cagri.argument<String>("ad") ?: "",
+                            cagri.argument<Double>("enlem") ?: 0.0,
+                            cagri.argument<Double>("boylam") ?: 0.0
+                        )
+                        sonuc.success(null)
+                    }
+                    // Bir yeri harita uygulamasında gösterir (yoksa tarayıcıda Google Haritalar)
+                    "haritadaAc" -> {
+                        val enlem = cagri.argument<Double>("enlem") ?: 0.0
+                        val boylam = cagri.argument<Double>("boylam") ?: 0.0
+                        val ad = Uri.encode(cagri.argument<String>("ad") ?: "Cami")
+                        val yolTarifi = cagri.argument<Boolean>("yolTarifi") ?: false
+                        val adres = if (yolTarifi)
+                            Uri.parse("https://www.google.com/maps/dir/?api=1&destination=$enlem,$boylam&travelmode=walking")
+                        else
+                            Uri.parse("geo:$enlem,$boylam?q=$enlem,$boylam($ad)")
+                        try {
+                            startActivity(Intent(Intent.ACTION_VIEW, adres).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+                        } catch (e: Exception) {
+                            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/maps/search/?api=1&query=$enlem,$boylam")))
+                        }
+                        sonuc.success(null)
+                    }
                     else -> sonuc.notImplemented()
                 }
             } catch (e: Exception) {

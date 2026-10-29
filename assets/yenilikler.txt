@@ -1,8 +1,8 @@
-• Sesli ezan: Uyarısı açık vakitlerde ezan okunur. Sabah vaktinde sabah ezanı okunur.
-• Ezan duası: Ezan bitince ezan duası kendiliğinden, sesli okunur.
-• Tam ekran uyarı: Vakit girince ekran açılır, telefon kilitliyken de. Ezanı "Durdur" ile susturabilirsin.
-• Vakitten önce hatırlatma: Ayarlardan 10, 15, 30 ya da 45 dakika önce hatırlatma seçebilirsin.
-• Otomatik güncelleme: Yeni sürüm çıkınca uygulama haber verir, tek dokunuşla güncellersin.
-• Ayarlar > Telefon izinleri: Tam ekran ve pil tasarrufu ayarlarını buradan açabilirsin.
+• Kıble pusulası: Kâbe'nin yönünü ve uzaklığını gösterir, kıbleye dönünce telefon hafifçe titrer.
+• Yakındaki camiler: Mesafesiyle listelenir; dokununca harita, yürüyen adam simgesiyle yol tarifi açılır.
+• Widget'lar: Ana ekrana küçük (2×2) ve orta (4×2) widget ekleyebilirsin; geri sayım canlı akar.
+• Ayet ve hadis: Her vakit yeni bir ayet grubu ve sahih bir hadis. Ana ekranda ve tam ekran uyarıda görünür.
+• Ayarlar > Ayet ve hadis: "Seçme ayetler" ya da "Sırayla (hatim)" seçebilir, Arapçasını açıp kapatabilirsin.
+• Ayetler anlam bütünlüğüyle gösterilir; "Önceki / Sonraki ayet" ile öncesine ve sonrasına bakabilirsin.
 
 Uygulamanın yapımında katkısı olan müezzinlerimize çok teşekkür ederiz. Allah onlardan razı olsun.

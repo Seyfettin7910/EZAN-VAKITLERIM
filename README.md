@@ -4,13 +4,21 @@
 
 **İndir (hep son sürüm):** [Ezan-Vakitlerim.apk](https://github.com/Seyfettin7910/EZAN-VAKITLERIM/releases/latest/download/Ezan-Vakitlerim.apk)
 
-## Neler var (1.1.0)
+## Neler var (1.2.0)
+- Kıble pusulası, yakındaki camiler (OpenStreetMap), ana ekran widget'ları (2×2 ve 4×2)
+- Her vakit bir ayet grubu (anlam bütünlüğüyle, Arapça + Diyanet meali) ve sahih bir hadis (Buhârî/Müslim); seçme ya da hatim modu
 - Sesli ezan (sabah vaktinde sabah ezanı), ardından otomatik sesli ezan duası
 - Tam ekran vakit uyarısı (kilit ekranında da), "Durdur" düğmesi
 - Vakitten önce hatırlatma (10 / 15 / 30 / 45 dk)
 - Otomatik güncelleme: yeni sürüm çıkınca uygulama haber verir, indirilen dosya doğrulanır
 - Sıradaki vakte saniye saniye geri sayım, günün altı vakti, her vakit için uyarı aç/kapat
 - GPS ile ya da 81 il içinden konum seçimi, 30 günlük imsakiye
+
+## Kaynaklar
+- Meal: Diyanet İşleri, [AlQuran Cloud](https://alquran.cloud) üzerinden
+- Hadisler: [HadeethEnc](https://hadeethenc.com) (Hadis Ansiklopedisi); sadece "Sahih Hadis" dereceli, Buhârî/Müslim kaynaklı olanlar
+- Cami bilgisi: © OpenStreetMap katkıcıları
+- İçerik `tool/icerik_uret.py` ile üretilir (Actions > İçerik üret)
 
 ## Teşekkür
 Uygulamanın yapımında katkısı olan müezzinlerimize çok teşekkür ederiz. Allah onlardan razı olsun.
