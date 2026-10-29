@@ -70,7 +70,7 @@ class _CamilerEkraniState extends State<CamilerEkrani> {
     return (k.enlem, k.boylam, false);
   }
 
-  // Camileri arar (sunucu meşgulse yedeklere sorar, internet yoksa son listeyi gösterir)
+  // Camileri arar (internet yoksa en son bulunan listeyi gösterir)
   Future<void> _ara() async {
     setState(() {
       _araniyor = true;
@@ -90,7 +90,7 @@ class _CamilerEkraniState extends State<CamilerEkrani> {
       if (mounted) {
         setState(() => _hata = h.internetYok
             ? 'İnternete bağlanılamadı. Bağlantını kontrol edip yenile düğmesine bas.'
-            : 'Cami sunucuları şu an çok yoğun. Biraz sonra yenile düğmesine bas.');
+            : 'Cami sunucusu şu an cevap vermiyor. Biraz sonra yenile düğmesine bas.');
       }
     } catch (_) {
       if (mounted) setState(() => _hata = 'Camiler getirilemedi. Biraz sonra tekrar dene.');

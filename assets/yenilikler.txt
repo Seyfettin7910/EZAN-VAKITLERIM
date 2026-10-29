@@ -2,7 +2,7 @@
 • Yeni "Sesi güçlendir" ayarı (açık gelir): ezan, telefonun en yüksek sesinden de yüksek okunur. Cızırtı olursa Ayarlar'dan kapatabilirsin.
 • Camiler artık haritada: üstteki "Harita" düğmesine bas, yakındaki camileri ve kendi yerini haritada gör.
 • Haritada bir camiye dokun, "Yol tarifi" de: yürüyüş yolu haritaya çizilir, kaç dakika süreceği yazar.
-• "Camiler getirilemedi" hatası azaldı: bir sunucu meşgulse uygulama kendiliğinden yedek sunuculara sorar.
+• "Camiler getirilemedi" hatası giderildi: camiler artık OpenStreetMap'in hızlı arama sunucusundan (Nominatim) bir saniyede geliyor.
 • İnternet yokken en son bulunan camiler gösterilir.
 • Açılış ekranı biraz daha uzun kalıyor (3,5 saniye); ekrana dokunursan beklemeden geçer.
 

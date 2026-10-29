@@ -1,7 +1,6 @@
-// Yakındaki camileri OpenStreetMap'ten (Overpass) bulur, yürüyüş yolunu hesaplatır.
-// Sunucu meşgulse sıradaki yedek sunucuya sorar; hiçbiri cevap vermezse en son bulunan liste gösterilir.
+// Yakındaki camileri OpenStreetMap'in arama sunucusundan (Nominatim) bulur, yürüyüş yolunu hesaplatır.
+// İnternete ulaşılamazsa en son bulunan liste gösterilir.
 
-import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'dart:math' as math;
@@ -63,14 +62,6 @@ class YuruyusYolu {
 }
 
 class CamiServisi {
-  // Aynı OpenStreetMap verisini veren sunucular; ilki meşgulse sıradakine sorulur
-  static const _sunucular = [
-    'overpass-api.de',
-    'overpass.private.coffee',
-    'overpass.kumi.systems',
-    'maps.mail.ru',
-  ];
-  static const _sunucuYollari = {'maps.mail.ru': '/osm/tools/overpass/api/interpreter'};
   static const _sonListeAnahtari = 'son_camiler';
 
   /// Yakındaki camileri arar; 3 km içinde yoksa 10 km'ye genişletir.
@@ -78,10 +69,10 @@ class CamiServisi {
   static Future<CamiSonucu> ara(double enlem, double boylam, {required bool gps}) async {
     try {
       var yaricap = 3000;
-      var liste = await _overpass(enlem, boylam, yaricap);
+      var liste = await _yaricaptaAra(enlem, boylam, yaricap);
       if (liste.isEmpty) {
         yaricap = 10000;
-        liste = await _overpass(enlem, boylam, yaricap);
+        liste = await _yaricaptaAra(enlem, boylam, yaricap);
       }
       final sonuc = CamiSonucu(enlem, boylam, yaricap, gps, liste, DateTime.now());
       await _sakla(sonuc);
@@ -93,43 +84,64 @@ class CamiServisi {
     }
   }
 
-  // Sunucuları sırayla dener; biri cevap verince onun listesini döndürür
-  static Future<List<Cami>> _overpass(double enlem, double boylam, int metre) async {
-    final sorgu = '[out:json][timeout:20];('
-        'node["amenity"="place_of_worship"]["religion"="muslim"](around:$metre,$enlem,$boylam);'
-        'way["amenity"="place_of_worship"]["religion"="muslim"](around:$metre,$enlem,$boylam);'
-        'relation["amenity"="place_of_worship"]["religion"="muslim"](around:$metre,$enlem,$boylam);'
-        ');out center 80;';
-    var hepsiBaglantiHatasi = true;
-    for (final sunucu in _sunucular) {
-      try {
-        final j = await jsonGetir(
-          Uri.https(sunucu, _sunucuYollari[sunucu] ?? '/api/interpreter', {'data': sorgu}),
-          sure: const Duration(seconds: 20),
-        );
-        return _cozumle(j, enlem, boylam);
-      } on SocketException {
-        // bu sunucuya bağlanılamadı (ya da internet yok); sıradakini dene
-      } catch (_) {
-        hepsiBaglantiHatasi = false; // sunucu cevap verdi ama meşgul / hatalı
-      }
+  // Verilen yarıçaptaki camileri bulur. Nominatim bir seferde en fazla 50 yer verdiği için
+  // liste dolarsa yakın çevreye (1,2 km) ikinci kez sorar ki en yakın camiler kaçmasın.
+  static Future<List<Cami>> _yaricaptaAra(double enlem, double boylam, int metre) async {
+    final (ilk, dolu) = await _nominatim(enlem, boylam, metre);
+    final hepsi = <String, Cami>{...ilk};
+    if (dolu && metre > 1200) {
+      await Future.delayed(const Duration(milliseconds: 1100)); // sunucunun kuralı: saniyede en fazla 1 istek
+      final (yakin, _) = await _nominatim(enlem, boylam, 1200);
+      hepsi.addAll(yakin);
     }
-    throw CamiHatasi(hepsiBaglantiHatasi);
+    final liste = hepsi.values.where((c) => c.metre <= metre).toList()
+      ..sort((a, b) => a.metre.compareTo(b.metre));
+    return liste;
   }
 
-  static List<Cami> _cozumle(dynamic j, double enlem, double boylam) {
-    final liste = <Cami>[];
-    for (final e in (j['elements'] as List)) {
-      final m = e as Map<String, dynamic>;
-      final e1 = (m['lat'] ?? m['center']?['lat']) as num?;
-      final b1 = (m['lon'] ?? m['center']?['lon']) as num?;
-      if (e1 == null || b1 == null) continue;
-      final etiket = (m['tags'] as Map<String, dynamic>?) ?? const {};
-      final ad = (etiket['name:tr'] ?? etiket['name'] ?? 'Adı bilinmeyen cami') as String;
-      liste.add(Cami(ad, e1.toDouble(), b1.toDouble(), uzaklikMetre(enlem, boylam, e1.toDouble(), b1.toDouble())));
+  // OpenStreetMap'in arama sunucusuna (Nominatim) kare bir alandaki ibadet yerlerini sorar,
+  // sadece camileri ayıklar. Dönüş: (kimlik → cami, liste 50'de doldu mu)
+  static Future<(Map<String, Cami>, bool)> _nominatim(double enlem, double boylam, int metre) async {
+    final dEnlem = metre / 111320.0;
+    final dBoylam = metre / (111320.0 * math.cos(enlem * math.pi / 180));
+    final dynamic j;
+    try {
+      j = await jsonGetir(
+        Uri.https('nominatim.openstreetmap.org', '/search', {
+          'format': 'jsonv2',
+          'q': '[amenity=place_of_worship]',
+          'viewbox': '${boylam - dBoylam},${enlem + dEnlem},${boylam + dBoylam},${enlem - dEnlem}',
+          'bounded': '1',
+          'limit': '50',
+          'extratags': '1',
+          'accept-language': 'tr',
+        }),
+        sure: const Duration(seconds: 20),
+      );
+    } on SocketException {
+      throw const CamiHatasi(true);
+    } catch (_) {
+      throw const CamiHatasi(false);
     }
-    liste.sort((a, b) => a.metre.compareTo(b.metre));
-    return liste;
+    final sonuc = <String, Cami>{};
+    final liste = j as List;
+    for (final e in liste) {
+      final m = e as Map<String, dynamic>;
+      final ek = (m['extratags'] as Map<String, dynamic>?) ?? const {};
+      final ad = ((m['name'] as String?) ?? '').trim();
+      final din = ek['religion'] as String?;
+      final kucuk = ad.toLowerCase();
+      // Din "muslim" ise cami; din yazılmamışsa adında cami/mescit geçiyorsa ya da adsızsa cami sayılır
+      final cami = din == 'muslim' ||
+          (din == null && (ad.isEmpty || kucuk.contains('cami') || kucuk.contains('mescid') || kucuk.contains('mescit')));
+      if (!cami) continue;
+      final e1 = double.tryParse('${m['lat']}');
+      final b1 = double.tryParse('${m['lon']}');
+      if (e1 == null || b1 == null) continue;
+      sonuc['${m['osm_type']}${m['osm_id']}'] =
+          Cami(ad.isEmpty ? 'Adı bilinmeyen cami' : ad, e1, b1, uzaklikMetre(enlem, boylam, e1, b1));
+    }
+    return (sonuc, liste.length >= 50);
   }
 
   // Son bulunan listeyi telefona yazar (internet olmayınca gösterilsin diye)
