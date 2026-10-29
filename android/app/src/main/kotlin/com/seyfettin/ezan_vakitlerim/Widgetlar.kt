@@ -124,14 +124,16 @@ object WidgetGuncelleyici {
             g.setTextViewText(R.id.w_baslik, "$siradakiAd $siradakiSaat")
             g.setChronometer(R.id.w_kalan, sayacTabani, "%s kaldı", true)
             g.setChronometerCountDown(R.id.w_kalan, true)
+            // Yatsıdan sonra bugünün vakitleri bitti: yarının vakitleri gösterilir, imsak vurgulanır
+            val gosterilen = if (siradakiBugun) bugun else VakitHesap.gunun(simdi, enlem, boylam, 1)
             for (i in 0 until 6) {
                 g.setTextViewText(adYazilari[i], VakitHesap.adlar[i])
-                g.setTextViewText(saatYazilari[i], saatBicimi.format(bugun[i]))
-                val vurgu = siradakiBugun && i == sira
+                g.setTextViewText(saatYazilari[i], saatBicimi.format(gosterilen[i]))
+                val vurgu = i == sira
                 g.setInt(sutunlar[i], "setBackgroundResource", if (vurgu) R.drawable.widget_siradaki else 0)
-                val gecti = bugun[i] <= simdi
+                val gecti = gosterilen[i] <= simdi
                 // Geçen vakitler biraz açık ama hâlâ rahat okunur; gelecek vakitler koyu
-                val renk = if (gecti) 0xFF5B6E6B.toInt() else 0xFF0B2321.toInt()
+                val renk = if (gecti) 0xFF4A5B58.toInt() else 0xFF0B2321.toInt()
                 g.setTextColor(adYazilari[i], renk)
                 g.setTextColor(saatYazilari[i], renk)
             }

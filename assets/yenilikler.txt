@@ -1,3 +1,6 @@
+• Orta widget (4×2) yeniden düzenlendi: vakitler 3 + 3 iki satır halinde, yazılar çok daha büyük ve kalın.
+• Yatsıdan sonra widget yarının vakitlerini gösterir, sıradaki imsak çerçeveli görünür (artık hepsi soluk kalmıyor).
+• İpucu: widget'a basılı tutup kenarından aşağı çekerek büyütebilirsin; yazılar da onunla büyür.
 • Ezan alarmı güçlendirildi: vakitler artık saat uygulamalarındaki "çalar saat" gibi kuruluyor; telefon uykudayken ya da pil tasarrufundayken de tam vaktinde okunur. (Durum çubuğunda küçük bir alarm simgesi görünebilir.)
 • Ayarlar > Ezan ve uyarı: "Deneme ezanı (1 dakika sonra)" düğmesi. Dokun, ekranı kilitle, ezan okunuyor mu gör.
 • Ayarlar > Telefon izinleri: "Tam vaktinde alarm izni" ve Xiaomi, Oppo, Realme gibi telefonlar için "Otomatik başlatmayı aç" kısayolu.
