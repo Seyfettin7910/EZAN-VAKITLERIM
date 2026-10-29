@@ -67,6 +67,8 @@ kotlin {
 
 dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
+    // Bildirim, servis ve dosya paylaşımı yardımcıları (sesli ezan ve güncelleme için)
+    implementation("androidx.core:core-ktx:1.15.0")
 }
 
 flutter {

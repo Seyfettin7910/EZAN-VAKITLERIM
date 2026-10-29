@@ -46,10 +46,23 @@ jobs:
           disable-animations: true
           script: |
             adb install -r /tmp/k/Ezan-Vakitlerim.apk > /tmp/k/kurulum.txt 2>&1 || true
+            adb shell pm grant com.seyfettin.ezan_vakitlerim android.permission.POST_NOTIFICATIONS || true
             adb logcat -c
             adb shell am start -n com.seyfettin.ezan_vakitlerim/.MainActivity
-            sleep 30
+            sleep 25
             adb exec-out screencap -p > /tmp/k/ekran.png
+            adb shell input keyevent KEYCODE_HOME
+            sleep 2
+            adb shell input keyevent KEYCODE_SLEEP
+            sleep 3
+            adb shell am broadcast -n com.seyfettin.ezan_vakitlerim/.DenemeAlici --ei vakit 3 --ei saniye 5 > /tmp/k/deneme.txt 2>&1 || true
+            sleep 15
+            adb exec-out screencap -p > /tmp/k/ekran-ezan.png
+            adb shell dumpsys audio > /tmp/k/ses-tam.txt 2>&1 || true
+            adb shell dumpsys activity services com.seyfettin.ezan_vakitlerim > /tmp/k/servis.txt 2>&1 || true
+            adb shell dumpsys notification --noredact > /tmp/k/bildirim-tam.txt 2>&1 || true
+            sleep 30
+            adb exec-out screencap -p > /tmp/k/ekran-ezan2.png
             adb logcat -d > /tmp/k/logcat-tam.txt || true
 
       - name: Sonucu kaydet
@@ -57,7 +70,9 @@ jobs:
         run: |
           cd /tmp/k
           grep -E "flutter|AndroidRuntime|FATAL|Exception|ezan_vakitlerim" logcat-tam.txt | tail -200 > logcat.txt 2>/dev/null || true
-          rm -f Ezan-Vakitlerim.apk logcat-tam.txt
+          grep -i -E "player|piid|usage=USAGE_ALARM|state:" ses-tam.txt | head -40 > ses.txt 2>/dev/null || true
+          grep -A12 "ezan_vakitlerim" bildirim-tam.txt | head -80 > bildirim.txt 2>/dev/null || true
+          rm -f Ezan-Vakitlerim.apk logcat-tam.txt ses-tam.txt bildirim-tam.txt
           cd $GITHUB_WORKSPACE
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"

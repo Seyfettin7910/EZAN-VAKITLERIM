@@ -11,6 +11,17 @@
     <!-- GPS ile konum bulmak için -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!-- Güncelleme denetimi için internet -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- İndirilen güncellemeyi kurmak için -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <!-- Sesli ezan: arka planda ses çalan servis, kilit ekranında tam ekran uyarı -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"/>
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <!-- Pil tasarrufunun ezanı geciktirmemesi için izin isteme -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
 
     <application
         android:label="Ezan Vakitlerim"
@@ -46,6 +57,38 @@
                 <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
             </intent-filter>
         </receiver>
+
+        <!-- Sesli ezan: alarm çalınca uyanan alıcı, ezanı okuyan servis, açılışta alarmları yeniden kuran alıcı -->
+        <receiver android:exported="false" android:name=".EzanAlici" />
+        <service
+            android:name=".EzanServisi"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+        <receiver android:exported="false" android:name=".AcilisAlici">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
+        <!-- Sadece bilgisayardan (adb) deneme için; DUMP izni yalnızca adb'de var -->
+        <receiver
+            android:exported="true"
+            android:name=".DenemeAlici"
+            android:permission="android.permission.DUMP" />
+
+        <!-- Güncelleme dosyasını kurulum ekranına vermek için -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.dosyalar"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/dosya_yollari" />
+        </provider>
 
         <!-- Bu satırı silme: Flutter eklentileri bununla kaydolur -->
         <meta-data

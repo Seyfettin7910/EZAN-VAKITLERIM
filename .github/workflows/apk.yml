@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths-ignore:
       - '**.md'
+      - '.github/workflows/apk-kontrol.yml'
       - 'tasarim/**'
   workflow_dispatch:
 
@@ -60,13 +61,22 @@ jobs:
       - name: APK derle
         run: |
           set -o pipefail
-          flutter build apk --release --build-number=${{ github.run_number }} 2>&1 | tee gunluk/3-derleme.txt
+          flutter build apk --release --build-number=${{ github.run_number }} --dart-define=DERLEME_NO=${{ github.run_number }} 2>&1 | tee gunluk/3-derleme.txt
 
-      - name: Sürümü oku ve dosyayı adlandır
+      - name: Sürümü oku, dosyayı adlandır, sürüm bilgisini yaz
         run: |
           SURUM=$(grep '^version:' pubspec.yaml | sed 's/version: *//; s/+.*//')
           echo "SURUM=$SURUM" >> "$GITHUB_ENV"
           cp build/app/outputs/flutter-apk/app-release.apk Ezan-Vakitlerim.apk
+          # Uygulamanın güncelleme denetimi bu dosyayı okur
+          jq -n --arg surum "$SURUM" --argjson derleme ${{ github.run_number }} \
+            --argjson boyut $(stat -c %s Ezan-Vakitlerim.apk) \
+            --arg sha256 "$(sha256sum Ezan-Vakitlerim.apk | cut -d' ' -f1)" \
+            --rawfile notlar assets/yenilikler.txt \
+            '{surum:$surum, derleme:$derleme, boyut:$boyut, sha256:$sha256, notlar:$notlar}' > surum.json
+          cat surum.json
+          cp surum.json gunluk/
+          { cat assets/yenilikler.txt; echo; echo "Derleme no: ${{ github.run_number }} · İmza: $IMZA"; echo "İndir: https://github.com/Seyfettin7910/EZAN-VAKITLERIM/releases/latest/download/Ezan-Vakitlerim.apk"; } > notlar.md
 
       - name: Releases sayfasına koy
         uses: softprops/action-gh-release@v2
@@ -74,10 +84,10 @@ jobs:
           tag_name: v${{ env.SURUM }}
           name: Ezan Vakitlerim ${{ env.SURUM }}
           make_latest: true
-          files: Ezan-Vakitlerim.apk
-          body: |
-            Derleme no: ${{ github.run_number }} · İmza: ${{ env.IMZA }}
-            İndir: https://github.com/Seyfettin7910/EZAN-VAKITLERIM/releases/latest/download/Ezan-Vakitlerim.apk
+          files: |
+            Ezan-Vakitlerim.apk
+            surum.json
+          body_path: notlar.md
 
       # Derleme günlüğünü "gunluk" dalına yazar (hata olursa sebebini okumak için)
       - name: Günlüğü kaydet

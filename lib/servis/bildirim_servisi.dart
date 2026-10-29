@@ -12,6 +12,7 @@ import 'package:timezone/timezone.dart' as tz;
 import '../hesap/vakit_hesap.dart';
 import '../yardimci.dart';
 import 'durum.dart';
+import 'yerel.dart';
 
 class BildirimServisi {
   static final FlutterLocalNotificationsPlugin _eklenti = FlutterLocalNotificationsPlugin();
@@ -60,7 +61,11 @@ class BildirimServisi {
 
   /// Eski bildirimleri siler, önümüzdeki günlerin bildirimlerini yeniden kurar.
   static Future<void> planla() async {
-    if (!_hazir) return;
+    if (!_hazir) {
+      // Bildirim sistemi açılamadıysa bile sesli ezan alarmları kurulabilir
+      await _sadeceEzanlariKur();
+      return;
+    }
     try {
       await _planla();
     } catch (hata) {
@@ -68,13 +73,42 @@ class BildirimServisi {
     }
   }
 
-  // Asıl kurma işi (hatası planla() içinde yakalanır)
+  // Bildirim sistemi çalışmadığında yalnızca sesli ezan alarmlarını kurar
+  static Future<void> _sadeceEzanlariKur() async {
+    final konum = durum.konum;
+    if (konum == null || !durum.sesliEzan) return;
+    final simdi = DateTime.now();
+    final ezanlar = <Map<String, Object>>[];
+    for (var g = 0; g < _gunSayisi; g++) {
+      final v = VakitHesap.hesapla(DateTime(simdi.year, simdi.month, simdi.day + g), konum.enlem, konum.boylam);
+      for (var i = 0; i < 6; i++) {
+        final zaman = v.vakitler[i];
+        if (i == 1 || !durum.bildirimler[i] || !zaman.isAfter(simdi)) continue;
+        ezanlar.add({
+          'zaman': zaman.millisecondsSinceEpoch,
+          'vakit': i,
+          'baslik': '${vakitAdlari[i]} vakti girdi',
+          'metin': '${saatYaz(zaman)} · ${konum.ad}',
+        });
+      }
+    }
+    await Yerel.ezanlariKur(ezanlar,
+        dua: durum.duaOtomatik, sessizdeOku: durum.sessizdeOku, tamEkran: durum.tamEkran);
+  }
+
+  // Asıl kurma işi (hatası planla() içinde yakalanır).
+  // Zili açık vakitlerde: sesli ezan açıksa ezan alarmı, kapalıysa normal bildirim kurulur.
+  // Hatırlatma seçiliyse vakitten X dakika önce ayrıca "... kaldı" bildirimi gelir.
   static Future<void> _planla() async {
     await _eklenti.cancelAll();
     final konum = durum.konum;
-    if (konum == null) return;
+    if (konum == null) {
+      await Yerel.ezanlariSil();
+      return;
+    }
 
     final simdi = DateTime.now();
+    final ezanlar = <Map<String, Object>>[];
     var numara = 0;
     for (var g = 0; g < _gunSayisi; g++) {
       final gun = DateTime(simdi.year, simdi.month, simdi.day + g);
@@ -83,16 +117,40 @@ class BildirimServisi {
         numara++;
         if (!durum.bildirimler[i]) continue;
         final zaman = v.vakitler[i];
+        final baslik = i == 1 ? 'Güneş doğdu' : '${vakitAdlari[i]} vakti girdi';
+        final metin = '${saatYaz(zaman)} · ${konum.ad}';
+
+        // Vakitten önce hatırlatma
+        final dk = durum.hatirlatmaDk;
+        final hatirlatmaZamani = zaman.subtract(Duration(minutes: dk));
+        if (dk > 0 && hatirlatmaZamani.isAfter(simdi)) {
+          await _eklenti.zonedSchedule(
+            id: 1000 + numara,
+            title: i == 1 ? 'Güneşin doğmasına $dk dakika kaldı' : '${vakitAdlari[i]} vaktine $dk dakika kaldı',
+            body: '${vakitAdlari[i]} ${saatYaz(zaman)} · ${konum.ad}',
+            scheduledDate: tz.TZDateTime.from(hatirlatmaZamani, tz.local),
+            notificationDetails: _detay,
+            androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+          );
+        }
+
         if (!zaman.isAfter(simdi)) continue; // geçmiş vakit kurulmaz
-        await _eklenti.zonedSchedule(
-          id: numara,
-          title: i == 1 ? 'Güneş doğdu' : '${vakitAdlari[i]} vakti girdi',
-          body: '${saatYaz(zaman)} · ${konum.ad}',
-          scheduledDate: tz.TZDateTime.from(zaman, tz.local),
-          notificationDetails: _detay,
-          androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
-        );
+        if (durum.sesliEzan && i != 1) {
+          // Güneş dışındaki vakitlerde ezanı Android tarafındaki servis okur
+          ezanlar.add({'zaman': zaman.millisecondsSinceEpoch, 'vakit': i, 'baslik': baslik, 'metin': metin});
+        } else {
+          await _eklenti.zonedSchedule(
+            id: numara,
+            title: baslik,
+            body: metin,
+            scheduledDate: tz.TZDateTime.from(zaman, tz.local),
+            notificationDetails: _detay,
+            androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+          );
+        }
       }
     }
+    await Yerel.ezanlariKur(ezanlar,
+        dua: durum.duaOtomatik, sessizdeOku: durum.sessizdeOku, tamEkran: durum.tamEkran);
   }
 }

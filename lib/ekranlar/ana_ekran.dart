@@ -202,11 +202,14 @@ class _AnaEkranState extends State<AnaEkran> {
               fontFeatures: const [FontFeature.tabularFigures()],
             ),
           ),
+          // Zil: açıkken sesli ezan varsa hoparlör, yoksa zil simgesi görünür
           IconButton(
-            tooltip: acik ? '${vakitAdlari[i]} bildirimini kapat' : '${vakitAdlari[i]} bildirimini aç',
+            tooltip: acik ? '${vakitAdlari[i]} uyarısını kapat' : '${vakitAdlari[i]} uyarısını aç',
             onPressed: () => durum.bildirimAyarla(i, !acik),
             icon: Icon(
-              acik ? Icons.notifications_active_outlined : Icons.notifications_off_outlined,
+              !acik
+                  ? Icons.notifications_off_outlined
+                  : (durum.sesliEzan && i != 1 ? Icons.volume_up_outlined : Icons.notifications_active_outlined),
               color: acik ? (siradaki ? Renk.altinYazi : Renk.yazi) : Renk.soluk,
             ),
           ),

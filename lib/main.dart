@@ -5,11 +5,17 @@ import 'package:flutter/material.dart';
 
 import 'ekranlar/ana_ekran.dart';
 import 'ekranlar/ayarlar_ekrani.dart';
+import 'ekranlar/guncelleme.dart';
 import 'ekranlar/imsakiye_ekrani.dart';
 import 'ekranlar/konum_sec_ekrani.dart';
+import 'ekranlar/tam_ekran.dart';
 import 'servis/bildirim_servisi.dart';
 import 'servis/durum.dart';
+import 'servis/yerel.dart';
 import 'tema.dart';
+
+/// Tam ekran uyarıyı her yerden açabilmek için uygulamanın gezinme anahtarı.
+final GlobalKey<NavigatorState> gezinme = GlobalKey<NavigatorState>();
 
 /// Uygulama açılınca ilk çalışan fonksiyon: ayarları okur, bildirimleri hazırlar, ekranı açar.
 Future<void> main() async {
@@ -27,6 +33,7 @@ class EzanVakitlerimUygulamasi extends StatelessWidget {
     return MaterialApp(
       title: 'Ezan Vakitlerim',
       debugShowCheckedModeBanner: false,
+      navigatorKey: gezinme,
       theme: uygulamaTemasi(),
       home: const Kabuk(),
     );
@@ -43,15 +50,34 @@ class Kabuk extends StatefulWidget {
 
 class _KabukState extends State<Kabuk> {
   int _sekme = 0;
+  bool _tamEkranAcik = false;
 
-  // Ekran ilk çizildikten sonra bildirim izni ister ve bildirimleri tazeler
+  // Ekran ilk çizildikten sonra: tam ekran uyarıyla mı açıldık bak, izin iste,
+  // uyarıları tazele, güncellemeden sonraysa yenilikleri göster, yeni sürüm denetle
   @override
   void initState() {
     super.initState();
+    final ilkKurulum = durum.konum == null;
+    Yerel.tamEkranDinle(_tamEkraniAc);
     WidgetsBinding.instance.addPostFrameCallback((_) async {
+      final vakit = await Yerel.acilisVakti();
+      if (vakit >= 0) _tamEkraniAc(vakit);
       await BildirimServisi.izinIste();
       await BildirimServisi.planla();
+      if (!mounted || _tamEkranAcik) return;
+      await yeniliklerGerekirseGoster(context, ilkKurulum: ilkKurulum);
+      if (!mounted || _tamEkranAcik) return;
+      await guncellemeDenetle(context);
     });
+  }
+
+  // Tam ekran vakit uyarısını açar (zaten açıksa ikinciyi açmaz)
+  void _tamEkraniAc(int vakit) {
+    if (_tamEkranAcik) return;
+    _tamEkranAcik = true;
+    gezinme.currentState
+        ?.push(MaterialPageRoute(builder: (_) => TamEkranEkrani(vakit: vakit)))
+        .whenComplete(() => _tamEkranAcik = false);
   }
 
   @override
