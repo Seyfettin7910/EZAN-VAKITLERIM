@@ -1,0 +1,5 @@
+1413 satır geldi
+UYARI: Konya için ilçe yok
+UYARI: Uşak için ilçe yok
+81 il, 980 ilçe
+koordinatı olmayan ilçeler: Aksaray/Gülağaç, Balıkesir/Erdek, Siirt/Eruh, Siirt/Pervari, Siirt/Tillo'nun, Siirt/Şirvan'ın, Hakkari/Derecik, Mardin/Mazıdağı, Siirt/Kurtalan
