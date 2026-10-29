@@ -115,20 +115,31 @@ class _AnaEkranState extends State<AnaEkran> {
             crossAxisAlignment: CrossAxisAlignment.baseline,
             textBaseline: TextBaseline.alphabetic,
             children: [
-              Text(vakitAdlari[d.siradaki], style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w800, color: Renk.anaYazi)),
-              const Spacer(),
+              Flexible(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.centerLeft,
+                  child: Text(vakitAdlari[d.siradaki], style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w800, color: Renk.anaYazi)),
+                ),
+              ),
+              const SizedBox(width: 12),
               Text(saatYaz(d.siradakiZaman), style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: Renk.altin)),
             ],
           ),
           const SizedBox(height: 6),
-          Text(
-            kalanYaz(d.siradakiZaman.difference(simdi)),
-            style: const TextStyle(
-              fontSize: 54,
-              fontWeight: FontWeight.w800,
-              height: 1.1,
-              color: Renk.anaYazi,
-              fontFeatures: [FontFeature.tabularFigures()],
+          // Yazı boyutu büyütülse de kartın içine sığsın diye gerekirse kendini küçültür
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.centerLeft,
+            child: Text(
+              kalanYaz(d.siradakiZaman.difference(simdi)),
+              style: const TextStyle(
+                fontSize: 54,
+                fontWeight: FontWeight.w800,
+                height: 1.1,
+                color: Renk.anaYazi,
+                fontFeatures: [FontFeature.tabularFigures()],
+              ),
             ),
           ),
           const SizedBox(height: 12),

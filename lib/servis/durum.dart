@@ -34,6 +34,7 @@ class UygulamaDurumu extends ChangeNotifier {
   int hatirlatmaDk = 0; // vakitten kaç dakika önce hatırlatılsın
   int ezanSesi = 85; // ezan okunurken alarm sesi yüzdesi (0 = telefonun kendi alarm sesi)
   bool otomatikGuncelle = true; // açılışta yeni sürüm denetlensin
+  double yaziBoyutu = 1.0; // uygulamadaki yazıların büyüklüğü: 1.0 normal, 1.2 büyük, 1.4 çok büyük
 
   // Ayet ve hadis gösterimi
   String ayetModu = 'secme'; // 'secme' = seçme ayet grupları, 'hatim' = Kur'an sırayla, rükû rükû
@@ -62,6 +63,7 @@ class UygulamaDurumu extends ChangeNotifier {
     hatirlatmaDk = _depo.getInt('hatirlatma_dk') ?? hatirlatmaDk;
     ezanSesi = _depo.getInt('ezan_sesi') ?? ezanSesi;
     otomatikGuncelle = _depo.getBool('otomatik_guncelle') ?? otomatikGuncelle;
+    yaziBoyutu = _depo.getDouble('yazi_boyutu') ?? yaziBoyutu;
     ayetModu = _depo.getString('ayet_modu') ?? ayetModu;
     hatimBaslangic = _depo.getInt('hatim_baslangic') ?? hatimBaslangic;
     arapcaGoster = _depo.getBool('arapca_goster') ?? arapcaGoster;
@@ -117,6 +119,13 @@ class UygulamaDurumu extends ChangeNotifier {
     }
     notifyListeners();
     await BildirimServisi.planla();
+  }
+
+  /// Uygulamadaki yazıların büyüklüğünü değiştirir (bütün ekranlar hemen büyür/küçülür).
+  Future<void> yaziBoyutuAyarla(double carpan) async {
+    yaziBoyutu = carpan;
+    await _depo.setDouble('yazi_boyutu', carpan);
+    notifyListeners();
   }
 
   /// Otomatik güncelleme denetimini açar/kapatır.

@@ -1,43 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Küçük widget (2×2): sıradaki vakit, saati, kalan süre -->
+<!-- Küçük widget (2×2): sıradaki vakit, saati, kalan süre. Yazılar büyük ve kalın (kolay okunsun diye);
+     saat yazısı widget'ın boyuna göre kendini büyütür/küçültür. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/w_kok"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/widget_zemin_koyu"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="14dp">
 
     <TextView
         android:id="@+id/w_ad"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sıradaki"
-        android:textColor="#B9D3CF"
-        android:textSize="13sp"
+        android:maxLines="1"
+        android:text="İkindi"
+        android:textColor="#E3F0ED"
+        android:textSize="17sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/w_saat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="--:--"
-        android:textColor="#F2F5F4"
-        android:textSize="38sp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:autoSizeMaxTextSize="60sp"
+        android:autoSizeMinTextSize="26sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:text="15:51"
+        android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
     <Chronometer
         android:id="@+id/w_kalan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#E0B054"
-        android:textSize="15sp"
+        android:textColor="#F2C46B"
+        android:textSize="20sp"
         android:textStyle="bold" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
 
     <TextView
         android:id="@+id/w_konum"
@@ -45,6 +48,8 @@
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:maxLines="1"
-        android:textColor="#B9D3CF"
-        android:textSize="11sp" />
+        android:text="Ezan Vakitlerim"
+        android:textColor="#D6E8E5"
+        android:textSize="13sp"
+        android:textStyle="bold" />
 </LinearLayout>

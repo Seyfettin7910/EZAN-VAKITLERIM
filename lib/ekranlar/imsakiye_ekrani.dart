@@ -83,8 +83,9 @@ class ImsakiyeEkrani extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
       child: Row(
         children: [
-          SizedBox(width: 52, child: Text(ilk, style: stil)),
-          for (final s in digerleri) Expanded(child: Text(s, style: stil, textAlign: TextAlign.center)),
+          SizedBox(width: 52, child: FittedBox(fit: BoxFit.scaleDown, alignment: Alignment.centerLeft, child: Text(ilk, style: stil))),
+          for (final s in digerleri)
+            Expanded(child: FittedBox(fit: BoxFit.scaleDown, child: Text(s, style: stil, textAlign: TextAlign.center))),
         ],
       ),
     );

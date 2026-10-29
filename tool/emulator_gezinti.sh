@@ -54,4 +54,16 @@ kaydir; kaydir
 cek 9-ayarlar2
 kaydir; kaydir
 cek 10-ayarlar3
+# Büyük yazıyla bir tur: telefonun yazı boyutunu %140 yap, taşma var mı bak
+adb shell settings put system font_scale 1.4
+adb shell am force-stop $P
+adb shell am start -n $P/.MainActivity
+sleep 12
+cek 11-buyuk-vakitler
+kaydir; kaydir
+cek 12-buyuk-vakitler-alt
+dokun "İmsakiye" alt
+sleep 3
+cek 13-buyuk-imsakiye
+adb shell settings put system font_scale 1.0
 adb logcat -d > $O/logcat-tam.txt

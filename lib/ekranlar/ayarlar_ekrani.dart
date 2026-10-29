@@ -99,6 +99,34 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> with WidgetsBindingObserv
               ),
             ]),
 
+            const _Baslik('Görünüm'),
+            _Kart(children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 14, 16, 4),
+                child: Row(
+                  children: [
+                    const Icon(Icons.text_fields, color: Renk.ana),
+                    const SizedBox(width: 12),
+                    const Expanded(child: Text('Yazı boyutu', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600))),
+                    Text('Aa', style: TextStyle(fontSize: 16 * durum.yaziBoyutu, fontWeight: FontWeight.w800, color: Renk.ana)),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(12, 8, 12, 14),
+                child: SegmentedButton<double>(
+                  showSelectedIcon: false,
+                  segments: const [
+                    ButtonSegment(value: 1.0, label: Text('Normal')),
+                    ButtonSegment(value: 1.2, label: Text('Büyük')),
+                    ButtonSegment(value: 1.4, label: Text('Çok büyük')),
+                  ],
+                  selected: {durum.yaziBoyutu},
+                  onSelectionChanged: (s) => durum.yaziBoyutuAyarla(s.first),
+                ),
+              ),
+            ]),
+
             const _Baslik('Ezan ve uyarı'),
             _Kart(children: [
               _Anahtar(

@@ -81,6 +81,11 @@ object WidgetGuncelleyici {
             for (k in ortalar) {
                 val g = RemoteViews(context.packageName, R.layout.widget_orta)
                 g.setTextViewText(R.id.w_baslik, "Konum seçmek için dokun")
+                for (i in 0 until 6) {
+                    g.setTextViewText(adYazilari[i], VakitHesap.adlar[i])
+                    g.setTextViewText(saatYazilari[i], "--:--")
+                    g.setInt(sutunlar[i], "setBackgroundResource", 0)
+                }
                 g.setOnClickPendingIntent(R.id.w_kok, acilis)
                 yonetici.updateAppWidget(k, g)
             }
@@ -125,7 +130,8 @@ object WidgetGuncelleyici {
                 val vurgu = siradakiBugun && i == sira
                 g.setInt(sutunlar[i], "setBackgroundResource", if (vurgu) R.drawable.widget_siradaki else 0)
                 val gecti = bugun[i] <= simdi
-                val renk = if (gecti) 0xFF8A9E9B.toInt() else 0xFF12302E.toInt()
+                // Geçen vakitler biraz açık ama hâlâ rahat okunur; gelecek vakitler koyu
+                val renk = if (gecti) 0xFF5B6E6B.toInt() else 0xFF0B2321.toInt()
                 g.setTextColor(adYazilari[i], renk)
                 g.setTextColor(saatYazilari[i], renk)
             }

@@ -94,10 +94,13 @@ class _TamEkranEkraniState extends State<TamEkranEkrani> {
             Text(tarihYaz(simdi), textAlign: TextAlign.center, style: const TextStyle(color: Renk.anaSoluk, fontSize: 15, fontWeight: FontWeight.w600)),
             const SizedBox(height: 6),
             Text(baslik, textAlign: TextAlign.center, style: const TextStyle(color: Renk.anaYazi, fontSize: 34, fontWeight: FontWeight.w800)),
-            Text(
-              saatYaz(zaman),
-              textAlign: TextAlign.center,
-              style: const TextStyle(color: Renk.altin, fontSize: 64, fontWeight: FontWeight.w800, height: 1.1),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                saatYaz(zaman),
+                textAlign: TextAlign.center,
+                style: const TextStyle(color: Renk.altin, fontSize: 64, fontWeight: FontWeight.w800, height: 1.1),
+              ),
             ),
             const SizedBox(height: 24),
 
@@ -121,10 +124,11 @@ class _TamEkranEkraniState extends State<TamEkranEkrani> {
                       style: FilledButton.styleFrom(
                         backgroundColor: Renk.altin,
                         foregroundColor: _zemin,
-                        minimumSize: const Size(44, 44),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
+                        minimumSize: const Size(120, 60),
+                        padding: const EdgeInsets.symmetric(horizontal: 22),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                       ),
-                      child: const Text('Durdur', style: TextStyle(fontWeight: FontWeight.w800)),
+                      child: const Text('Durdur', style: TextStyle(fontSize: 19, fontWeight: FontWeight.w800)),
                     ),
                 ],
               ),
@@ -149,7 +153,7 @@ class _TamEkranEkraniState extends State<TamEkranEkrani> {
               ),
             const SizedBox(height: 24),
             SizedBox(
-              height: 54,
+              height: 60,
               child: OutlinedButton(
                 onPressed: _kapat,
                 style: OutlinedButton.styleFrom(
@@ -157,7 +161,7 @@ class _TamEkranEkraniState extends State<TamEkranEkrani> {
                   side: const BorderSide(color: Color(0xFF3C6C6A), width: 1.5),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                 ),
-                child: const Text('Kapat', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
+                child: const Text('Kapat', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800)),
               ),
             ),
           ],

@@ -1,8 +1,7 @@
-• İl ve ilçe seçimi: Konumu artık ilçe ilçe seçebilirsin (81 il, 973 ilçe). Vakitler seçtiğin ilçenin merkezine göre hesaplanır. Arama kutusuna doğrudan ilçe adını da yazabilirsin.
-• GPS ile seçince en yakın ilçenin adı görünür.
-• Ezan sesi yükseltildi: Ezan ve ezan duası daha gür okunur.
-• Ezan ses seviyesi: Ayarlar > Ezan ve uyarı'dan seçebilirsin. Ezan okunurken alarm sesi o seviyeye çıkar, bitince eski haline döner.
-
-1.2.0 ile gelenler: Kıble pusulası, yakındaki camiler, ana ekran widget'ları, her vakit bir ayet ve sahih bir hadis.
+• Yazı boyutu: Ayarlar > Görünüm'den Normal, Büyük ya da Çok büyük seçebilirsin. Bütün uygulamanın yazıları birden büyür.
+• Widget'larda yazılar daha büyük, daha kalın ve daha koyu; uzaktan da rahat okunur.
+• Küçük widget (2×2) düzeltildi: artık ana ekrana eklenebiliyor.
+• Widget seçme ekranında örnek vakitler görünüyor.
+• Tam ekran uyarıda "Durdur" ve "Kapat" düğmeleri büyüdü, kolay basılıyor.
 
 Uygulamanın yapımında katkısı olan müezzinlerimize çok teşekkür ederiz. Allah onlardan razı olsun.

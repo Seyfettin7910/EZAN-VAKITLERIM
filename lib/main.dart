@@ -36,12 +36,24 @@ class EzanVakitlerimUygulamasi extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Ezan Vakitlerim',
-      debugShowCheckedModeBanner: false,
-      navigatorKey: gezinme,
-      theme: uygulamaTemasi(),
-      home: const Kabuk(),
+    return ListenableBuilder(
+      listenable: durum,
+      builder: (context, _) => MaterialApp(
+        title: 'Ezan Vakitlerim',
+        debugShowCheckedModeBanner: false,
+        navigatorKey: gezinme,
+        theme: uygulamaTemasi(),
+        // Ayarlardaki "Yazı boyutu", telefonun kendi yazı boyutunun üstüne eklenir
+        builder: (context, child) {
+          final mq = MediaQuery.of(context);
+          final telefon = mq.textScaler.scale(10) / 10;
+          return MediaQuery(
+            data: mq.copyWith(textScaler: TextScaler.linear(telefon * durum.yaziBoyutu)),
+            child: child!,
+          );
+        },
+        home: const Kabuk(),
+      ),
     );
   }
 }
@@ -108,7 +120,12 @@ class _KabukState extends State<Kabuk> {
               ],
             ),
           ),
-          bottomNavigationBar: NavigationBar(
+          // Alt menü yazıları en fazla %130'a kadar büyür, yoksa beş sekme sığmaz
+          bottomNavigationBar: MediaQuery(
+            data: MediaQuery.of(context).copyWith(
+              textScaler: MediaQuery.of(context).textScaler.clamp(maxScaleFactor: 1.3),
+            ),
+            child: NavigationBar(
             selectedIndex: _sekme,
             onDestinationSelected: (i) => setState(() => _sekme = i),
             destinations: const [
@@ -118,6 +135,7 @@ class _KabukState extends State<Kabuk> {
               NavigationDestination(icon: Icon(Icons.calendar_month_outlined), selectedIcon: Icon(Icons.calendar_month), label: 'İmsakiye'),
               NavigationDestination(icon: Icon(Icons.tune), label: 'Ayarlar'),
             ],
+            ),
           ),
         );
       },
