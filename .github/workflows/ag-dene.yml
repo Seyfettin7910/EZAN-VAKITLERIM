@@ -10,20 +10,22 @@ jobs:
     steps:
       - name: Sunuculara sor
         run: |
+          set +e
           mkdir -p /tmp/a && cd /tmp/a
           Q='[out:json][timeout:20];(node["amenity"="place_of_worship"]["religion"="muslim"](around:3000,39.9179,32.8628);way["amenity"="place_of_worship"]["religion"="muslim"](around:3000,39.9179,32.8628););out center 80;'
           UA='EzanVakitlerim/1.2 (github.com/Seyfettin7910/EZAN-VAKITLERIM)'
           for s in overpass-api.de/api/interpreter overpass.private.coffee/api/interpreter overpass.kumi.systems/api/interpreter maps.mail.ru/osm/tools/overpass/api/interpreter; do
             echo "== $s" >> sonuc.txt
             curl -sS -G -A "$UA" -m 30 -o yanit.txt -w "kod=%{http_code} sure=%{time_total}\n" --data-urlencode "data=$Q" "https://$s" >> sonuc.txt 2>&1 || true
-            head -c 300 yanit.txt >> sonuc.txt; echo >> sonuc.txt
+            head -c 300 yanit.txt >> sonuc.txt 2>/dev/null || true; rm -f yanit.txt; echo >> sonuc.txt
           done
           echo "== OSM harita karosu" >> sonuc.txt
           curl -sS -A "$UA" -m 20 -o /dev/null -w "kod=%{http_code}\n" https://tile.openstreetmap.org/15/19374/12428.png >> sonuc.txt 2>&1 || true
           echo "== yol" >> sonuc.txt
           curl -sS -A "$UA" -m 20 -w "\nkod=%{http_code}\n" "https://routing.openstreetmap.de/routed-foot/route/v1/driving/32.8597,39.9334;32.8540,39.9250?overview=false" >> sonuc.txt 2>&1 || true
-          cat sonuc.txt
+          cat sonuc.txt || true
       - name: Kaydet
+        if: always()
         run: |
           cd /tmp/a && git init -q && git checkout -q -b gunluk-ag
           git config user.name "github-actions"; git config user.email "github-actions@users.noreply.github.com"
