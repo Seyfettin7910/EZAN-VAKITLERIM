@@ -29,6 +29,7 @@ class _AcilisEkraniState extends State<AcilisEkrani> with SingleTickerProviderSt
   late final AnimationController _anim =
       AnimationController(vsync: this, duration: const Duration(milliseconds: 1300));
   bool _ilkKareHazir = false;
+  final Completer<void> _atla = Completer<void>(); // ekrana dokununca beklemeyi bitirir
 
   // Yüklemeyi ve animasyonu başlatır
   @override
@@ -62,8 +63,8 @@ class _AcilisEkraniState extends State<AcilisEkrani> with SingleTickerProviderSt
     super.dispose();
   }
 
-  // Ayarları ve verileri yükler; en az 2,4 saniye bekletir ki yazı okunabilsin.
-  // Ezan uyarısıyla açıldıysa hiç beklemeden geçer.
+  // Ayarları ve verileri yükler; en az 3,5 saniye bekletir ki ayet rahat okunsun.
+  // Ekrana dokunulursa ya da ezan uyarısıyla açıldıysa beklemeden geçer.
   Future<void> _yukleVeGec() async {
     final baslangic = DateTime.now();
     Future<void> guvenli(Future<void> Function() is_) async {
@@ -81,8 +82,8 @@ class _AcilisEkraniState extends State<AcilisEkrani> with SingleTickerProviderSt
     final vakit = await Yerel.acilisVakti();
 
     if (vakit < 0) {
-      final kalan = const Duration(milliseconds: 2400) - DateTime.now().difference(baslangic);
-      if (kalan > Duration.zero) await Future.delayed(kalan);
+      final kalan = const Duration(milliseconds: 3500) - DateTime.now().difference(baslangic);
+      if (kalan > Duration.zero) await Future.any([Future.delayed(kalan), _atla.future]);
     }
     if (!mounted) return;
     debugPrint('Açılış ekranı: ${DateTime.now().difference(baslangic).inMilliseconds} ms sonra ana ekrana geçiliyor');
@@ -103,7 +104,12 @@ class _AcilisEkraniState extends State<AcilisEkrani> with SingleTickerProviderSt
         value: SystemUiOverlayStyle.light,
         child: Scaffold(
           backgroundColor: Renk.ana,
-          body: AnimatedBuilder(
+          body: GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: () {
+              if (!_atla.isCompleted) _atla.complete();
+            },
+            child: AnimatedBuilder(
             animation: _anim,
             builder: (context, _) {
               // Logo: ilk 0,8 saniyede ortadan yukarı süzülüp küçülür
@@ -144,6 +150,7 @@ class _AcilisEkraniState extends State<AcilisEkrani> with SingleTickerProviderSt
                 ],
               );
             },
+          ),
           ),
         ),
       ),

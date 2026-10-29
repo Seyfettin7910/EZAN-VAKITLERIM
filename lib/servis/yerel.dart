@@ -59,9 +59,9 @@ class Yerel {
   static Future<void> konumKaydet(String ad, double enlem, double boylam) =>
       _cagir<void>('konumKaydet', null, {'ad': ad, 'enlem': enlem, 'boylam': boylam});
 
-  /// Bir yeri harita uygulamasında açar; [yolTarifi] ise yürüyerek yol tarifi verir.
-  static Future<void> haritadaAc(double enlem, double boylam, String ad, {bool yolTarifi = false}) =>
-      _cagir<void>('haritadaAc', null, {'enlem': enlem, 'boylam': boylam, 'ad': ad, 'yolTarifi': yolTarifi});
+  /// Bir yeri telefondaki harita uygulamasında açar.
+  static Future<void> haritadaAc(double enlem, double boylam, String ad) =>
+      _cagir<void>('haritadaAc', null, {'enlem': enlem, 'boylam': boylam, 'ad': ad});
 
   static const EventChannel _pusula = EventChannel('ezan_vakitlerim/pusula');
 

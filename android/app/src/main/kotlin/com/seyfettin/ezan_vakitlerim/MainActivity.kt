@@ -151,15 +151,15 @@ class MainActivity : FlutterActivity() {
                         val enlem = cagri.argument<Double>("enlem") ?: 0.0
                         val boylam = cagri.argument<Double>("boylam") ?: 0.0
                         val ad = Uri.encode(cagri.argument<String>("ad") ?: "Cami")
-                        val yolTarifi = cagri.argument<Boolean>("yolTarifi") ?: false
-                        val adres = if (yolTarifi)
-                            Uri.parse("https://www.google.com/maps/dir/?api=1&destination=$enlem,$boylam&travelmode=walking")
-                        else
-                            Uri.parse("geo:$enlem,$boylam?q=$enlem,$boylam($ad)")
+                        // Telefonda hangi harita uygulaması varsa o açılır; hiç yoksa OpenStreetMap sitesi
+                        val adres = Uri.parse("geo:$enlem,$boylam?q=$enlem,$boylam($ad)")
                         try {
                             startActivity(Intent(Intent.ACTION_VIEW, adres).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
                         } catch (e: Exception) {
-                            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/maps/search/?api=1&query=$enlem,$boylam")))
+                            try {
+                                startActivity(Intent(Intent.ACTION_VIEW,
+                                    Uri.parse("https://www.openstreetmap.org/?mlat=$enlem&mlon=$boylam#map=18/$enlem/$boylam")))
+                            } catch (_: Exception) {}
                         }
                         sonuc.success(null)
                     }

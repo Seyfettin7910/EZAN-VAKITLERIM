@@ -3,7 +3,7 @@ description: "Ücretsiz, reklamsız namaz vakitleri uygulaması (Android)."
 publish_to: 'none'
 
 # Sürüm: 1.0.0 kullanıcıya görünen sürüm. "+" sonrasını GitHub her derlemede kendisi artırır.
-version: 1.2.3+1
+version: 1.2.4+1
 
 environment:
   sdk: ^3.13.7
@@ -21,6 +21,9 @@ dependencies:
   shared_preferences: ^2.5.6
   # İndirilen güncellemenin bozuk olup olmadığını parmak iziyle (SHA-256) kontrol etmek için
   crypto: ^3.0.8
+  # Yakındaki camileri haritada göstermek için (OpenStreetMap, ücretsiz, anahtarsız)
+  flutter_map: ^8.3.2
+  latlong2: ^0.9.1
 
 dev_dependencies:
   flutter_test:

@@ -53,6 +53,14 @@ cek 6-kible
 dokun "Camiler" alt
 sleep 25
 cek 7-camiler
+dokun "Harita"
+sleep 15
+cek 7b-harita
+dokun "Liste"
+sleep 2
+dokun "Yürüyerek yol tarifi"
+sleep 15
+cek 7c-yol
 dokun "Ayarlar" alt
 sleep 3
 kaydir; kaydir

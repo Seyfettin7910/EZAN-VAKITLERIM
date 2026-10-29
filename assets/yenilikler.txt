@@ -1,5 +1,7 @@
-• Yeni açılış ekranı: logonun altında "Ezan Vakitlerim" yazısı, altın süslü ayraç ve vakit ayeti (Nisâ Sûresi, 103).
-• Telefonun kendi açılış ekranı da artık yeşil zeminde; uygulamaya geçiş yumuşak.
-• Ezan uyarısıyla açılınca açılış ekranında beklemeden doğrudan tam ekran uyarı gelir.
+• Camiler artık haritada: üstteki "Harita" düğmesine bas, yakındaki camileri ve kendi yerini haritada gör.
+• Haritada bir camiye dokun, "Yol tarifi" de: yürüyüş yolu haritaya çizilir, kaç dakika süreceği yazar.
+• "Camiler getirilemedi" hatası azaldı: bir sunucu meşgulse uygulama kendiliğinden yedek sunuculara sorar.
+• İnternet yokken en son bulunan camiler gösterilir.
+• Açılış ekranı biraz daha uzun kalıyor (3,5 saniye); ekrana dokunursan beklemeden geçer.
 
 Uygulamanın yapımında katkısı olan müezzinlerimize çok teşekkür ederiz. Allah onlardan razı olsun.
