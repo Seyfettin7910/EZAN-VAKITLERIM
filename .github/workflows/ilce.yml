@@ -13,7 +13,9 @@ jobs:
         with:
           python-version: '3.12'
       - name: İl ve ilçeleri çek
-        run: python3 tool/ilce_uret.py | tee ilce-gunluk.txt
+        run: |
+          set -o pipefail
+          python3 -u tool/ilce_uret.py 2>&1 | tee ilce-gunluk.txt || true
       - name: Depoya kaydet
         run: |
           git config user.name "github-actions"
