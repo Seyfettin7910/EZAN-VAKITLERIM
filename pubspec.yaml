@@ -20,7 +20,7 @@ dependencies:
   # Seçilen konumu ve ayarları telefonda saklamak için
   shared_preferences: ^2.5.6
   # İndirilen güncellemenin bozuk olup olmadığını parmak iziyle (SHA-256) kontrol etmek için
-  crypto: ^
+  crypto: ^3.0.8
 
 dev_dependencies:
   flutter_test:
