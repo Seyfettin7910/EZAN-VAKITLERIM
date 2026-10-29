@@ -26,8 +26,11 @@ adb logcat -c
 # Açılış ekranı: "ilk kare" günlüğü düşünce, yazılar belirdikten sonra görüntü al
 adb shell am start -n $P/.MainActivity
 for i in $(seq 1 60); do adb logcat -d -s flutter | grep -q "Açılış ekranı: ilk kare" && break; sleep 0.3; done
-sleep 0.4; cek 0-acilis-a
-sleep 0.5; cek 0-acilis-b
+acilisKareleri() { # telefonun içinde art arda 8 görüntü alır, sonra hepsini çeker
+  for i in 1 2 3 4 5 6 7 8; do adb shell screencap -p /sdcard/a$i.png; echo "$1 $i $(date +%T.%N)" >> $O/kare-zaman.txt; done
+  for i in 1 2 3 4 5 6 7 8; do adb pull /sdcard/a$i.png $O/$1-$i.png > /dev/null 2>&1; done
+}
+acilisKareleri 0-acilis
 sleep 8
 cek 1-acilis
 dokun "Ankara"
@@ -61,8 +64,11 @@ cek 10-ayarlar3
 # Büyük yazıyla bir tur: telefonun yazı boyutunu %140 yap, taşma var mı bak
 adb shell settings put system font_scale 1.4
 adb shell am force-stop $P
+adb logcat -c
 adb shell am start -n $P/.MainActivity
-sleep 12
+for i in $(seq 1 60); do adb logcat -d -s flutter | grep -q "Açılış ekranı: ilk kare" && break; sleep 0.3; done
+acilisKareleri 0-buyuk-acilis
+sleep 6
 cek 11-buyuk-vakitler
 kaydir; kaydir
 cek 12-buyuk-vakitler-alt
@@ -71,3 +77,14 @@ sleep 3
 cek 13-buyuk-imsakiye
 adb shell settings put system font_scale 1.0
 adb logcat -d > $O/logcat-tam.txt
+cd $O && python3 -c "
+from PIL import Image
+import glob
+for ad in ('0-acilis','0-buyuk-acilis'):
+  d=sorted(glob.glob(ad+'-*.png'))
+  if not d: continue
+  ims=[Image.open(x).convert('RGB') for x in d]; w,h=ims[0].size
+  o=Image.new('RGB',(w*len(ims),h))
+  for i,im in enumerate(ims): o.paste(im,(i*w,0))
+  o.save(ad+'-serit.png')
+" || true
