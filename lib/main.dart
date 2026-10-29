@@ -120,10 +120,10 @@ class _KabukState extends State<Kabuk> {
               ],
             ),
           ),
-          // Alt menü yazıları en fazla %130'a kadar büyür, yoksa beş sekme sığmaz
+          // Alt menü yazıları en fazla %110'a kadar büyür, yoksa beş sekme sığmaz
           bottomNavigationBar: MediaQuery(
             data: MediaQuery.of(context).copyWith(
-              textScaler: MediaQuery.of(context).textScaler.clamp(maxScaleFactor: 1.3),
+              textScaler: MediaQuery.of(context).textScaler.clamp(maxScaleFactor: 1.1),
             ),
             child: NavigationBar(
             selectedIndex: _sekme,

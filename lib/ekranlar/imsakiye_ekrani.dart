@@ -23,6 +23,9 @@ class ImsakiyeEkrani extends StatelessWidget {
           return VakitHesap.hesapla(DateTime(simdi.year, simdi.month, simdi.day + g), konum.enlem, konum.boylam);
         });
 
+        // Yazı büyütülmüşse tablo yerine gün gün kart gösterilir (sütunlar sıkışmasın, iri okunsun)
+        final buyukYazi = MediaQuery.textScalerOf(context).scale(10) > 11.5;
+
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -34,7 +37,16 @@ class ImsakiyeEkrani extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(24, 0, 24, 12),
               child: Text('${konum.ad} · 30 gün', style: const TextStyle(fontSize: 13, color: Renk.soluk)),
             ),
+            if (buyukYazi)
+              Expanded(
+                child: ListView.builder(
+                  padding: const EdgeInsets.fromLTRB(16, 4, 16, 24),
+                  itemCount: gunler.length,
+                  itemBuilder: (context, i) => _gunKarti(gunler[i], bugun: i == 0),
+                ),
+              ),
             // Başlık satırı
+            if (!buyukYazi)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: _satir(
@@ -43,6 +55,7 @@ class ImsakiyeEkrani extends StatelessWidget {
                 stil: const TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: Renk.soluk),
               ),
             ),
+            if (!buyukYazi)
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.fromLTRB(16, 4, 16, 24),
@@ -74,6 +87,43 @@ class ImsakiyeEkrani extends StatelessWidget {
           ],
         );
       },
+    );
+  }
+
+  // Büyük yazı için bir günün kartı: üstte tarih, altında 3 + 3 vakit
+  Widget _gunKarti(GunlukVakitler gun, {required bool bugun}) {
+    Widget vakit(int i) => Expanded(
+          child: Column(
+            children: [
+              Text(_kisaAdlar[i], style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: Renk.soluk)),
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(saatYaz(gun.vakitler[i]),
+                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: Renk.yazi,
+                        fontFeatures: [FontFeature.tabularFigures()])),
+              ),
+            ],
+          ),
+        );
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 4),
+      padding: const EdgeInsets.fromLTRB(12, 10, 12, 12),
+      decoration: BoxDecoration(
+        color: bugun ? Renk.siradaki : Renk.kart,
+        border: bugun ? Border.all(color: Renk.halka, width: 2) : null,
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(bugun ? 'Bugün · ${tarihYaz(gun.tarih)}' : tarihYaz(gun.tarih),
+              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800, color: Renk.yazi)),
+          const SizedBox(height: 8),
+          Row(children: [vakit(0), vakit(1), vakit(2)]),
+          const SizedBox(height: 8),
+          Row(children: [vakit(3), vakit(4), vakit(5)]),
+        ],
+      ),
     );
   }
 

@@ -115,11 +115,13 @@ class _AnaEkranState extends State<AnaEkran> {
             crossAxisAlignment: CrossAxisAlignment.baseline,
             textBaseline: TextBaseline.alphabetic,
             children: [
-              Flexible(
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
+              Expanded(
+                child: Align(
                   alignment: Alignment.centerLeft,
-                  child: Text(vakitAdlari[d.siradaki], style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w800, color: Renk.anaYazi)),
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(vakitAdlari[d.siradaki], style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w800, color: Renk.anaYazi)),
+                  ),
                 ),
               ),
               const SizedBox(width: 12),
