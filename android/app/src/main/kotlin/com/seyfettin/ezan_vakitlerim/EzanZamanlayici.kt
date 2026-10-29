@@ -87,15 +87,7 @@ object EzanZamanlayici {
                 context, i, niyet,
                 PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
             )
-            try {
-                if (Build.VERSION.SDK_INT >= 31 && !am.canScheduleExactAlarms()) {
-                    am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, zaman, pi)
-                } else {
-                    am.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, zaman, pi)
-                }
-            } catch (e: SecurityException) {
-                am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, zaman, pi)
-            }
+            alarmKur(context, am, zaman, pi)
         }
         context.getSharedPreferences(DEPO, Context.MODE_PRIVATE).edit()
             .putInt(ANAHTAR_SAYI, dizi.length())
@@ -114,11 +106,33 @@ object EzanZamanlayici {
             context, 9999, niyet,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
-        val zaman = System.currentTimeMillis() + saniyeSonra * 1000L
+        alarmKur(context, am, System.currentTimeMillis() + saniyeSonra * 1000L, pi)
+    }
+
+    // Tek bir alarmı kurar. "Çalar saat" türünde kurulur: saat uygulamalarının alarmı gibi,
+    // telefon uykudayken, pil tasarrufundayken de tam vaktinde çalar; Xiaomi gibi telefonlar da bunu kesmez.
+    // Tam zamanlı alarm izni yoksa yaklaşık zamanlı alarma düşer.
+    private fun alarmKur(context: Context, am: AlarmManager, zaman: Long, pi: PendingIntent) {
         try {
-            am.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, zaman, pi)
-        } catch (e: SecurityException) {
-            am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, zaman, pi)
+            if (Build.VERSION.SDK_INT >= 31 && !am.canScheduleExactAlarms()) {
+                am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, zaman, pi)
+                return
+            }
+            val goster = PendingIntent.getActivity(
+                context, 7000, Intent(context, MainActivity::class.java),
+                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+            )
+            am.setAlarmClock(AlarmManager.AlarmClockInfo(zaman, goster), pi)
+        } catch (e: Exception) {
+            try {
+                am.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, zaman, pi)
+            } catch (e2: Exception) {
+                am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, zaman, pi)
+            }
         }
     }
+
+    // Tam zamanlı alarm kurma izni var mı (Android 12 ve üstü)
+    fun tamAlarmIzniVar(context: Context): Boolean =
+        Build.VERSION.SDK_INT < 31 || context.getSystemService(AlarmManager::class.java).canScheduleExactAlarms()
 }

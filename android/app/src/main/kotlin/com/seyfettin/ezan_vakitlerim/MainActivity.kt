@@ -108,6 +108,25 @@ class MainActivity : FlutterActivity() {
                         }
                         sonuc.success(null)
                     }
+                    // Gerçek alarm yoluyla birkaç saniye sonra deneme ezanı (telefon alarmı kesiyor mu görmek için)
+                    "denemeAlarmi" -> {
+                        EzanZamanlayici.denemeKur(this, 2, cagri.argument<Int>("saniye") ?: 60)
+                        sonuc.success(null)
+                    }
+                    "tamAlarmIzniVar" -> sonuc.success(EzanZamanlayici.tamAlarmIzniVar(this))
+                    "tamAlarmIzniAc" -> {
+                        if (Build.VERSION.SDK_INT >= 31) {
+                            try {
+                                startActivity(Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM, Uri.parse("package:$packageName")))
+                            } catch (e: Exception) { uygulamaAyarlariniAc() }
+                        }
+                        sonuc.success(null)
+                    }
+                    // Xiaomi, Oppo, Realme, Vivo, Huawei gibi telefonlarda "Otomatik başlatma" ekranını açar
+                    "otomatikBaslatmaAc" -> {
+                        otomatikBaslatmaAc()
+                        sonuc.success(null)
+                    }
                     "pilKisitlamasiYok" -> {
                         val pm = getSystemService(PowerManager::class.java)
                         sonuc.success(pm.isIgnoringBatteryOptimizations(packageName))
@@ -171,5 +190,35 @@ class MainActivity : FlutterActivity() {
                 sonuc.error("hata", e.message, null)
             }
         }
+    }
+
+    // Telefon markasına göre "Otomatik başlatma" ayar ekranını açmayı dener; bulamazsa uygulama ayarlarını açar
+    private fun otomatikBaslatmaAc() {
+        val adaylar = listOf(
+            "com.miui.securitycenter" to "com.miui.permcenter.autostart.AutoStartManagementActivity",
+            "com.coloros.safecenter" to "com.coloros.safecenter.permission.startup.StartupAppListActivity",
+            "com.coloros.safecenter" to "com.coloros.safecenter.startupapp.StartupAppListActivity",
+            "com.oplus.safecenter" to "com.oplus.safecenter.permission.startup.StartupAppListActivity",
+            "com.oppo.safe" to "com.oppo.safe.permission.startup.StartupAppListActivity",
+            "com.vivo.permissionmanager" to "com.vivo.permissionmanager.activity.BgStartUpManagerActivity",
+            "com.iqoo.secure" to "com.iqoo.secure.ui.phoneoptimize.AddWhiteListActivity",
+            "com.huawei.systemmanager" to "com.huawei.systemmanager.startupmgr.ui.StartupNormalAppListActivity",
+            "com.huawei.systemmanager" to "com.huawei.systemmanager.optimize.process.ProtectActivity",
+            "com.letv.android.letvsafe" to "com.letv.android.letvsafe.AutobootManageActivity",
+            "com.asus.mobilemanager" to "com.asus.mobilemanager.entry.FunctionActivity",
+        )
+        for ((paket, ekran) in adaylar) {
+            try {
+                startActivity(Intent().setClassName(paket, ekran).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+                return
+            } catch (e: Exception) { }
+        }
+        uygulamaAyarlariniAc()
+    }
+
+    private fun uygulamaAyarlariniAc() {
+        try {
+            startActivity(Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:$packageName")))
+        } catch (e: Exception) { }
     }
 }

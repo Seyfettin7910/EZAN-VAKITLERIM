@@ -48,6 +48,11 @@ class Yerel {
 
   static Future<bool> tamEkranIzniVar() => _cagir<bool>('tamEkranIzniVar', true);
   static Future<void> tamEkranIzniAc() => _cagir<void>('tamEkranIzniAc', null);
+  /// Gerçek alarm yoluyla [saniye] sonra deneme ezanı okutur.
+  static Future<void> denemeAlarmi(int saniye) => _cagir<void>('denemeAlarmi', null, {'saniye': saniye});
+  static Future<bool> tamAlarmIzniVar() => _cagir<bool>('tamAlarmIzniVar', true);
+  static Future<void> tamAlarmIzniAc() => _cagir<void>('tamAlarmIzniAc', null);
+  static Future<void> otomatikBaslatmaAc() => _cagir<void>('otomatikBaslatmaAc', null);
   static Future<bool> pilKisitlamasiYok() => _cagir<bool>('pilKisitlamasiYok', true);
   static Future<void> pilAyariAc() => _cagir<void>('pilAyariAc', null);
   static Future<bool> kurulumIzniVar() => _cagir<bool>('kurulumIzniVar', true);

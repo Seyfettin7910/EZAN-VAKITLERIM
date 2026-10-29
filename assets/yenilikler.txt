@@ -1,3 +1,6 @@
+• Ezan alarmı güçlendirildi: vakitler artık saat uygulamalarındaki "çalar saat" gibi kuruluyor; telefon uykudayken ya da pil tasarrufundayken de tam vaktinde okunur. (Durum çubuğunda küçük bir alarm simgesi görünebilir.)
+• Ayarlar > Ezan ve uyarı: "Deneme ezanı (1 dakika sonra)" düğmesi. Dokun, ekranı kilitle, ezan okunuyor mu gör.
+• Ayarlar > Telefon izinleri: "Tam vaktinde alarm izni" ve Xiaomi, Oppo, Realme gibi telefonlar için "Otomatik başlatmayı aç" kısayolu.
 • Yeni: Teheccüd ezanı. Gecenin son üçte biri girince ezan okunur (Kâbe'deki ilk ezan gibi). Ana ekrandaki "Teheccüd" satırının zilinden ya da Ayarlar > Hangi vakitlerde uyarı'dan açılır; kapalı gelir.
 • Teheccüd ezanının kendi ses seviyesi var (%50 gelir, Ayarlar'dan değişir); gece evdekiler uyanmasın diye güçlendirilmez.
 • Ezan sesi daha yüksek: ezan okunurken telefonun alarm sesi artık tam seviyeye (%100) çıkar, ses dosyaları da güçlendirildi.

@@ -24,6 +24,7 @@ class AyarlarEkrani extends StatefulWidget {
 class _AyarlarEkraniState extends State<AyarlarEkrani> with WidgetsBindingObserver {
   bool _tamEkranIzni = true;
   bool _pilSerbest = true;
+  bool _alarmIzni = true;
 
   // Ekran açılınca ve telefon ayarlarından geri dönünce izinlerin durumunu tazeler
   @override
@@ -47,10 +48,12 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> with WidgetsBindingObserv
   Future<void> _izinleriOku() async {
     final tam = await Yerel.tamEkranIzniVar();
     final pil = await Yerel.pilKisitlamasiYok();
+    final alarm = await Yerel.tamAlarmIzniVar();
     if (mounted) {
       setState(() {
         _tamEkranIzni = tam;
         _pilSerbest = pil;
+        _alarmIzni = alarm;
       });
     }
   }
@@ -67,7 +70,6 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> with WidgetsBindingObserv
     ));
   }
 
-  // Ezanı hemen okutur ve tam ekran uyarıyı açar (sesi denemek için)
   // "Teheccüd" satırının altındaki yazı: bu geceki vakti de gösterir
   String _teheccudAciklamasi() {
     final k = durum.konum;
@@ -76,6 +78,18 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> with WidgetsBindingObserv
     return '$metin · bu gece ${saatYaz(VakitHesap.buGeceTeheccud(DateTime.now(), k.enlem, k.boylam))}';
   }
 
+  // 1 dakika sonrasına gerçek alarm yoluyla deneme ezanı kurar
+  Future<void> _denemeAlarmi() async {
+    await BildirimServisi.planla(); // son ses ayarları Android tarafına geçsin
+    await Yerel.denemeAlarmi(60);
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      duration: Duration(seconds: 6),
+      content: Text('1 dakika sonra ezan okunacak. Ekranı kilitle ve bekle. Okunmazsa "Telefon izinleri"ne bak.'),
+    ));
+  }
+
+  // Ezanı hemen okutur ve tam ekran uyarıyı açar (sesi denemek için)
   Future<void> _sesiDene() async {
     await BildirimServisi.planla(); // son ses seviyesi ayarı Android tarafına geçsin
     await Yerel.sesiDene(3);
@@ -220,6 +234,12 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> with WidgetsBindingObserv
                 subtitle: const Text('Ezanı şimdi okutur, durdurabilirsin'),
                 onTap: _sesiDene,
               ),
+              ListTile(
+                leading: const Icon(Icons.alarm, color: Renk.ana),
+                title: const Text('Deneme ezanı (1 dakika sonra)', style: TextStyle(fontWeight: FontWeight.w600)),
+                subtitle: const Text('Gerçek vakit gibi çalışır: dokun, ekranı kilitle ve bekle'),
+                onTap: _denemeAlarmi,
+              ),
             ]),
 
             const _Baslik('Hangi vakitlerde uyarı'),
@@ -321,6 +341,24 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> with WidgetsBindingObserv
                     ? 'Ezan gecikmez'
                     : 'Telefon ezanı geciktirebilir: dokun ve "İzin ver" de'),
                 onTap: _pilSerbest ? null : Yerel.pilAyariAc,
+              ),
+              ListTile(
+                leading: Icon(_alarmIzni ? Icons.check_circle : Icons.alarm_off,
+                    color: _alarmIzni ? Renk.ana : const Color(0xFFB3261E)),
+                title: const Text('Tam vaktinde alarm izni', style: TextStyle(fontWeight: FontWeight.w600)),
+                subtitle: Text(_alarmIzni ? 'Açık' : 'Kapalı: ezan geç okunabilir. Dokun, açılan ekranda izin ver'),
+                onTap: _alarmIzni ? null : Yerel.tamAlarmIzniAc,
+              ),
+              const ListTile(
+                leading: Icon(Icons.info_outline, color: Renk.altinYazi),
+                title: Text('Xiaomi, Redmi, Oppo, Realme, Vivo, Huawei', style: TextStyle(fontWeight: FontWeight.w600)),
+                subtitle: Text('Bu telefonlarda "Otomatik başlatma" açık olmazsa ezan okunmayabilir. Aşağıya dokun, Ezan Vakitlerim\'i aç.'),
+              ),
+              ListTile(
+                leading: const Icon(Icons.play_for_work, color: Renk.ana),
+                title: const Text('Otomatik başlatmayı aç', style: TextStyle(fontWeight: FontWeight.w600)),
+                subtitle: const Text('Telefonun ilgili ayar ekranı açılır'),
+                onTap: Yerel.otomatikBaslatmaAc,
               ),
             ]),
 
