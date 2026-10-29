@@ -11,6 +11,7 @@ import android.media.AudioAttributes
 import android.media.AudioFocusRequest
 import android.media.AudioManager
 import android.media.MediaPlayer
+import android.media.audiofx.LoudnessEnhancer
 import android.os.Build
 import android.os.IBinder
 import android.os.PowerManager
@@ -54,6 +55,7 @@ class EzanServisi : Service() {
     }
 
     private var oynatici: MediaPlayer? = null
+    private var guclendirici: LoudnessEnhancer? = null // sesi en yüksek seviyenin üstüne çıkarır
     private var odakIstegi: AudioFocusRequest? = null
     private var baslik = ""
     private var metin = ""
@@ -107,6 +109,7 @@ class EzanServisi : Service() {
 
     // Bir ses dosyasını alarm sesi olarak çalar; bitince "sonra" işini yapar
     private fun cal(dosya: Int, sonra: () -> Unit) {
+        guclendiriciyiBirak()
         oynatici?.release()
         try {
             val mp = MediaPlayer()
@@ -126,6 +129,7 @@ class EzanServisi : Service() {
                 true
             }
             mp.prepare()
+            guclendir(mp)
             mp.start()
             oynatici = mp
         } catch (e: Exception) {
@@ -133,9 +137,29 @@ class EzanServisi : Service() {
         }
     }
 
+    // Ayarlarda "Sesi güçlendir" açıksa, çalan sesi Android'in ses güçlendiricisiyle 7 dB yükseltir.
+    // Güçlendirici kendi içinde sınırlayıcı kullanır, ses patlamaz.
+    private fun guclendir(mp: MediaPlayer) {
+        val acik = getSharedPreferences(EzanZamanlayici.DEPO, Context.MODE_PRIVATE).getBoolean("sesGuclendir", true)
+        if (!acik) return
+        try {
+            guclendirici = LoudnessEnhancer(mp.audioSessionId).apply {
+                setTargetGain(700) // milibel: 700 = 7 dB
+                enabled = true
+            }
+        } catch (e: Exception) {
+            guclendirici = null // bazı telefonlarda desteklenmeyebilir; normal sesle çalar
+        }
+    }
+
+    private fun guclendiriciyiBirak() {
+        try { guclendirici?.release() } catch (e: Exception) { }
+        guclendirici = null
+    }
+
     // Ayarlardaki "Ezan ses seviyesi" (yüzde) için alarm sesini geçici olarak o seviyeye getirir
     private fun sesSeviyesiniAyarla() {
-        val yuzde = getSharedPreferences(EzanZamanlayici.DEPO, Context.MODE_PRIVATE).getInt("sesSeviyesi", 85)
+        val yuzde = getSharedPreferences(EzanZamanlayici.DEPO, Context.MODE_PRIVATE).getInt("sesSeviyesi", 100)
         if (yuzde <= 0) return // 0 = telefonun kendi alarm sesi
         val ses = getSystemService(AudioManager::class.java)
         try {
@@ -192,6 +216,7 @@ class EzanServisi : Service() {
             it.release()
         }
         oynatici = null
+        guclendiriciyiBirak()
         sesOdaginiBirak()
         sesSeviyesiniGeriAl()
         durum = null
@@ -262,6 +287,7 @@ class EzanServisi : Service() {
 
     override fun onDestroy() {
         sesSeviyesiniGeriAl()
+        guclendiriciyiBirak()
         oynatici?.release()
         oynatici = null
         durum = null

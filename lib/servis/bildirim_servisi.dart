@@ -96,7 +96,7 @@ class BildirimServisi {
       }
     }
     await Yerel.ezanlariKur(ezanlar,
-        dua: durum.duaOtomatik, sessizdeOku: durum.sessizdeOku, tamEkran: durum.tamEkran, sesSeviyesi: durum.ezanSesi);
+        dua: durum.duaOtomatik, sessizdeOku: durum.sessizdeOku, tamEkran: durum.tamEkran, sesSeviyesi: durum.ezanSesi, sesGuclendir: durum.sesGuclendir);
   }
 
   // Asıl kurma işi (hatası planla() içinde yakalanır).
@@ -154,6 +154,6 @@ class BildirimServisi {
       }
     }
     await Yerel.ezanlariKur(ezanlar,
-        dua: durum.duaOtomatik, sessizdeOku: durum.sessizdeOku, tamEkran: durum.tamEkran, sesSeviyesi: durum.ezanSesi);
+        dua: durum.duaOtomatik, sessizdeOku: durum.sessizdeOku, tamEkran: durum.tamEkran, sesSeviyesi: durum.ezanSesi, sesGuclendir: durum.sesGuclendir);
   }
 }

@@ -32,7 +32,8 @@ class UygulamaDurumu extends ChangeNotifier {
   bool tamEkran = true; // vakit girince tam ekran uyarı açılsın
   bool sessizdeOku = false; // telefon sessizdeyken de ezan okunsun
   int hatirlatmaDk = 0; // vakitten kaç dakika önce hatırlatılsın
-  int ezanSesi = 85; // ezan okunurken alarm sesi yüzdesi (0 = telefonun kendi alarm sesi)
+  int ezanSesi = 100; // ezan okunurken alarm sesi yüzdesi (0 = telefonun kendi alarm sesi)
+  bool sesGuclendir = true; // ezanı telefonun en yüksek sesinin de üstüne çıkar (Android ses güçlendiricisi)
   bool otomatikGuncelle = true; // açılışta yeni sürüm denetlensin
   double yaziBoyutu = 1.0; // uygulamadaki yazıların büyüklüğü: 1.0 normal, 1.2 büyük, 1.4 çok büyük
 
@@ -62,6 +63,13 @@ class UygulamaDurumu extends ChangeNotifier {
     sessizdeOku = _depo.getBool('sessizde_oku') ?? sessizdeOku;
     hatirlatmaDk = _depo.getInt('hatirlatma_dk') ?? hatirlatmaDk;
     ezanSesi = _depo.getInt('ezan_sesi') ?? ezanSesi;
+    // 1.2.4: eski varsayılan %85 kısık kaldı; bir kereye mahsus %100'e çıkarılır
+    if (!(_depo.getBool('ses_100_yapildi') ?? false)) {
+      if (ezanSesi > 0 && ezanSesi < 100) ezanSesi = 100;
+      await _depo.setInt('ezan_sesi', ezanSesi);
+      await _depo.setBool('ses_100_yapildi', true);
+    }
+    sesGuclendir = _depo.getBool('ses_guclendir') ?? sesGuclendir;
     otomatikGuncelle = _depo.getBool('otomatik_guncelle') ?? otomatikGuncelle;
     yaziBoyutu = _depo.getDouble('yazi_boyutu') ?? yaziBoyutu;
     ayetModu = _depo.getString('ayet_modu') ?? ayetModu;
@@ -92,7 +100,11 @@ class UygulamaDurumu extends ChangeNotifier {
   }
 
   /// Ezan ve uyarı ayarlarından birini değiştirir, kaydeder ve uyarıları yeniden kurar.
-  Future<void> ezanAyarla({bool? sesli, bool? dua, bool? tam, bool? sessiz, int? hatirlatma, int? ses}) async {
+  Future<void> ezanAyarla({bool? sesli, bool? dua, bool? tam, bool? sessiz, int? hatirlatma, int? ses, bool? guclendir}) async {
+    if (guclendir != null) {
+      sesGuclendir = guclendir;
+      await _depo.setBool('ses_guclendir', guclendir);
+    }
     if (ses != null) {
       ezanSesi = ses;
       await _depo.setInt('ezan_sesi', ses);

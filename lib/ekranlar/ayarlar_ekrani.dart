@@ -170,6 +170,12 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> with WidgetsBindingObserv
                 label: durum.ezanSesi == 0 ? 'Telefon' : '%${durum.ezanSesi}',
                 onChanged: durum.sesliEzan ? (v) => durum.ezanAyarla(ses: v.round()) : null,
               ),
+              _Anahtar(
+                baslik: 'Sesi güçlendir',
+                aciklama: 'Ezan, telefonun en yüksek sesinden de yüksek okunur. Cızırtı olursa kapat.',
+                deger: durum.sesGuclendir,
+                degisti: durum.sesliEzan ? (v) => durum.ezanAyarla(guclendir: v) : null,
+              ),
               ListTile(
                 title: const Text('Vakitten önce hatırlat', style: TextStyle(fontWeight: FontWeight.w600)),
                 subtitle: const Text('Uyarısı açık vakitler için'),
