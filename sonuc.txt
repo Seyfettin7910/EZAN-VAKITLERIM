@@ -1,0 +1,75 @@
+== overpass-api.de/api/interpreter
+kod=200 sure=25.317293
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-29T14:22:51Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+ 
+== overpass.private.coffee/api/interpreter
+curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received
+kod=000 sure=30.002574
+
+== overpass.kumi.systems/api/interpreter
+curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received
+kod=000 sure=30.002369
+
+== maps.mail.ru/osm/tools/overpass/api/interpreter
+kod=200 sure=11.508799
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.4 2390de5a",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-29T14:23:51Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  
+== photon
+kod=200 sure=3.668619
+adet 50
+4150 m Camii place_of_worship
+5059 m Camii place_of_worship
+6190 m Camii place_of_worship
+6458 m Camii place_of_worship
+8684 m Camii place_of_worship
+8969 m Camii place_of_worship
+9026 m Camii place_of_worship
+9441 m Camii place_of_worship
+9609 m Camii place_of_worship
+9906 m Camii place_of_worship
+9854 m Camii place_of_worship
+10263 m Camii place_of_worship
+== nominatim
+kod=200 sure=0.353085
+adet 50
+Counter({'muslim': 50})
+1878 m '' muslim way 1273320642
+2875 m '' muslim way 363091621
+2180 m 'Cenabi Ahmet Paşa Cami' muslim way 322722702
+1868 m 'Cebeci Camii' muslim way 417922715
+220 m 'Kocatepe Camii' muslim relation 6276462
+2171 m 'Ziya Oralay Cami' muslim way 431542051
+2314 m 'Birlik Cami' muslim way 382251247
+3207 m 'Hz.Ebubekir Camii' muslim way 422645507
+1352 m 'Osman Ağa Cami' muslim way 304760089
+1766 m '' muslim way 382251246
+1969 m '' muslim way 1160176957
+2026 m 'Sabuni Camii' muslim way 1367337864
+2146 m '' muslim way 385121565
+2315 m 'İmamı Azam Cami' muslim way 304507514
+2438 m 'İbadullah Camii' muslim way 1268588920
+== OSM harita karosu
+kod=200
+== yol
+{"code":"Ok","routes":[{"legs":[{"steps":[],"weight":146.56,"summary":"","duration":1151.1,"distance":1438.6}],"weight_name":"routability","weight":146.56,"duration":1151.1,"distance":1438.6}],"waypoints":[{"hint":"e1zPgUdhMZCuAQAAwQAAAIgEAAAZBQAA9NEJQnmLdUGqyLlCHpbQQhMBAAB7AAAA6AIAAEIDAAB9AAAALWb1AddVYQI0ZvUB2FVhAgoAnxUAAAAA","location":[32.859693,39.933399],"name":"A. Adnan Saygun Caddesi","distance":0.6086242269},{"hint":"dWp4gmShLZ_EAAAA9gEAAAAAAAAAAAAAc9y8QcBqcEIAAAAAAAAAALwAAADiAQAAAAAAAAAAAAB9AAAA7k_1AQY1YQLwT_UBCDVhAgAAbwgAAAAA","location":[32.853998,39.924998],"name":"","distance":0.280260111}]}
+kod=200
