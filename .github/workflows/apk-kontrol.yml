@@ -8,6 +8,10 @@ on:
         description: 'Denenecek sürüm etiketi (boş = son sürüm)'
         required: false
         default: ''
+      bekle:
+        description: 'Ezan başladıktan sonra ikinci ekran görüntüsü için bekleme (saniye)'
+        required: false
+        default: '30'
 permissions:
   contents: write
 jobs:
@@ -61,8 +65,9 @@ jobs:
             adb shell dumpsys audio > /tmp/k/ses-tam.txt 2>&1 || true
             adb shell dumpsys activity services com.seyfettin.ezan_vakitlerim > /tmp/k/servis.txt 2>&1 || true
             adb shell dumpsys notification --noredact > /tmp/k/bildirim-tam.txt 2>&1 || true
-            sleep 30
+            sleep ${{ inputs.bekle }}
             adb exec-out screencap -p > /tmp/k/ekran-ezan2.png
+            adb shell dumpsys notification --noredact > /tmp/k/bildirim2-tam.txt 2>&1 || true
             adb logcat -d > /tmp/k/logcat-tam.txt || true
 
       - name: Sonucu kaydet
@@ -72,7 +77,8 @@ jobs:
           grep -E "flutter|AndroidRuntime|FATAL|Exception|ezan_vakitlerim" logcat-tam.txt | tail -200 > logcat.txt 2>/dev/null || true
           grep -i -E "player|piid|usage=USAGE_ALARM|state:" ses-tam.txt | head -40 > ses.txt 2>/dev/null || true
           grep -A12 "ezan_vakitlerim" bildirim-tam.txt | head -80 > bildirim.txt 2>/dev/null || true
-          rm -f Ezan-Vakitlerim.apk logcat-tam.txt ses-tam.txt bildirim-tam.txt
+          grep -E "android.text=|android.title=" bildirim2-tam.txt | head -20 > bildirim2.txt 2>/dev/null || true
+          rm -f Ezan-Vakitlerim.apk logcat-tam.txt ses-tam.txt bildirim-tam.txt bildirim2-tam.txt
           cd $GITHUB_WORKSPACE
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
