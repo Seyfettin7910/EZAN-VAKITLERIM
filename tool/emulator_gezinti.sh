@@ -50,6 +50,14 @@ fi
 dokun "Kıble" alt
 sleep 5
 cek 6-kible
+# İşlemci ölçümü: Kıble açıkken ön planda, sonra ana ekrana çıkınca arka planda
+islemci() { echo "== $1" >> $O/islemci.txt; for i in 1 2 3; do adb shell top -b -n 1 -d 2 | grep -E "ezan_vakit|PID" | head -3 >> $O/islemci.txt; sleep 2; done; }
+islemci "kible-onde"
+adb shell input keyevent KEYCODE_HOME
+sleep 8
+islemci "kible-arkada"
+adb shell am start -n $P/.MainActivity
+sleep 4
 dokun "Camiler" alt
 sleep 25
 cek 7-camiler
