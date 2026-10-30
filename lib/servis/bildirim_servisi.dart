@@ -16,7 +16,10 @@ import 'yerel.dart';
 
 class BildirimServisi {
   static final FlutterLocalNotificationsPlugin _eklenti = FlutterLocalNotificationsPlugin();
-  static const int _gunSayisi = 14;
+  static const int _gunSayisi = 14; // sesli ezan alarmları (Android tarafı, hafif)
+  static const int _bildirimGunSayisi = 7; // normal bildirimler (her biri telefona yazıldığı için daha az gün)
+  static Future<void> _zincir = Future.value(); // kurma işleri üst üste binmesin diye sıra
+  static int _istekNo = 0;
   static bool _hazir = false; // bildirim sistemi sorunsuz başladı mı
 
   // Bildirimin görünüşü: yüksek öncelikli, sesli, kendi küçük simgemizle
@@ -60,7 +63,16 @@ class BildirimServisi {
   }
 
   /// Eski bildirimleri siler, önümüzdeki günlerin bildirimlerini yeniden kurar.
-  static Future<void> planla() async {
+  /// Aynı anda birden çok istek gelirse sırayla çalışır; sırada bekleyen eski istekler atlanır
+  /// (en yenisi zaten son ayarlarla kuracak). Böylece işlemci boşuna yorulmaz.
+  static Future<void> planla() {
+    final no = ++_istekNo;
+    final is_ = _zincir.then((_) => no == _istekNo ? _planlaSirayla() : null);
+    _zincir = is_.catchError((_) {});
+    return is_;
+  }
+
+  static Future<void> _planlaSirayla() async {
     // Widget'lar da aynı konuma göre hesaplasın
     final k = durum.konum;
     if (k != null) await Yerel.konumKaydet(k.ad, k.enlem, k.boylam);
@@ -124,10 +136,12 @@ class BildirimServisi {
         final baslik = i == 1 ? 'Güneş doğdu' : '${vakitAdlari[i]} vakti girdi';
         final metin = '${saatYaz(zaman)} · ${konum.ad}';
 
+        final bildirimGunu = g < _bildirimGunSayisi;
+
         // Vakitten önce hatırlatma
         final dk = durum.hatirlatmaDk;
         final hatirlatmaZamani = zaman.subtract(Duration(minutes: dk));
-        if (dk > 0 && hatirlatmaZamani.isAfter(simdi)) {
+        if (bildirimGunu && dk > 0 && hatirlatmaZamani.isAfter(simdi)) {
           await _eklenti.zonedSchedule(
             id: 1000 + numara,
             title: i == 1 ? 'Güneşin doğmasına $dk dakika kaldı' : '${vakitAdlari[i]} vaktine $dk dakika kaldı',
@@ -142,7 +156,7 @@ class BildirimServisi {
         if (durum.sesliEzan && i != 1) {
           // Güneş dışındaki vakitlerde ezanı Android tarafındaki servis okur
           ezanlar.add({'zaman': zaman.millisecondsSinceEpoch, 'vakit': i, 'baslik': baslik, 'metin': metin});
-        } else {
+        } else if (bildirimGunu) {
           await _eklenti.zonedSchedule(
             id: numara,
             title: baslik,
@@ -159,7 +173,7 @@ class BildirimServisi {
       if (durum.teheccud && t.isAfter(simdi)) {
         if (durum.sesliEzan) {
           ezanlar.add(_teheccudOgesi(t, konum.ad));
-        } else {
+        } else if (g < _bildirimGunSayisi) {
           await _eklenti.zonedSchedule(
             id: 3000 + g,
             title: 'Teheccüd vakti',

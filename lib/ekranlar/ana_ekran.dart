@@ -13,7 +13,8 @@ import 'icerik_karti.dart';
 import 'konum_sec_ekrani.dart';
 
 class AnaEkran extends StatefulWidget {
-  const AnaEkran({super.key});
+  final bool aktif; // sekme ekrandayken true; değilse saniye sayacı durur
+  const AnaEkran({super.key, this.aktif = true});
 
   @override
   State<AnaEkran> createState() => _AnaEkranState();
@@ -21,20 +22,49 @@ class AnaEkran extends StatefulWidget {
 
 class _AnaEkranState extends State<AnaEkran> {
   Timer? _sayac;
+  final ValueNotifier<DateTime> _an = ValueNotifier(DateTime.now()); // her saniye: sadece geri sayım kartı
+  int _sonDakika = -1;
 
-  // Ekran açılınca her saniye kendini yenileyen sayacı başlatır (geri sayım için)
   @override
   void initState() {
     super.initState();
-    _sayac = Timer.periodic(const Duration(seconds: 1), (_) {
-      if (mounted) setState(() {});
-    });
+    if (widget.aktif) _baslat();
   }
 
-  // Ekran kapanınca sayacı durdurur, boşuna pil yemesin
+  @override
+  void didUpdateWidget(AnaEkran eski) {
+    super.didUpdateWidget(eski);
+    if (widget.aktif && !eski.aktif) _baslat();
+    if (!widget.aktif && eski.aktif) _durdur();
+  }
+
+  // Saniye sayacını başlatır. Her saniye sadece geri sayım kartı yenilenir;
+  // ekranın geri kalanı (vakit listesi, ayet) dakikada bir yenilenir.
+  void _baslat() {
+    _sayac?.cancel();
+    _an.value = DateTime.now();
+    _sonDakika = _an.value.minute;
+    _sayac = Timer.periodic(const Duration(seconds: 1), (_) {
+      final s = DateTime.now();
+      _an.value = s;
+      if (s.minute != _sonDakika) {
+        _sonDakika = s.minute;
+        if (mounted) setState(() {});
+      }
+    });
+    if (mounted) setState(() {});
+  }
+
+  // Sekme görünmüyorken ya da uygulama arka plandayken sayacı durdurur, boşuna pil yemesin
+  void _durdur() {
+    _sayac?.cancel();
+    _sayac = null;
+  }
+
   @override
   void dispose() {
-    _sayac?.cancel();
+    _durdur();
+    _an.dispose();
     super.dispose();
   }
 
@@ -53,16 +83,22 @@ class _AnaEkranState extends State<AnaEkran> {
         final bugun = VakitHesap.hesapla(simdi, konum.enlem, konum.boylam);
         final d = VakitHesap.durum(simdi, konum.enlem, konum.boylam);
 
-        // Önceki vakitten sıradakine ne kadar yol alındı (ilerleme çubuğu için, 0-1 arası)
-        final toplam = d.siradakiZaman.difference(d.oncekiZaman).inSeconds;
-        final gecen = simdi.difference(d.oncekiZaman).inSeconds;
-        final ilerleme = toplam > 0 ? (gecen / toplam).clamp(0.0, 1.0) : 0.0;
-
         return ListView(
           padding: const EdgeInsets.only(bottom: 24),
           children: [
             _ust(konum, simdi),
-            _geriSayimKarti(d, simdi, ilerleme),
+            // Her saniye sadece bu kart yeniden çizilir
+            ValueListenableBuilder<DateTime>(
+              valueListenable: _an,
+              builder: (context, an, _) {
+                final dd = VakitHesap.durum(an, konum.enlem, konum.boylam);
+                // Önceki vakitten sıradakine ne kadar yol alındı (ilerleme çubuğu için, 0-1 arası)
+                final toplam = dd.siradakiZaman.difference(dd.oncekiZaman).inSeconds;
+                final gecen = an.difference(dd.oncekiZaman).inSeconds;
+                final ilerleme = toplam > 0 ? (gecen / toplam).clamp(0.0, 1.0) : 0.0;
+                return _geriSayimKarti(dd, an, ilerleme);
+              },
+            ),
             const SizedBox(height: 16),
             _vakitListesi(bugun, d, simdi),
             if (durum.icerikAnaEkran) ...[

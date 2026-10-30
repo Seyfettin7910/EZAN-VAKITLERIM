@@ -25,6 +25,8 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> with WidgetsBindingObserv
   bool _tamEkranIzni = true;
   bool _pilSerbest = true;
   bool _alarmIzni = true;
+  int? _ezanSesiSurukle; // kaydırıcı sürüklenirken geçici değer (bırakınca kaydedilir)
+  int? _teheccudSesSurukle;
 
   // Ekran açılınca ve telefon ayarlarından geri dönünce izinlerin durumunu tazeler
   @override
@@ -176,23 +178,32 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> with WidgetsBindingObserv
                 deger: durum.sessizdeOku,
                 degisti: durum.sesliEzan ? (v) => durum.ezanAyarla(sessiz: v) : null,
               ),
-              ListTile(
-                title: const Text('Ezan ses seviyesi', style: TextStyle(fontWeight: FontWeight.w600)),
-                subtitle: Text(durum.ezanSesi == 0
-                    ? 'Telefonun kendi alarm sesi'
-                    : 'Ezan okunurken alarm sesi %${durum.ezanSesi} olur, bitince eski haline döner'),
-                trailing: Text(durum.ezanSesi == 0 ? 'Telefon' : '%${durum.ezanSesi}',
-                    style: const TextStyle(fontWeight: FontWeight.w800, color: Renk.ana)),
-              ),
-              Slider(
-                value: durum.ezanSesi.toDouble(),
-                min: 0,
-                max: 100,
-                divisions: 20,
-                activeColor: Renk.ana,
-                label: durum.ezanSesi == 0 ? 'Telefon' : '%${durum.ezanSesi}',
-                onChanged: durum.sesliEzan ? (v) => durum.ezanAyarla(ses: v.round()) : null,
-              ),
+              Builder(builder: (context) {
+                final ses = _ezanSesiSurukle ?? durum.ezanSesi;
+                return Column(children: [
+                  ListTile(
+                    title: const Text('Ezan ses seviyesi', style: TextStyle(fontWeight: FontWeight.w600)),
+                    subtitle: Text(ses == 0
+                        ? 'Telefonun kendi alarm sesi'
+                        : 'Ezan okunurken alarm sesi %$ses olur, bitince eski haline döner'),
+                    trailing: Text(ses == 0 ? 'Telefon' : '%$ses',
+                        style: const TextStyle(fontWeight: FontWeight.w800, color: Renk.ana)),
+                  ),
+                  Slider(
+                    value: ses.toDouble(),
+                    min: 0,
+                    max: 100,
+                    divisions: 20,
+                    activeColor: Renk.ana,
+                    label: ses == 0 ? 'Telefon' : '%$ses',
+                    onChanged: durum.sesliEzan ? (v) => setState(() => _ezanSesiSurukle = v.round()) : null,
+                    onChangeEnd: (v) async {
+                      await durum.ezanAyarla(ses: v.round());
+                      if (mounted) setState(() => _ezanSesiSurukle = null);
+                    },
+                  ),
+                ]);
+              }),
               _Anahtar(
                 baslik: 'Sesi güçlendir',
                 aciklama: 'Ezan, telefonun en yüksek sesinden de yüksek okunur. Cızırtı olursa kapat.',
@@ -203,16 +214,21 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> with WidgetsBindingObserv
                 ListTile(
                   title: const Text('Teheccüd ezanı ses seviyesi', style: TextStyle(fontWeight: FontWeight.w600)),
                   subtitle: const Text('Gece okunduğu için ayrı ve daha kısık; evdekiler uyanmasın'),
-                  trailing: Text('%${durum.teheccudSes}', style: const TextStyle(fontWeight: FontWeight.w800, color: Renk.ana)),
+                  trailing: Text('%${_teheccudSesSurukle ?? durum.teheccudSes}',
+                      style: const TextStyle(fontWeight: FontWeight.w800, color: Renk.ana)),
                 ),
                 Slider(
-                  value: durum.teheccudSes.toDouble().clamp(5, 100),
+                  value: (_teheccudSesSurukle ?? durum.teheccudSes).toDouble().clamp(5, 100),
                   min: 5,
                   max: 100,
                   divisions: 19,
                   activeColor: Renk.ana,
-                  label: '%${durum.teheccudSes}',
-                  onChanged: durum.sesliEzan ? (v) => durum.teheccudAyarla(ses: v.round()) : null,
+                  label: '%${_teheccudSesSurukle ?? durum.teheccudSes}',
+                  onChanged: durum.sesliEzan ? (v) => setState(() => _teheccudSesSurukle = v.round()) : null,
+                  onChangeEnd: (v) async {
+                    await durum.teheccudAyarla(ses: v.round());
+                    if (mounted) setState(() => _teheccudSesSurukle = null);
+                  },
                 ),
               ],
               ListTile(

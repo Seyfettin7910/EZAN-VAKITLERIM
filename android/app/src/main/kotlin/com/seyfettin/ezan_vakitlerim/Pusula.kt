@@ -16,6 +16,7 @@ class Pusula(private val context: Context) : EventChannel.StreamHandler, SensorE
     private var sapma = 0f
     private var dogruluk = SensorManager.SENSOR_STATUS_ACCURACY_HIGH
     private var sonGonderim = 0L
+    private var sonAci = -1000.0
     private val matris = FloatArray(9)
     private val yonler = FloatArray(3)
 
@@ -44,12 +45,16 @@ class Pusula(private val context: Context) : EventChannel.StreamHandler, SensorE
 
     override fun onSensorChanged(olay: SensorEvent) {
         val simdi = System.currentTimeMillis()
-        if (simdi - sonGonderim < 50) return // saniyede en fazla 20 kez
-        sonGonderim = simdi
+        if (simdi - sonGonderim < 100) return // saniyede en fazla 10 kez
         SensorManager.getRotationMatrixFromVector(matris, olay.values)
         SensorManager.getOrientation(matris, yonler)
         var aci = Math.toDegrees(yonler[0].toDouble()) + sapma
         aci = (aci % 360 + 360) % 360
+        // Telefon kıpırdamıyorsa (yarım dereceden az değişim) hiç gönderme, ekran boşuna çizilmesin
+        val fark = Math.abs(((aci - sonAci + 540) % 360) - 180)
+        if (fark < 0.5 && simdi - sonGonderim < 1000) return
+        sonGonderim = simdi
+        sonAci = aci
         akis?.success(mapOf("aci" to aci, "dogruluk" to dogruluk))
     }
 

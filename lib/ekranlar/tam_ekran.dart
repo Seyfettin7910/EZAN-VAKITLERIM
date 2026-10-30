@@ -22,18 +22,26 @@ class TamEkranEkrani extends StatefulWidget {
   State<TamEkranEkrani> createState() => _TamEkranEkraniState();
 }
 
-class _TamEkranEkraniState extends State<TamEkranEkrani> {
+class _TamEkranEkraniState extends State<TamEkranEkrani> with WidgetsBindingObserver {
   static const _zemin = Color(0xFF0B2E2D);
   static const _kart = Color(0xFF17403F);
 
   Timer? _sayac;
   String? _calan; // "ezan", "dua" ya da null
   bool _duaGoster = false;
+  int _bosSayisi = 0; // art arda kaç kez "çalan yok" cevabı geldi
 
-  // Her saniye Android'e "ne çalıyor?" diye sorar, ekranı ona göre günceller
+  // Okuma sürerken her saniye Android'e "ne çalıyor?" diye sorar, ekranı ona göre günceller
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    _sormayaBasla();
+  }
+
+  void _sormayaBasla() {
+    _sayac?.cancel();
+    _bosSayisi = 0;
     _durumSor();
     _sayac = Timer.periodic(const Duration(seconds: 1), (_) => _durumSor());
   }
@@ -41,14 +49,34 @@ class _TamEkranEkraniState extends State<TamEkranEkrani> {
   Future<void> _durumSor() async {
     final d = await Yerel.ezanDurumu();
     if (!mounted) return;
-    setState(() {
-      _calan = d;
-      if (d == 'dua') _duaGoster = true;
-    });
+    // Okuma bittiyse (3 kez üst üste boş) sormayı bırak; ekran açık kalsa da işlemci yorulmasın
+    _bosSayisi = d == null ? _bosSayisi + 1 : 0;
+    if (_bosSayisi >= 3) {
+      _sayac?.cancel();
+      _sayac = null;
+    }
+    if (d != _calan || d == 'dua') {
+      setState(() {
+        _calan = d;
+        if (d == 'dua') _duaGoster = true;
+      });
+    }
+  }
+
+  // Uygulama arka plana gidince sormayı durdurur, geri gelince yeniden başlar
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      _sormayaBasla();
+    } else if (state == AppLifecycleState.paused) {
+      _sayac?.cancel();
+      _sayac = null;
+    }
   }
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
     _sayac?.cancel();
     super.dispose();
   }

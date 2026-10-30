@@ -1,3 +1,7 @@
+• Pil ve işlemci iyileştirmesi: Kıble pusulası artık uygulama arka plana gidince hemen kapanıyor (önceden açık kalıyordu).
+• Ana ekrandaki geri sayım sadece ekrandayken çalışıyor; her saniye bütün ekran yerine sadece sayaç yenileniyor.
+• Tam ekran uyarı, ezan bitince ve uygulama arka plandayken durumu sormayı bırakıyor.
+• Ayarlardaki ses kaydırıcıları artık bırakınca bir kez kaydediyor (önceden her kıpırdatışta bütün alarmlar yeniden kuruluyordu).
 • Orta widget (4×2) yeniden düzenlendi: vakitler 3 + 3 iki satır halinde, yazılar çok daha büyük ve kalın.
 • Yatsıdan sonra widget yarının vakitlerini gösterir, sıradaki imsak çerçeveli görünür (artık hepsi soluk kalmıyor).
 • İpucu: widget'a basılı tutup kenarından aşağı çekerek büyütebilirsin; yazılar da onunla büyür.

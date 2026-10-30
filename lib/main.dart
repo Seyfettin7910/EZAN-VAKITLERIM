@@ -66,9 +66,23 @@ class Kabuk extends StatefulWidget {
   State<Kabuk> createState() => _KabukState();
 }
 
-class _KabukState extends State<Kabuk> {
+class _KabukState extends State<Kabuk> with WidgetsBindingObserver {
   int _sekme = 0;
   bool _tamEkranAcik = false;
+  bool _onPlanda = true; // uygulama ekranda mı (arka plana atılınca sayaç ve pusula durur)
+
+  // Uygulama arka plana gidince / geri gelince sekmelere haber verir
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    final onde = state == AppLifecycleState.resumed;
+    if (onde != _onPlanda) setState(() => _onPlanda = onde);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
 
   // Ekran ilk çizildikten sonra: tam ekran uyarıyla mı açıldık bak, izin iste,
   // uyarıları tazele, güncellemeden sonraysa yenilikleri göster, yeni sürüm denetle
@@ -76,6 +90,7 @@ class _KabukState extends State<Kabuk> {
   void initState() {
     super.initState();
     final ilkKurulum = durum.konum == null;
+    WidgetsBinding.instance.addObserver(this);
     Yerel.tamEkranDinle(_tamEkraniAc);
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (widget.acilisVakti >= 0) _tamEkraniAc(widget.acilisVakti);
@@ -111,8 +126,9 @@ class _KabukState extends State<Kabuk> {
             child: IndexedStack(
               index: _sekme,
               children: [
-                const AnaEkran(),
-                KibleEkrani(aktif: _sekme == 1), // pusula sadece bu sekme açıkken çalışır
+                // Sayaç ve pusula sadece kendi sekmeleri ekrandayken çalışır (pil ve işlemci için)
+                AnaEkran(aktif: _sekme == 0 && _onPlanda),
+                KibleEkrani(aktif: _sekme == 1 && _onPlanda),
                 CamilerEkrani(aktif: _sekme == 2),
                 const ImsakiyeEkrani(),
                 const AyarlarEkrani(),
