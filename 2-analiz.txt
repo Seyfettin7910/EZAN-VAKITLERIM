@@ -1,0 +1,5 @@
+Analyzing EZAN-VAKITLERIM...                                    
+
+warning • The '!' will have no effect because the receiver can't be null. Try removing the '!' operator • lib/ekranlar/icerik_karti.dart:59:30 • unnecessary_non_null_assertion
+
+1 issue found. (ran in 7.2s)
