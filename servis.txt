@@ -1,0 +1,53 @@
+ACTIVITY MANAGER SERVICES (dumpsys activity services)
+  User 0 active services:
+  * ServiceRecord{e13febc u0 com.seyfettin.ezan_vakitlerim/.EzanServisi}
+    intent={act=com.seyfettin.ezan_vakitlerim.EZAN_BASLAT cmp=com.seyfettin.ezan_vakitlerim/.EzanServisi}
+    packageName=com.seyfettin.ezan_vakitlerim
+    processName=com.seyfettin.ezan_vakitlerim
+    baseDir=/data/app/~~b789M5n5CMgf3FmXb7YPzQ==/com.seyfettin.ezan_vakitlerim-VTwKnBhZv1hkMErlpX706g==/base.apk
+    dataDir=/data/user/0/com.seyfettin.ezan_vakitlerim
+    app=ProcessRecord{4719157 7026:com.seyfettin.ezan_vakitlerim/u0a192}
+    mAllowWhileInUsePermissionInFgsReason=DENIED
+    allowUiJobScheduling=false
+    recentCallingPackage=com.seyfettin.ezan_vakitlerim
+    recentCallingUid=10192
+    allowStartForeground=ALARM_MANAGER_ALARM_CLOCK
+    startForegroundCount=1
+    infoAllowStartForeground=[callingPackage: com.seyfettin.ezan_vakitlerim; callingUid: 10192; uidState: RCVR; uidBFSL: n/a; intent: Intent { act=com.seyfettin.ezan_vakitlerim.EZAN_BASLAT cmp=com.seyfettin.ezan_vakitlerim/.EzanServisi (has extras) }; code:ALARM_MANAGER_ALARM_CLOCK; tempAllowListReason:<132d990 com.seyfettin.ezan_vakitlerim.EZAN_VAKTI.DENEME/u0,reasonCode:ALARM_MANAGER_ALARM_CLOCK,duration:10000,callingUid:10192>; targetSdkVersion:36; callerTargetSdkVersion:36; startForegroundCount:0; bindFromPackage:null: isBindService:false]
+    isForeground=true foregroundId=7001 types=00000002 foregroundNoti=Notification(channel=ezan_kanal shortcut=null contentView=null vibrate=null sound=null defaults=0x0 flags=0xea color=0xff0f4c4a category=alarm actions=1 vis=PUBLIC)
+    createTime=-10s148ms startingBgTimeout=--
+    lastActivity=-10s147ms restartTime=-10s147ms createdFromFg=false
+    startRequested=true delayedStop=false stopIfKilled=true callStart=true lastStartId=1
+ startCommandResult=2
+
+  * ServiceRecord{bc6d5ab u0 com.seyfettin.ezan_vakitlerim/com.baseflow.geolocator.GeolocatorLocationService}
+    intent={cmp=com.seyfettin.ezan_vakitlerim/com.baseflow.geolocator.GeolocatorLocationService}
+    packageName=com.seyfettin.ezan_vakitlerim
+    processName=com.seyfettin.ezan_vakitlerim
+    baseDir=/data/app/~~b789M5n5CMgf3FmXb7YPzQ==/com.seyfettin.ezan_vakitlerim-VTwKnBhZv1hkMErlpX706g==/base.apk
+    dataDir=/data/user/0/com.seyfettin.ezan_vakitlerim
+    app=ProcessRecord{4719157 7026:com.seyfettin.ezan_vakitlerim/u0a192}
+    mAllowWhileInUsePermissionInFgsReason=PROC_STATE_TOP
+    allowUiJobScheduling=false
+    recentCallingPackage=com.seyfettin.ezan_vakitlerim
+    recentCallingUid=10192
+    allowStartForeground=PROC_STATE_TOP
+    startForegroundCount=0
+    infoAllowStartForeground=[callingPackage: com.seyfettin.ezan_vakitlerim; callingUid: 10192; uidState: TOP ; uidBFSL: [BFSL]; intent: Intent { cmp=com.seyfettin.ezan_vakitlerim/com.baseflow.geolocator.GeolocatorLocationService }; code:PROC_STATE_TOP; tempAllowListReason:<9b084a4 android.intent.action.MY_PACKAGE_REPLACED/u0,reasonCode:PACKAGE_REPLACED,duration:20000,callingUid:1000>; targetSdkVersion:36; callerTargetSdkVersion:36; startForegroundCount:0; bindFromPackage:null: isBindService:true]
+    createTime=-45s265ms startingBgTimeout=--
+    lastActivity=-45s265ms restartTime=-45s265ms createdFromFg=true
+    Bindings:
+    * IntentBindRecord{3a0cb23 CREATE}:
+      intent={cmp=com.seyfettin.ezan_vakitlerim/com.baseflow.geolocator.GeolocatorLocationService}
+      binder=android.os.BinderProxy@96d5820
+      requested=true received=true hasBound=true doRebind=false
+      * Client AppBindRecord{d2875d9 ProcessRecord{4719157 7026:com.seyfettin.ezan_vakitlerim/u0a192}}
+        Per-process Connections:
+          ConnectionRecord{aa0ebfa u0 CR com.seyfettin.ezan_vakitlerim/com.baseflow.geolocator.GeolocatorLocationService:@a3d3e25 flags=0x1}
+    All Connections:
+      ConnectionRecord{aa0ebfa u0 CR com.seyfettin.ezan_vakitlerim/com.baseflow.geolocator.GeolocatorLocationService:@a3d3e25 flags=0x1}
+
+  Connection bindings to services:
+  * ConnectionRecord{aa0ebfa u0 CR com.seyfettin.ezan_vakitlerim/com.baseflow.geolocator.GeolocatorLocationService:@a3d3e25 flags=0x1}
+    binding=AppBindRecord{d2875d9 com.seyfettin.ezan_vakitlerim/com.baseflow.geolocator.GeolocatorLocationService:com.seyfettin.ezan_vakitlerim}
+    conn=android.os.BinderProxy@a3d3e25 flags=0x1

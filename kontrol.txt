@@ -1,0 +1,13 @@
+== etiket: 
+== boyut
+-rw-r--r-- 1 runner runner 64089577 Oct 30 12:28 Ezan-Vakitlerim.apk
+d977e6418eed160c3572264e64b3ee0fe36f1c1d4ad1b641b9f3aa2e0e721ecf  Ezan-Vakitlerim.apk
+== apksigner
+
+V3.0 Signer: certificate DN: CN=Seyfettin AYDIN, O=Ezan Vakitlerim, C=TR
+V3.0 Signer: certificate SHA-256 digest: 1787d09b2a3a45c5fc4edd4b4c00e9c70d0ea7ac886826fcd9421f6b1b4689b8
+V3.0 Signer: certificate SHA-1 digest: e36e31adcce9a090474c59607ea3f14115181733
+V3.0 Signer: certificate MD5 digest: 97a412d1b43d07598cf3092d4092baf7
+== paket
+package: name='com.seyfettin.ezan_vakitlerim' versionCode='29' versionName='1.2.9' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'
+minSdkVersion:'24'

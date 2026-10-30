@@ -1,0 +1,31 @@
+  source:android.os.BinderProxy@123a069 -- pack: com.seyfettin.ezan_vakitlerim -- client: android.media.AudioManager@5225974 -- gain: GAIN_TRANSIENT -- flags:  -- loss: none -- notified: true -- limbofalse -- uid: 10192 -- attr: AudioAttributes: usage=USAGE_ALARM content=CONTENT_TYPE_UNKNOWN flags=0x800 tags= bundle=null -- sdk:36
+Other state:
+  players:
+(not logged)  AudioPlaybackConfiguration piid:79 deviceId:0 type:android.media.SoundPool u/pid:1000/523 state:idle attr:AudioAttributes: usage=USAGE_ASSISTANCE_SONIFICATION content=CONTENT_TYPE_SONIFICATION flags=0x800 tags= bundle=null sessionId:0 mutedState:none  FormatInfo{isSpatialized=false, channelMask=0x0, sampleRate=0}
+  AudioPlaybackConfiguration piid:87 deviceId:0 type:android.media.SoundPool u/pid:10168/836 state:idle attr:AudioAttributes: usage=USAGE_ASSISTANCE_SONIFICATION content=CONTENT_TYPE_SONIFICATION flags=0x800 tags= bundle=null sessionId:0 mutedState:none  FormatInfo{isSpatialized=false, channelMask=0x0, sampleRate=0}
+  AudioPlaybackConfiguration piid:95 deviceId:0 type:android.media.MediaPlayer u/pid:10128/2676 state:idle attr:AudioAttributes: usage=USAGE_UNKNOWN content=CONTENT_TYPE_UNKNOWN flags=0x800 tags= bundle=null sessionId:89 mutedState:none  FormatInfo{isSpatialized=false, channelMask=0x0, sampleRate=0}
+  AudioPlaybackConfiguration piid:111 deviceId:2 type:android.media.MediaPlayer u/pid:10192/7026 state:started attr:AudioAttributes: usage=USAGE_ALARM content=CONTENT_TYPE_SPEECH flags=0x800 tags= bundle=null sessionId:121 mutedState:none  FormatInfo{isSpatialized=false, channelMask=0x1, sampleRate=44100}
+  ducked players piids:
+  faded out players piids:
+  muted player piids due to call/ring:
+  muted players (piids) awaiting device connection:
+  current portId to piid map:
+  portId: 16 piid: 111
+Events log: playback activity as reported through PlayerBase
+10-30 12:29:34:476 new player piid:79 uid/pid:1000/523 type:android.media.SoundPool attr:AudioAttributes: usage=USAGE_ASSISTANCE_SONIFICATION content=CONTENT_TYPE_SONIFICATION flags=0x800 tags= bundle=null session:0
+10-30 12:29:35:867 new player piid:87 uid/pid:10168/836 type:android.media.SoundPool attr:AudioAttributes: usage=USAGE_ASSISTANCE_SONIFICATION content=CONTENT_TYPE_SONIFICATION flags=0x800 tags= bundle=null session:0
+10-30 12:29:44:902 new player piid:95 uid/pid:10128/2676 type:android.media.MediaPlayer attr:AudioAttributes: usage=USAGE_UNKNOWN content=CONTENT_TYPE_UNKNOWN flags=0x800 tags= bundle=null session:89
+10-30 12:30:15:294 new player piid:103 uid/pid:10168/836 type:android.media.MediaPlayer attr:AudioAttributes: usage=USAGE_UNKNOWN content=CONTENT_TYPE_UNKNOWN flags=0x800 tags= bundle=null session:113
+10-30 12:30:15:299 player piid:103 new AudioAttributes:AudioAttributes: usage=USAGE_NOTIFICATION content=CONTENT_TYPE_SONIFICATION flags=0x800 tags= bundle=null
+10-30 12:30:15:962 player piid:103 event:started
+10-30 12:30:16:001 player piid:103 event:stopped
+10-30 12:30:16:002 releasing player piid:103
+10-30 12:33:22:016 new player piid:111 uid/pid:10192/7026 type:android.media.MediaPlayer attr:AudioAttributes: usage=USAGE_UNKNOWN content=CONTENT_TYPE_UNKNOWN flags=0x800 tags= bundle=null session:121
+10-30 12:33:22:016 player piid:111 new AudioAttributes:AudioAttributes: usage=USAGE_ALARM content=CONTENT_TYPE_SPEECH flags=0x800 tags= bundle=null
+10-30 12:33:22:056 player piid:111 event:started
+10-30 12:33:22:069 port updated portId:16 mapped to player piid:111
+10-30 12:33:22:070 player piid:111 format update:FormatInfo{isSpatialized=false, channelMask=0x1, sampleRate=44100}
+10-30 12:33:22:072 player piid:111 event:device updated deviceId:2
+  mScoAudioState: SCO_STATE_INACTIVE
+	mState:1
+	AudioAttributes: usage=USAGE_ALARM content=CONTENT_TYPE_UNKNOWN flags=0x800 tags= bundle=null forVolume: true stream: STREAM_ALARM(4)

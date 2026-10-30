@@ -1,0 +1,14 @@
+== kible-onde
+  PID USER         PR  NI VIRT  RES  SHR S[%CPU] %MEM     TIME+ ARGS
+ 3282 u0_a192      10 -10  17G 144M  79M S  0.0   5.8   0:02.33 com.seyfettin.ezan_vakitlerim
+  PID USER         PR  NI VIRT  RES  SHR S[%CPU] %MEM     TIME+ ARGS
+ 3282 u0_a192      10 -10  17G 144M  79M S  0.0   5.8   0:02.35 com.seyfettin.ezan_vakitlerim
+  PID USER         PR  NI VIRT  RES  SHR S[%CPU] %MEM     TIME+ ARGS
+ 3282 u0_a192      10 -10  17G 145M  79M S  3.8   5.8   0:02.35 com.seyfettin.ezan_vakitlerim
+== kible-arkada
+  PID USER         PR  NI VIRT  RES  SHR S[%CPU] %MEM     TIME+ ARGS
+ 3282 u0_a192      20   0  17G 146M  80M S  0.0   5.8   0:02.39 com.seyfettin.ezan_vakitlerim
+  PID USER         PR  NI VIRT  RES  SHR S[%CPU] %MEM     TIME+ ARGS
+ 3282 u0_a192      20   0  17G 146M  80M S  0.0   5.8   0:02.39 com.seyfettin.ezan_vakitlerim
+  PID USER         PR  NI VIRT  RES  SHR S[%CPU] %MEM     TIME+ ARGS
+ 3282 u0_a192      20   0  17G 146M  80M S  0.0   5.8   0:02.39 com.seyfettin.ezan_vakitlerim

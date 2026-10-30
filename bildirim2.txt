@@ -1,0 +1,6 @@
+                android.title=String (Ses denemesi)
+                android.text=String (Ezan okunuyor · Ezan sesi deneniyor)
+                android.title=String (Serial console enabled)
+                android.text=String (Performance is impacted. To disable, check bootloader.)
+                android.title=String (Configure AT Translated Set 2 keyboard)
+                android.text=String (Tap to select language and layout)
